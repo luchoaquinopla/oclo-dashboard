@@ -2345,14 +2345,17 @@ const AUDITORIA = [
 </script>
 <script>
 (function(){
+  // Marks each table's existing parent as the horizontal-scroll container
+  // instead of inserting a new wrapper <div>. Moving nodes into a wrapper
+  // desyncs React's own DOM bookkeeping — its next reconcile can then try
+  // to removeChild a table from a parent it no longer actually has,
+  // throwing "NotFoundError: ... is not a child of this node".
   function wrapTables(){
     document.querySelectorAll('table.cts-table').forEach(function(t){
       var p = t.parentElement;
-      if(p && p.classList && p.classList.contains('cts-table-wrap')) return;
-      var d = document.createElement('div');
-      d.className = 'cts-table-wrap';
-      t.parentNode.insertBefore(d, t);
-      d.appendChild(t);
+      if(p && p.classList && !p.classList.contains('cts-table-wrap')){
+        p.classList.add('cts-table-wrap');
+      }
     });
   }
   function start(){
