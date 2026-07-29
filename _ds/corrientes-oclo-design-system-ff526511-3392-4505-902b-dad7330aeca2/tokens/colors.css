@@ -1,0 +1,53 @@
+:root{
+/* Paleta principal — tonos institucionales, no alterar */
+--celeste-oscuro:#769FD3;
+--celeste-claro:#90B4E1;
+--rojo-claro:#F4492E;
+--rojo-oscuro:#EA2F09;
+--amarillo-claro:#FACD05;
+--amarillo-oscuro:#FAAE05;
+--verde-claro:#719C29;
+--verde-oscuro:#356F23;
+--bordo:#6F0603;
+--gris-claro:#EDEDED;
+--negro:#2E2D2C;
+--blanco:#FFFFFF;
+/* Paleta extendida — segmentación de datos (tablas, gráficos, mapas) */
+--naranja-claro:#F68E13;
+--naranja-oscuro:#F36D21;
+--ocre:#B45F04;
+--rosa:#FA8072;
+--turquesa-claro:#58A89A;
+--turquesa-oscuro:#008275;
+--azul:#1F5D9B;
+--violeta-oscuro:#6B5CB7;
+--violeta-claro:#8E7CC3;
+/* Neutrales derivados (mezclas de Negro/Blanco/Gris Claro — no son tonos de marca nuevos) */
+--gris-100:#F7F7F7;
+--gris-200:#EDEDED;
+--gris-300:#DBDBDA;
+--gris-400:#B8B7B6;
+--gris-500:#8A8988;
+--gris-600:#5C5B5A;
+--gris-700:#454443;
+/* Semánticos */
+--surface-page:#F7F7F7;
+--surface-card:#FFFFFF;
+--surface-sidebar:#2E2D2C;
+--text-body:#2E2D2C;
+--text-muted:#5C5B5A;
+--text-faint:#8A8988;
+--text-inverse:#FFFFFF;
+--border-default:#DBDBDA;
+--border-strong:#B8B7B6;
+--accent:#769FD3;
+--accent-strong:#1F5D9B;
+--link:#1F5D9B;
+/* Estados OCLO (pastillas): fondo = tono claro, icono = tono oscuro del mismo matiz */
+--estado-tramite-bg:#FAAE05;--estado-tramite-icon:#B45F04;
+--estado-audiencia-bg:#769FD3;--estado-audiencia-icon:#1F5D9B;
+--estado-acuerdo-bg:#719C29;--estado-acuerdo-icon:#356F23;
+--estado-sinacuerdo-bg:#F4492E;--estado-sinacuerdo-icon:#6F0603;
+--estado-vencido-bg:#6F0603;--estado-vencido-icon:#2E2D2C;
+--estado-archivado-bg:#8A8988;--estado-archivado-icon:#454443;
+}

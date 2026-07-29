@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#2E2D2C"/><rect x="30" y="30" width="17" height="17" rx="3" fill="#769FD3"/><rect x="53" y="30" width="17" height="17" rx="3" fill="#FACD05"/><rect x="30" y="53" width="17" height="17" rx="3" fill="#719C29"/><rect x="53" y="53" width="17" height="17" rx="3" fill="#F4492E"/></svg></template>
+<helmet>
+<link rel="stylesheet" href="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/tokens/colors.css">
+<link rel="stylesheet" href="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/tokens/typography.css">
+<link rel="stylesheet" href="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/components/components.css">
+<link rel="stylesheet" href="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/styles.css">
+<script src="_ds/corrientes-oclo-design-system-ff526511-3392-4505-902b-dad7330aeca2/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:#F7F7F7}
+a{color:#1F5D9B;text-decoration:none}
+a:hover{color:#123A62;text-decoration:underline}
+@keyframes ocloPulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* --- Responsive overrides (mobile/tablet) --- */
+@media (max-width:860px){
+  *{box-sizing:border-box}
+  html,body{overflow-x:hidden;height:auto!important}
+  [style*="height:100vh"][style*="overflow:hidden"]{flex-direction:column!important;height:auto!important;min-height:100vh!important;overflow:visible!important}
+  aside[style*="width:246px"]{width:100%!important;flex:none!important}
+  aside nav[style*="flex-direction:column"]{flex-direction:row!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;padding:8px 10px!important;gap:6px!important}
+  aside nav button{width:auto!important;flex:0 0 auto!important;white-space:nowrap}
+  [style*="display:grid"]{grid-template-columns:1fr!important;grid-template-rows:none!important}
+  [style*="display:flex"]{flex-wrap:wrap!important}
+  header[style*="min-height:62px"]{height:auto!important;padding:10px 14px!important}
+  main[style*="flex:1;overflow:auto"]{padding:14px!important}
+  [style*="width:min(300px,26vw)"]{width:100%!important}
+  [style*="width:680px"]{width:100%!important}
+  .cts-table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch;margin:0 -1px}
+  .cts-table-wrap .cts-table{min-width:560px}
+}
+@media (max-width:480px){
+  aside nav button span[style*="flex:1"]{display:none}
+  h1{font-size:18px!important}
+}
+</style>
+</helmet>
+<div style="display:flex;height:100vh;overflow:hidden;background:#F7F7F7;font-family:'Barlow',system-ui,sans-serif;color:#2E2D2C">
+
+  <aside style="width:246px;flex:none;background:#2E2D2C;display:flex;flex-direction:column">
+    <div style="padding:20px 18px 14px">
+      <img src="assets/logo-horizontal-dark.png" alt="Gobierno de Corrientes" style="width:174px;display:block">
+    </div>
+    <div style="padding:0 18px 16px;border-bottom:1px solid #454443;font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;color:#B8B7B6;text-transform:uppercase;line-height:1.5">OCLO · Conciliación<br>Laboral Obligatoria</div>
+    <nav style="display:flex;flex-direction:column;gap:2px;padding:12px 10px;flex:1;overflow:auto">
+      <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="9">
+        <button onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:11px;padding:9px 12px;border:none;border-radius:6px;cursor:pointer;font:600 13.5px 'Barlow',sans-serif;text-align:left;width:100%;transition:background .12s ease-out,color .12s ease-out;background:{{ it.bg }};color:{{ it.fg }}">
+          <span class="cts-icon" style="font-size:19px">{{ it.icon }}</span>
+          <span style="flex:1">{{ it.label }}</span>
+          <span style="font:700 10.5px 'Barlow',sans-serif;padding:1px 6px;border-radius:999px;background:{{ it.badgeBg }};color:{{ it.badgeFg }}">{{ it.badge }}</span>
+        </button>
+      </sc-for>
+    </nav>
+    <div style="padding:13px 14px;border-top:1px solid #454443;display:flex;align-items:center;gap:10px">
+      <div style="width:34px;height:34px;border-radius:50%;background:#769FD3;color:#fff;display:flex;align-items:center;justify-content:center;font:700 13px 'Barlow',sans-serif;flex:none">MF</div>
+      <div style="min-width:0;flex:1">
+        <div style="font:600 12.5px 'Barlow',sans-serif;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Dra. Marcela Fernández</div>
+        <div style="font:400 11px 'Barlow',sans-serif;color:#B8B7B6">Jefa de conciliadores</div>
+      </div>
+      <span class="cts-icon" style="font-size:18px;color:#8A8988">logout</span>
+    </div>
+  </aside>
+
+  <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+    <header style="min-height:62px;flex:none;background:#fff;border-bottom:1px solid #DBDBDA;display:flex;align-items:center;gap:16px;padding:8px 26px">
+      <div style="flex:1;min-width:0">
+        <div style="font:600 10.5px 'Barlow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8A8988">Secretaría de Trabajo y Empleo</div>
+        <h1 style="margin:0;font:800 23px 'Barlow Semi Condensed',sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.01em;color:#2E2D2C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tituloVista }}</h1>
+      </div>
+      <div style="flex:none;display:flex;align-items:center;gap:12px">
+        <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;background:#fff;width:min(300px,26vw);min-width:150px">
+          <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
+          <input placeholder="Buscar expediente, DNI o CUIT" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;color:#2E2D2C;background:transparent">
+        </div>
+        <div style="position:relative;display:flex">
+          <span class="cts-icon" style="font-size:23px;color:#5C5B5A">notifications</span>
+          <span style="position:absolute;top:-2px;right:-3px;min-width:15px;height:15px;border-radius:999px;background:#EA2F09;color:#fff;font:700 10px 'Barlow',sans-serif;display:flex;align-items:center;justify-content:center;padding:0 3px">6</span>
+        </div>
+      </div>
+    </header>
+
+    <main style="flex:1;overflow:auto;padding:24px 26px 34px">
+
+      <sc-if value="{{ esDashboard }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:18px">
+
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+            <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="5">
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:15px 16px 14px;display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:9px">
+                  <span style="width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex:none;background:{{ k.color }}">
+                    <span class="cts-icon" style="font-size:16px;color:#fff">{{ k.icon }}</span>
+                  </span>
+                  <div style="font:600 11.5px 'Barlow',sans-serif;letter-spacing:.03em;text-transform:uppercase;color:#5C5B5A;line-height:1.2">{{ k.label }}</div>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:5px">
+                  <span style="font:800 34px 'Barlow Semi Condensed',sans-serif;line-height:.94;color:#2E2D2C">{{ k.valor }}</span>
+                  <span style="font:600 14px 'Barlow',sans-serif;color:#5C5B5A">{{ k.unidad }}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:5px;font:600 12px 'Barlow',sans-serif;color:{{ k.deltaColor }}">
+                  <span class="cts-icon" style="font-size:15px">{{ k.deltaIcon }}</span>{{ k.delta }}
+                </div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #DBDBDA;border-left:5px solid #6F0603;border-radius:8px;padding:12px 16px">
+            <span class="cts-icon" style="font-size:22px;color:#6F0603">timer_off</span>
+            <div style="flex:1">
+              <div style="font:700 14px 'Barlow',sans-serif;color:#2E2D2C">3 expedientes vencen el plazo legal de 30 días hábiles esta semana</div>
+              <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">EXP-2026-00418 (vence 29/07) · EXP-2026-00402 (30/07) · EXP-2026-00377 (31/07)</div>
+            </div>
+            <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="visibility" hint-size="auto,32px">Ver vencimientos</x-import>
+          </div>
+
+          <div style="display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);gap:16px;align-items:start">
+
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+              <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Expedientes recientes</h3>
+                <span style="font:400 12.5px 'Barlow',sans-serif;color:#8A8988">actualizado hoy 08:12</span>
+                <div style="margin-left:auto;display:flex;gap:8px">
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="download" hint-size="auto,32px">Exportar</x-import>
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" size="sm" icon="note_add" hint-size="auto,32px">Nuevo expediente</x-import>
+                </div>
+              </div>
+              <table class="cts-table cts-table--hover">
+                <thead>
+                  <tr>
+                    <th style="width:126px">Expediente</th>
+                    <th>Carátula</th>
+                    <th style="width:132px">Conciliador/a</th>
+                    <th style="width:82px">Ingreso</th>
+                    <th style="width:176px">Estado</th>
+                    <th style="width:44px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ expedientes }}" as="e" hint-placeholder-count="7">
+                    <tr>
+                      <td style="font-weight:600;white-space:nowrap">{{ e.nro }}</td>
+                      <td>
+                        <div style="font:400 14px 'Barlow',sans-serif;line-height:1.3">{{ e.caratula }}</div>
+                        <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ e.motivo }}</div>
+                      </td>
+                      <td style="font-size:13px">{{ e.conciliador }}</td>
+                      <td style="font-size:13px;white-space:nowrap">{{ e.ingreso }}</td>
+                      <td>
+                        <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" estado="{{ e.estado }}" size="sm" hint-size="150px,24px"></x-import>
+                      </td>
+                      <td><span class="cts-icon" style="font-size:19px;color:#8A8988">chevron_right</span></td>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:11px 16px;font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">
+                <span>Mostrando 7 de 214 expedientes activos</span>
+                <a href="#" style="font-weight:600">Ver bandeja completa</a>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                <div style="display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Audiencias de hoy</h3>
+                  <span style="font:700 11px 'Barlow',sans-serif;background:#EDEDED;color:#5C5B5A;border-radius:999px;padding:2px 8px">28/07/2026</span>
+                  <a href="#" style="margin-left:auto;font:600 12.5px 'Barlow',sans-serif">Agenda</a>
+                </div>
+                <div style="display:flex;flex-direction:column">
+                  <sc-for list="{{ audiencias }}" as="a" hint-placeholder-count="4">
+                    <div style="display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid #EDEDED;align-items:flex-start">
+                      <div style="flex:none;width:46px;text-align:right">
+                        <div style="font:700 15px 'Barlow',sans-serif;line-height:1.1">{{ a.hora }}</div>
+                        <div style="font:400 11px 'Barlow',sans-serif;color:#8A8988">{{ a.dur }}</div>
+                      </div>
+                      <div style="width:3px;align-self:stretch;border-radius:2px;flex:none;background:{{ a.color }}"></div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font:600 13.5px 'Barlow',sans-serif;line-height:1.25">{{ a.caratula }}</div>
+                        <div style="font:400 12px 'Barlow',sans-serif;color:#5C5B5A">{{ a.nro }} · {{ a.conciliador }}</div>
+                        <div style="display:flex;align-items:center;gap:5px;margin-top:4px;font:600 11.5px 'Barlow',sans-serif;color:{{ a.color }}">
+                          <span class="cts-icon" style="font-size:14px">{{ a.icon }}</span>{{ a.modalidad }}
+                        </div>
+                      </div>
+                      <button onClick="{{ irAudiencia }}" style="flex:none;border:1px solid #B8B7B6;background:#fff;border-radius:6px;height:30px;padding:0 10px;font:600 12.5px 'Barlow',sans-serif;color:#2E2D2C;cursor:pointer">{{ a.accion }}</button>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Distribución por estado</h3>
+                  <span style="margin-left:auto;font:400 12px 'Barlow',sans-serif;color:#8A8988">214 expedientes</span>
+                </div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:11px">
+                  <sc-for list="{{ distribucion }}" as="d" hint-placeholder-count="6">
+                    <div style="display:flex;align-items:center;gap:10px">
+                      <div style="width:118px;flex:none;font:600 12.5px 'Barlow',sans-serif;color:#2E2D2C">{{ d.label }}</div>
+                      <div style="flex:1;height:14px;background:#EDEDED;border-radius:3px;overflow:hidden">
+                        <div style="height:100%;border-radius:3px;background:{{ d.color }};width:{{ d.pct }}"></div>
+                      </div>
+                      <div style="width:56px;flex:none;text-align:right;font:600 12.5px 'Barlow',sans-serif;color:#5C5B5A">{{ d.n }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esSorteo }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+
+          <div style="display:flex;align-items:center;gap:18px;background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:16px 18px">
+            <div>
+              <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Expediente a sortear</div>
+              <div style="font:700 18px 'Barlow',sans-serif;line-height:1.2">EXP-2026-00431 · Sosa, Ramón c/ Frigorífico del Litoral S.A.</div>
+              <div style="font:400 13px 'Barlow',sans-serif;color:#5C5B5A">Despido sin causa · Ingresado 27/07/2026 · Mesa de entradas</div>
+            </div>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+              <div style="text-align:right">
+                <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Universo habilitado</div>
+                <div style="font:700 18px 'Barlow',sans-serif">12 conciliadores</div>
+              </div>
+              <button onClick="{{ ejecutarSorteo }}" class="cts-btn cts-btn--primary" style="height:44px;padding:0 20px;font-size:15px">
+                <span class="cts-icon" style="font-size:19px">casino</span>{{ textoBotonSorteo }}
+              </button>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start">
+
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Universo de conciliadores disponibles</h3>
+                <span style="margin-left:auto;display:flex;align-items:center;gap:6px;font:600 12px 'Barlow',sans-serif;color:{{ estadoSorteoColor }}">
+                  <span class="cts-icon" style="font-size:16px">{{ estadoSorteoIcon }}</span>{{ estadoSorteoTexto }}
+                </span>
+              </div>
+              <div style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+                <sc-for list="{{ conciliadores }}" as="c" hint-placeholder-count="12">
+                  <div style="border:1.5px solid {{ c.borde }};background:{{ c.fondo }};border-radius:7px;padding:11px 12px;display:flex;flex-direction:column;gap:6px;transition:background .1s ease-out,border-color .1s ease-out">
+                    <div style="display:flex;align-items:center;gap:9px">
+                      <span style="width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:700 12px 'Barlow',sans-serif;color:#fff;background:{{ c.avatarBg }}">{{ c.ini }}</span>
+                      <div style="min-width:0">
+                        <div style="font:600 13px 'Barlow',sans-serif;line-height:1.2;color:{{ c.texto }}">{{ c.nombre }}</div>
+                        <div style="font:400 11.5px 'Barlow',sans-serif;color:{{ c.textoSec }}">Mat. {{ c.mat }} · {{ c.carga }} casos</div>
+                      </div>
+                    </div>
+                    <div style="font:700 10.5px 'Barlow',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:{{ c.textoSec }}">{{ c.estado }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="padding:0 16px 16px;font:400 12px 'Barlow',sans-serif;color:#5C5B5A">Se excluyen conciliadores con licencia vigente, con causal de excusación registrada en el expediente o con vinculación previa con alguna de las partes.</div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="border:1px solid #DBDBDA;border-radius:8px;background:#fff;overflow:hidden">
+                <div style="background:#356F23;padding:12px 16px;display:flex;align-items:center;gap:9px">
+                  <span class="cts-icon" style="font-size:19px;color:#fff">receipt_long</span>
+                  <span style="font:700 14px 'Barlow',sans-serif;color:#fff">Constancia de sorteo auditable</span>
+                </div>
+                <div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+                  <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #DBDBDA;border-radius:7px;background:#F7F7F7">
+                    <span style="width:42px;height:42px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:700 15px 'Barlow',sans-serif;color:#fff;background:#1F5D9B">{{ ganadorIni }}</span>
+                    <div>
+                      <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Conciliador/a designado/a</div>
+                      <div style="font:700 17px 'Barlow',sans-serif;line-height:1.2">{{ ganadorNombre }}</div>
+                      <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">{{ ganadorDetalle }}</div>
+                    </div>
+                  </div>
+                  <sc-for list="{{ constancia }}" as="c" hint-placeholder-count="6">
+                    <div style="display:flex;gap:12px;font:400 13px 'Barlow',sans-serif;border-bottom:1px solid #EDEDED;padding-bottom:9px">
+                      <span style="width:126px;flex:none;color:#5C5B5A;font-weight:600">{{ c.k }}</span>
+                      <span style="flex:1;word-break:break-all;color:#2E2D2C">{{ c.v }}</span>
+                    </div>
+                  </sc-for>
+                  <div style="display:flex;gap:10px">
+                    <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="download" hint-size="auto,40px">Descargar constancia</x-import>
+                    <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" icon="event" onClick="{{ fijarDesdeSorteo }}" hint-size="auto,40px">Notificar y fijar audiencia</x-import>
+                  </div>
+                </div>
+              </div>
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;display:flex;align-items:center">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Últimos sorteos</h3>
+                  <a href="#" style="margin-left:auto;font:600 12.5px 'Barlow',sans-serif">Auditoría completa</a>
+                </div>
+                <table class="cts-table">
+                  <thead><tr><th style="width:118px">Expediente</th><th>Designado/a</th><th style="width:112px">Fecha y hora</th></tr></thead>
+                  <tbody>
+                    <sc-for list="{{ historialSorteos }}" as="h" hint-placeholder-count="4">
+                      <tr>
+                        <td style="font-weight:600;font-size:13px">{{ h.nro }}</td>
+                        <td style="font-size:13px">{{ h.quien }}</td>
+                        <td style="font-size:12.5px;color:#5C5B5A;white-space:nowrap">{{ h.cuando }}</td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esAgenda }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <div style="display:flex;border:1px solid #B8B7B6;border-radius:6px;overflow:hidden">
+              <sc-for list="{{ vistasAgenda }}" as="v" hint-placeholder-count="2">
+                <button onClick="{{ v.onClick }}" style="display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border:none;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;background:{{ v.fondo }};color:{{ v.texto }}">
+                  <span class="cts-icon" style="font-size:17px">{{ v.icon }}</span>{{ v.label }}
+                </button>
+              </sc-for>
+            </div>
+            <select class="cts-select" value="{{ fAudConc }}" onChange="{{ setFAudConc }}" style="width:206px">
+              <option>Todos los conciliadores</option>
+              <option>Dra. M. Fernández</option>
+              <option>Dr. J. Aquino</option>
+              <option>Dra. C. Romero</option>
+              <option>Dr. L. Benítez</option>
+              <option>Dra. S. Núñez</option>
+              <option>Dra. G. Sandoval</option>
+              <option>Dr. P. Gómez</option>
+            </select>
+            <select class="cts-select" value="{{ fAudModo }}" onChange="{{ setFAudModo }}" style="width:170px">
+              <option>Todas las modalidades</option>
+              <option>Presencial</option>
+              <option>Virtual</option>
+              <option>Mixta</option>
+            </select>
+            <div style="display:flex;align-items:center;gap:8px;height:38px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px">
+              <span class="cts-icon" style="font-size:18px;color:#8A8988">date_range</span>
+              <span style="font:600 13px 'Barlow',sans-serif">27/07/2026 — 07/08/2026</span>
+            </div>
+            <button onClick="{{ abrirFijar }}" class="cts-btn cts-btn--primary" style="margin-left:auto"><span class="cts-icon" style="font-size:18px">add</span>Fijar audiencia</button>
+          </div>
+
+          <sc-if value="{{ agendaLista }}" hint-placeholder-val="{{ true }}">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Audiencias programadas</h3>
+                <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalAudiencias }}</span>
+              </div>
+              <table class="cts-table">
+                <thead>
+                  <tr>
+                    <th style="width:124px">Expediente</th>
+                    <th>Partes</th>
+                    <th style="width:112px">Fecha y hora</th>
+                    <th style="width:118px">Modalidad</th>
+                    <th style="width:200px">Sala o enlace</th>
+                    <th style="width:132px">Conciliador/a</th>
+                    <th style="width:154px">Estado</th>
+                    <th style="width:112px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ listaAudiencias }}" as="a" hint-placeholder-count="10">
+                    <tr>
+                      <td style="font-weight:600;font-size:13px;white-space:nowrap">{{ a.nro }}</td>
+                      <td>
+                        <div style="font:400 13.5px 'Barlow',sans-serif;line-height:1.25">{{ a.partes }}</div>
+                        <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ a.motivo }}</div>
+                      </td>
+                      <td style="font-size:13px;white-space:nowrap">
+                        <div style="font-weight:600">{{ a.fecha }}</div>
+                        <div style="color:#5C5B5A">{{ a.hora }} · {{ a.dur }}</div>
+                      </td>
+                      <td>
+                        <span style="display:inline-flex;align-items:center;gap:7px;font:600 12.5px 'Barlow',sans-serif;color:{{ a.modoColor }}">
+                          <span class="cts-icon" style="font-size:17px">{{ a.modoIcon }}</span>{{ a.modalidad }}
+                        </span>
+                      </td>
+                      <td style="font-size:12.5px;color:#454443;word-break:break-all">{{ a.lugar }}</td>
+                      <td style="font-size:13px">{{ a.conciliador }}</td>
+                      <td>
+                        <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ a.pColor }}" icon-bg="{{ a.pIconBg }}" icon="{{ a.pIcon }}" size="sm" hint-size="130px,24px">{{ a.pLabel }}</x-import>
+                      </td>
+                      <td>
+                        <button onClick="{{ a.onAccion }}" style="height:30px;padding:0 11px;border-radius:5px;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;border:1px solid {{ a.accionBorde }};background:{{ a.accionFondo }};color:{{ a.accionTexto }}">{{ a.accion }}</button>
+                      </td>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ agendaCalendario }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Semana del 27/07 al 31/07/2026</h3>
+                <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalAudiencias }}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:74px repeat(5,minmax(0,1fr))">
+                <div style="border-bottom:1px solid #DBDBDA;background:#F7F7F7"></div>
+                <sc-for list="{{ diasSemana }}" as="d" hint-placeholder-count="5">
+                  <div style="border-bottom:1px solid #DBDBDA;border-left:1px solid #EDEDED;background:{{ d.fondo }};padding:9px 12px">
+                    <div style="font:700 12.5px 'Barlow',sans-serif;text-transform:uppercase;letter-spacing:.04em;color:{{ d.texto }}">{{ d.dia }}</div>
+                    <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ d.fecha }}</div>
+                  </div>
+                </sc-for>
+                <sc-for list="{{ filasHorario }}" as="f" hint-placeholder-count="10">
+                  <div style="border-bottom:1px solid #EDEDED;padding:6px 10px;font:600 11.5px 'Barlow',sans-serif;color:#8A8988;text-align:right;background:#F7F7F7">{{ f.hora }}</div>
+                  <sc-for list="{{ f.celdas }}" as="c" hint-placeholder-count="5">
+                    <div style="border-bottom:1px solid #EDEDED;border-left:1px solid #EDEDED;min-height:46px;padding:4px">
+                      <sc-if value="{{ c.hay }}" hint-placeholder-val="{{ false }}">
+                        <button onClick="{{ c.onClick }}" style="width:100%;height:100%;min-height:38px;text-align:left;border:none;border-left:3px solid {{ c.borde }};border-radius:4px;cursor:pointer;padding:5px 7px;background:{{ c.fondo }}">
+                          <div style="font:700 11.5px 'Barlow',sans-serif;color:#2E2D2C;line-height:1.15">{{ c.hora }} · {{ c.nro }}</div>
+                          <div style="font:400 11px 'Barlow',sans-serif;color:#454443;line-height:1.2">{{ c.partes }}</div>
+                          <div style="font:600 10.5px 'Barlow',sans-serif;color:{{ c.borde }};text-transform:uppercase;letter-spacing:.04em">{{ c.modalidad }}</div>
+                        </button>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ modalFijar }}" hint-placeholder-val="{{ false }}">
+            <div style="position:fixed;inset:0;background:rgba(46,45,44,.5);display:flex;align-items:center;justify-content:center;z-index:100;padding:24px">
+              <div style="background:#fff;border-radius:8px;width:680px;max-width:100%;max-height:100%;overflow:auto;box-shadow:0 8px 28px rgba(46,45,44,.25)">
+                <div style="display:flex;align-items:center;padding:16px 20px;border-bottom:1px solid #DBDBDA">
+                  <div>
+                    <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Agenda de audiencias</div>
+                    <h3 style="margin:0;font:800 21px 'Barlow Semi Condensed',sans-serif;text-transform:uppercase;line-height:1">Fijar audiencia</h3>
+                  </div>
+                  <span onClick="{{ cerrarFijar }}" class="cts-icon" style="margin-left:auto;font-size:22px;color:#5C5B5A;cursor:pointer">close</span>
+                </div>
+
+                <div style="padding:18px 20px;display:flex;flex-direction:column;gap:16px">
+                  <div style="background:#F7F7F7;border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <div>
+                      <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Expediente</div>
+                      <div style="font:700 14.5px 'Barlow',sans-serif;line-height:1.25">EXP-2026-00431</div>
+                      <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">Sosa, Ramón c/ Frigorífico del Litoral S.A.</div>
+                    </div>
+                    <div>
+                      <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Conciliador/a designado/a por sorteo</div>
+                      <div style="font:700 14.5px 'Barlow',sans-serif;line-height:1.25">{{ fijarConciliador }}</div>
+                      <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">Designación: 28/07/2026 · constancia b7d41e93</div>
+                    </div>
+                  </div>
+
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <label style="display:flex;flex-direction:column;gap:5px">
+                      <span style="font:600 12.5px 'Barlow',sans-serif">Fecha de la audiencia</span>
+                      <input type="date" value="{{ fFecha }}" onChange="{{ setFFecha }}" class="cts-input">
+                    </label>
+                    <label style="display:flex;flex-direction:column;gap:5px">
+                      <span style="font:600 12.5px 'Barlow',sans-serif">Hora</span>
+                      <select class="cts-select" value="{{ fHora }}" onChange="{{ setFHora }}">
+                        <option>08:30</option><option>09:00</option><option>09:30</option><option>10:00</option>
+                        <option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
+                        <option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div style="display:flex;align-items:center;gap:11px;border:1px solid #DBDBDA;border-left:5px solid {{ plazoAvisoColor }};border-radius:7px;padding:11px 13px">
+                    <span class="cts-icon" style="font-size:20px;color:{{ plazoAvisoColor }}">{{ plazoAvisoIcon }}</span>
+                    <div>
+                      <div style="font:700 13px 'Barlow',sans-serif;color:{{ plazoAvisoColor }}">{{ plazoAvisoTitulo }}</div>
+                      <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">{{ plazoAvisoDetalle }}</div>
+                    </div>
+                  </div>
+
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <span style="font:600 12.5px 'Barlow',sans-serif">Modalidad</span>
+                    <div style="display:flex;gap:8px">
+                      <sc-for list="{{ opcionesModalidad }}" as="m" hint-placeholder-count="3">
+                        <button onClick="{{ m.onClick }}" style="display:flex;align-items:center;gap:8px;height:40px;padding:0 15px;border-radius:6px;cursor:pointer;font:700 13px 'Barlow',sans-serif;border:1.5px solid {{ m.borde }};background:{{ m.fondo }};color:{{ m.texto }}">
+                          <span class="cts-icon" style="font-size:18px">{{ m.icon }}</span>{{ m.label }}
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+
+                  <sc-if value="{{ necesitaSala }}" hint-placeholder-val="{{ false }}">
+                    <label style="display:flex;flex-direction:column;gap:5px">
+                      <span style="font:600 12.5px 'Barlow',sans-serif">Sala física</span>
+                      <select class="cts-select" value="{{ fSala }}" onChange="{{ setFSala }}">
+                        <option>Sala 1 — Planta baja</option>
+                        <option>Sala 2 — Planta baja</option>
+                        <option>Sala 3 — Primer piso</option>
+                        <option>Sala de audiencias ampliada — Primer piso</option>
+                      </select>
+                    </label>
+                  </sc-if>
+
+                  <sc-if value="{{ necesitaEnlace }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;gap:5px">
+                      <span style="font:600 12.5px 'Barlow',sans-serif">Enlace de videollamada institucional</span>
+                      <div style="display:flex;align-items:center;gap:9px;height:40px;padding:0 12px;border:1px solid #DBDBDA;border-radius:6px;background:#F7F7F7">
+                        <span class="cts-icon" style="font-size:18px;color:#356F23">link</span>
+                        <span style="flex:1;min-width:0;font:600 12.5px 'Barlow',sans-serif;color:#454443;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ enlaceGenerado }}</span>
+                        <span class="cts-icon" style="font-size:17px;color:#8A8988">content_copy</span>
+                      </div>
+                      <span style="font:400 11.5px 'Barlow',sans-serif;color:#8A8988">Generado automáticamente por la plataforma. No editable.</span>
+                    </div>
+                  </sc-if>
+
+                  <div style="display:flex;flex-direction:column;gap:7px">
+                    <span style="font:600 12.5px 'Barlow',sans-serif">Participantes adicionales</span>
+                    <div style="display:flex;gap:8px">
+                      <input value="{{ fPartInput }}" onChange="{{ setFPartInput }}" placeholder="Nombre y carácter (letrado/a, testigo)" class="cts-input" style="flex:1">
+                      <button onClick="{{ agregarParticipante }}" class="cts-btn cts-btn--secondary"><span class="cts-icon" style="font-size:17px">person_add</span>Agregar</button>
+                    </div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap">
+                      <sc-for list="{{ participantesExtra }}" as="p" hint-placeholder-count="2">
+                        <span style="display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 6px 0 10px;border-radius:5px;background:#EDEDED;font:600 12.5px 'Barlow',sans-serif;color:#2E2D2C">
+                          {{ p.nombre }}<span onClick="{{ p.onQuitar }}" class="cts-icon" style="font-size:16px;color:#5C5B5A;cursor:pointer">close</span>
+                        </span>
+                      </sc-for>
+                    </div>
+                  </div>
+
+                  <label class="cts-check" style="align-items:flex-start;gap:10px;border:1px solid #DBDBDA;border-radius:7px;padding:12px 13px">
+                    <input type="checkbox" checked="{{ fNotificar }}" onChange="{{ toggleNotificar }}" style="margin-top:2px">
+                    <span>
+                      <span style="display:block;font:600 13.5px 'Barlow',sans-serif">Notificar automáticamente a las partes por los canales configurados</span>
+                      <span style="display:block;font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">Se emite cédula electrónica al domicilio constituido de cada parte, con acuse y sello de tiempo.</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:10px;padding:14px 20px;border-top:1px solid #DBDBDA">
+                  <button onClick="{{ cerrarFijar }}" class="cts-btn cts-btn--secondary">Cancelar</button>
+                  <button onClick="{{ guardarAudiencia }}" class="cts-btn cts-btn--primary"><span class="cts-icon" style="font-size:18px">event_available</span>Guardar y notificar</button>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esSala }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <button onClick="{{ volverAgenda }}" class="cts-btn cts-btn--secondary cts-btn--sm"><span class="cts-icon" style="font-size:16px">arrow_back</span>Agenda de audiencias</button>
+            <span style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">Sala virtual institucional · acceso restringido a las partes acreditadas</span>
+          </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch;height:100%">
+
+          <div style="background:#2E2D2C;border-radius:8px;display:flex;flex-direction:column;overflow:hidden;min-height:620px">
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #454443">
+              <span style="display:flex;align-items:center;gap:7px;background:{{ grabBg }};border-radius:5px;padding:5px 10px;font:700 12px 'Barlow',sans-serif;color:#fff">
+                <span style="width:9px;height:9px;border-radius:50%;background:#fff;animation:{{ grabAnim }}"></span>{{ grabTexto }}
+              </span>
+              <div style="font:600 13px 'Barlow',sans-serif;color:#EDEDED">EXP-2026-00418 · Audiencia de conciliación</div>
+              <div style="margin-left:auto;display:flex;align-items:center;gap:16px;font:600 12.5px 'Barlow',sans-serif;color:#B8B7B6">
+                <span style="display:flex;align-items:center;gap:6px"><span class="cts-icon" style="font-size:17px">schedule</span>00:14:32</span>
+                <span style="display:flex;align-items:center;gap:6px"><span class="cts-icon" style="font-size:17px;color:#719C29">lock</span>Cifrada de extremo a extremo</span>
+              </div>
+            </div>
+
+            <div style="flex:1;padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px">
+              <sc-for list="{{ participantes }}" as="p" hint-placeholder-count="4">
+                <div style="position:relative;border-radius:7px;overflow:hidden;background:#454443;border:2px solid {{ p.borde }};display:flex;align-items:center;justify-content:center;min-height:180px">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+                    <div style="width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 25px 'Barlow',sans-serif;color:#fff;background:{{ p.avatarBg }}">{{ p.ini }}</div>
+                    <div style="font:400 11.5px 'Barlow',sans-serif;color:#8A8988">{{ p.placeholder }}</div>
+                  </div>
+                  <div style="position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:8px;background:#2E2D2C;border-radius:5px;padding:5px 9px">
+                    <span class="cts-icon" style="font-size:15px;color:{{ p.micColor }}">{{ p.micIcon }}</span>
+                    <div>
+                      <div style="font:600 12.5px 'Barlow',sans-serif;color:#fff;line-height:1.2">{{ p.nombre }}</div>
+                      <div style="font:400 10.5px 'Barlow',sans-serif;color:#B8B7B6">{{ p.rol }}</div>
+                    </div>
+                  </div>
+                  <div style="position:absolute;right:10px;top:10px;display:flex;align-items:center;gap:5px;background:#2E2D2C;border-radius:5px;padding:4px 8px;font:600 11px 'Barlow',sans-serif;color:{{ p.conexColor }}">
+                    <span class="cts-icon" style="font-size:14px">{{ p.conexIcon }}</span>{{ p.conexion }}
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="flex:none;padding:14px 16px;border-top:1px solid #454443;display:flex;align-items:center;gap:10px">
+              <sc-for list="{{ controlesLlamada }}" as="c" hint-placeholder-count="4">
+                <button style="display:flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:6px;border:1px solid #5C5B5A;background:#2E2D2C;color:#EDEDED;font:600 13px 'Barlow',sans-serif;cursor:pointer">
+                  <span class="cts-icon" style="font-size:19px">{{ c.icon }}</span>{{ c.label }}
+                </button>
+              </sc-for>
+              <button onClick="{{ toggleGrabacion }}" style="margin-left:auto;display:flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:6px;border:none;background:{{ grabBg }};color:#fff;font:700 13px 'Barlow',sans-serif;cursor:pointer">
+                <span class="cts-icon" style="font-size:19px">{{ grabBotonIcon }}</span>{{ grabBoton }}
+              </button>
+              <button style="display:flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:6px;border:none;background:#EA2F09;color:#fff;font:700 13px 'Barlow',sans-serif;cursor:pointer">
+                <span class="cts-icon" style="font-size:19px">call_end</span>Finalizar audiencia
+              </button>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:14px;overflow:auto">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:15px 16px;display:flex;flex-direction:column;gap:10px">
+              <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Expediente</div>
+              <div style="font:700 16px 'Barlow',sans-serif;line-height:1.25">EXP-2026-00418<br>Britez, Lucía c/ Distribuidora Paraná S.R.L.</div>
+              <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" estado="audiencia" size="sm" hint-size="150px,24px"></x-import>
+              <sc-for list="{{ datosExpediente }}" as="d" hint-placeholder-count="5">
+                <div style="display:flex;gap:10px;font:400 13px 'Barlow',sans-serif;border-top:1px solid #EDEDED;padding-top:8px">
+                  <span style="width:104px;flex:none;color:#5C5B5A;font-weight:600">{{ d.k }}</span>
+                  <span style="flex:1">{{ d.v }}</span>
+                </div>
+              </sc-for>
+              <a href="#" style="font:600 12.5px 'Barlow',sans-serif">Abrir expediente digital</a>
+            </div>
+
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="padding:12px 16px;border-bottom:1px solid #DBDBDA;font:600 15px 'Barlow',sans-serif">Control del acto</div>
+              <div style="padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{ checklist }}" as="c" hint-placeholder-count="4">
+                  <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
+                    <span class="cts-icon" style="font-size:20px;flex:none;color:{{ c.color }}">{{ c.icon }}</span>
+                    <span style="flex:1">
+                      <span style="display:block;font:600 13.5px 'Barlow',sans-serif;line-height:1.25">{{ c.label }}</span>
+                      <span style="display:block;font:400 12px 'Barlow',sans-serif;color:#5C5B5A">{{ c.detalle }}</span>
+                    </span>
+                  </label>
+                </sc-for>
+              </div>
+              <div style="padding:0 16px 16px;display:flex;flex-direction:column;gap:9px">
+                <div style="font:600 12.5px 'Barlow',sans-serif">Resultado del acto</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                  <sc-for list="{{ resultados }}" as="r" hint-placeholder-count="4">
+                    <button onClick="{{ r.onClick }}" style="height:38px;border-radius:6px;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;border:1.5px solid {{ r.borde }};background:{{ r.fondo }};color:{{ r.texto }}">{{ r.label }}</button>
+                  </sc-for>
+                </div>
+                <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="draw" hint-size="100%,40px">Registrar y firmar acta</x-import>
+              </div>
+            </div>
+
+            <div style="background:#EDEDED;border:1px solid #DBDBDA;border-radius:8px;padding:13px 15px;display:flex;gap:10px">
+              <span class="cts-icon" style="font-size:19px;color:#5C5B5A;flex:none">policy</span>
+              <div style="font:400 12.5px 'Barlow',sans-serif;color:#454443;line-height:1.4">Se graba únicamente la apertura y el cierre del acto. Los tramos de negociación no se registran, conforme al principio de confidencialidad de la conciliación.</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esExpedientes }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+
+          <sc-if value="{{ sinFicha }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                  <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;flex:1;min-width:240px">
+                    <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
+                    <input value="{{ qBandeja }}" onChange="{{ setQBandeja }}" placeholder="Buscar por carátula, expediente, DNI o CUIT" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;background:transparent;color:#2E2D2C">
+                  </div>
+                  <select class="cts-select" value="{{ fConc }}" onChange="{{ setFConc }}" style="width:212px">
+                    <option>Todos los conciliadores</option>
+                    <option>Sin asignar</option>
+                    <option>Dra. M. Fernández</option>
+                    <option>Dr. J. Aquino</option>
+                    <option>Dra. C. Romero</option>
+                    <option>Dr. L. Benítez</option>
+                    <option>Dra. S. Núñez</option>
+                    <option>Dr. P. Gómez</option>
+                  </select>
+                  <select class="cts-select" value="{{ fPlazo }}" onChange="{{ setFPlazo }}" style="width:196px">
+                    <option>Todos los plazos</option>
+                    <option>Vencidos</option>
+                    <option>Próximos a vencer</option>
+                    <option>En término</option>
+                  </select>
+                  <button onClick="{{ limpiarFiltros }}" class="cts-btn cts-btn--ghost">Limpiar filtros</button>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-top:1px solid #EDEDED;padding-top:12px">
+                  <span style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988;margin-right:2px">Estado</span>
+                  <sc-for list="{{ chipsEstado }}" as="c" hint-placeholder-count="7">
+                    <button onClick="{{ c.onClick }}" style="display:flex;align-items:center;gap:7px;height:30px;padding:0 11px 0 8px;border-radius:5px;cursor:pointer;font:700 12px 'Barlow',sans-serif;border:1.5px solid {{ c.borde }};background:{{ c.fondo }};color:{{ c.texto }}">
+                      <span style="width:9px;height:9px;border-radius:2px;background:{{ c.punto }}"></span>{{ c.label }}
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Bandeja de expedientes</h3>
+                  <span style="font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalBandeja }}</span>
+                  <div style="margin-left:auto;display:flex;gap:8px">
+                    <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="download" hint-size="auto,32px">Exportar bandeja</x-import>
+                    <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" size="sm" icon="note_add" hint-size="auto,32px">Nuevo expediente</x-import>
+                  </div>
+                </div>
+                <table class="cts-table cts-table--hover">
+                  <thead>
+                    <tr>
+                      <th style="width:124px">Expediente</th>
+                      <th>Partes</th>
+                      <th style="width:172px">Estado</th>
+                      <th style="width:86px">Ingreso</th>
+                      <th style="width:110px">Próx. audiencia</th>
+                      <th style="width:136px">Conciliador/a</th>
+                      <th style="width:132px">Plazo legal</th>
+                      <th style="width:52px"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <sc-for list="{{ bandeja }}" as="e" hint-placeholder-count="8">
+                      <tr onClick="{{ e.onOpen }}">
+                        <td style="font-weight:600;font-size:13px;white-space:nowrap">{{ e.nro }}</td>
+                        <td>
+                          <div style="font:400 14px 'Barlow',sans-serif;line-height:1.3">{{ e.partes }}</div>
+                          <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ e.motivo }}</div>
+                        </td>
+                        <td>
+                          <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ e.pColor }}" icon-bg="{{ e.pIconBg }}" icon="{{ e.pIcon }}" size="sm" hint-size="150px,24px">{{ e.pLabel }}</x-import>
+                        </td>
+                        <td style="font-size:13px;white-space:nowrap">{{ e.ingreso }}</td>
+                        <td style="font-size:13px;white-space:nowrap">{{ e.prox }}</td>
+                        <td style="font-size:13px">{{ e.conciliador }}</td>
+                        <td>
+                          <span style="display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 9px;border-radius:5px;font:700 11.5px 'Barlow',sans-serif;background:{{ e.plazoBg }};color:{{ e.plazoFg }}">
+                            <span class="cts-icon" style="font-size:14px">{{ e.plazoIcon }}</span>{{ e.plazoTexto }}
+                          </span>
+                        </td>
+                        <td><span class="cts-icon" style="font-size:19px;color:#8A8988">chevron_right</span></td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 16px;border-top:1px solid #EDEDED">
+                  <span style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">{{ rangoPagina }}</span>
+                  <div style="margin-left:auto;display:flex;align-items:center;gap:6px">
+                    <button onClick="{{ pagAnterior }}" class="cts-btn cts-btn--secondary cts-btn--sm">Anterior</button>
+                    <sc-for list="{{ paginas }}" as="p" hint-placeholder-count="3">
+                      <button onClick="{{ p.onClick }}" style="min-width:30px;height:30px;border-radius:5px;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;border:1px solid {{ p.borde }};background:{{ p.fondo }};color:{{ p.texto }}">{{ p.n }}</button>
+                    </sc-for>
+                    <button onClick="{{ pagSiguiente }}" class="cts-btn cts-btn--secondary cts-btn--sm">Siguiente</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ hayFicha }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:16px 18px">
+                <button onClick="{{ cerrarFicha }}" class="cts-btn cts-btn--secondary cts-btn--sm"><span class="cts-icon" style="font-size:16px">arrow_back</span>Bandeja</button>
+                <div>
+                  <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">{{ ficha.nro }} · Carátula</div>
+                  <div style="font:700 18px 'Barlow',sans-serif;line-height:1.2">{{ ficha.partes }}</div>
+                  <div style="font:400 13px 'Barlow',sans-serif;color:#5C5B5A">{{ ficha.motivo }} · Ingresado {{ ficha.ingreso }} · {{ ficha.conciliador }}</div>
+                </div>
+                <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ ficha.pColor }}" icon-bg="{{ ficha.pIconBg }}" icon="{{ ficha.pIcon }}" hint-size="170px,30px">{{ ficha.pLabel }}</x-import>
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" icon="event" hint-size="auto,40px">Fijar audiencia</x-import>
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="draw" hint-size="auto,40px">Homologar acuerdo</x-import>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px;align-items:start">
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                    <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;font:600 16px 'Barlow',sans-serif">Datos de las partes</div>
+                    <div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                      <sc-for list="{{ ficha.partesDetalle }}" as="p" hint-placeholder-count="2">
+                        <div style="border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px;display:flex;flex-direction:column;gap:7px">
+                          <div style="display:flex;align-items:center;gap:8px">
+                            <span style="width:24px;height:24px;border-radius:5px;display:flex;align-items:center;justify-content:center;background:{{ p.color }}"><span class="cts-icon" style="font-size:15px;color:#fff">{{ p.icon }}</span></span>
+                            <span style="font:700 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#5C5B5A">{{ p.rol }}</span>
+                          </div>
+                          <div style="font:700 15px 'Barlow',sans-serif;line-height:1.2">{{ p.nombre }}</div>
+                          <sc-for list="{{ p.campos }}" as="c" hint-placeholder-count="4">
+                            <div style="display:flex;gap:8px;font:400 12.5px 'Barlow',sans-serif;line-height:1.35">
+                              <span style="width:88px;flex:none;color:#8A8988;font-weight:600">{{ c.k }}</span>
+                              <span style="flex:1">{{ c.v }}</span>
+                            </div>
+                          </sc-for>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+
+                  <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                    <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                      <div style="font:600 16px 'Barlow',sans-serif">Documentos y actas</div>
+                      <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="upload_file" hint-size="auto,32px" style="margin-left:auto">Adjuntar</x-import>
+                    </div>
+                    <div style="display:flex;flex-direction:column">
+                      <sc-for list="{{ ficha.documentos }}" as="d" hint-placeholder-count="5">
+                        <div style="display:flex;align-items:center;gap:11px;padding:11px 16px;border-bottom:1px solid #EDEDED">
+                          <span class="cts-icon" style="font-size:20px;color:{{ d.color }}">{{ d.icon }}</span>
+                          <div style="flex:1;min-width:0">
+                            <div style="font:600 13.5px 'Barlow',sans-serif;line-height:1.25">{{ d.nombre }}</div>
+                            <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ d.meta }}</div>
+                          </div>
+                          <span class="cts-icon" style="font-size:19px;color:#8A8988">download</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                  <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                    <div style="font:600 16px 'Barlow',sans-serif">Línea de tiempo del trámite</div>
+                    <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ ficha.plazoTexto }}</span>
+                  </div>
+                  <div style="padding:18px 16px">
+                    <sc-for list="{{ ficha.timeline }}" as="t" hint-placeholder-count="7">
+                      <div style="display:flex;gap:13px">
+                        <div style="display:flex;flex-direction:column;align-items:center;flex:none;width:26px">
+                          <span style="width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ t.color }}"><span class="cts-icon" style="font-size:15px;color:#fff">{{ t.icon }}</span></span>
+                          <span style="flex:1;width:2px;background:{{ t.linea }};min-height:14px"></span>
+                        </div>
+                        <div style="padding-bottom:16px;flex:1">
+                          <div style="font:600 13.5px 'Barlow',sans-serif;line-height:1.25;color:{{ t.texto }}">{{ t.titulo }}</div>
+                          <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ t.fecha }}</div>
+                          <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A;line-height:1.4;margin-top:2px">{{ t.detalle }}</div>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esRegistro }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;flex:1;min-width:220px">
+              <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
+              <input value="{{ qConc }}" onChange="{{ setQConc }}" placeholder="Buscar por nombre o matrícula" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;background:transparent;color:#2E2D2C">
+            </div>
+            <select class="cts-select" value="{{ fCirc }}" onChange="{{ setFCirc }}" style="width:230px">
+              <option>Todas las circunscripciones</option>
+              <option>1ª — Capital</option>
+              <option>2ª — Goya</option>
+              <option>3ª — Paso de los Libres</option>
+              <option>4ª — Curuzú Cuatiá</option>
+            </select>
+            <div style="display:flex;gap:8px">
+              <sc-for list="{{ chipsDisp }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.onClick }}" style="height:40px;padding:0 13px;border-radius:6px;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;border:1.5px solid {{ c.borde }};background:{{ c.fondo }};color:{{ c.texto }}">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="person_add" hint-size="auto,40px">Alta de conciliador</x-import>
+          </div>
+
+          <div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Conciliadores registrados</h3>
+                <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalConc }}</span>
+              </div>
+              <table class="cts-table cts-table--hover">
+                <thead>
+                  <tr>
+                    <th>Conciliador/a</th>
+                    <th style="width:78px">Matrícula</th>
+                    <th style="width:112px">Circunscripción</th>
+                    <th style="width:158px">Disponibilidad</th>
+                    <th style="width:62px">Casos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ registro }}" as="c" hint-placeholder-count="10">
+                    <tr onClick="{{ c.onOpen }}">
+                      <td>
+                        <div style="display:flex;align-items:center;gap:10px">
+                          <span style="width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:700 12px 'Barlow',sans-serif;color:#fff;background:{{ c.avatarBg }}">{{ c.ini }}</span>
+                          <div>
+                            <div style="font:600 13.5px 'Barlow',sans-serif;line-height:1.2">{{ c.nombre }}</div>
+                            <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ c.email }}</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td style="font-size:13px;font-weight:600">{{ c.mat }}</td>
+                      <td style="font-size:13px">{{ c.circ }}</td>
+                      <td>
+                        <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ c.pColor }}" icon-bg="{{ c.pIconBg }}" icon="{{ c.pIcon }}" size="sm" hint-size="140px,24px">{{ c.pLabel }}</x-import>
+                      </td>
+                      <td style="font-size:13px;font-weight:600">{{ c.casos }}</td>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                <div style="padding:16px;display:flex;align-items:center;gap:13px;border-bottom:1px solid #DBDBDA">
+                  <span style="width:48px;height:48px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:700 17px 'Barlow',sans-serif;color:#fff;background:{{ concSel.avatarBg }}">{{ concSel.ini }}</span>
+                  <div style="flex:1;min-width:0">
+                    <div style="font:700 17px 'Barlow',sans-serif;line-height:1.2">{{ concSel.nombre }}</div>
+                    <div style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">Matrícula {{ concSel.mat }} · {{ concSel.circ }}</div>
+                  </div>
+                </div>
+                <div style="padding:14px 16px;display:flex;flex-direction:column;gap:9px;border-bottom:1px solid #DBDBDA">
+                  <sc-for list="{{ concSel.datos }}" as="d" hint-placeholder-count="5">
+                    <div style="display:flex;gap:10px;font:400 13px 'Barlow',sans-serif">
+                      <span style="width:118px;flex:none;color:#8A8988;font-weight:600">{{ d.k }}</span>
+                      <span style="flex:1">{{ d.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-bottom:1px solid #DBDBDA">
+                  <sc-for list="{{ concSel.stats }}" as="s" hint-placeholder-count="3">
+                    <div style="border:1px solid #DBDBDA;border-radius:7px;padding:10px 11px">
+                      <div style="font:800 26px 'Barlow Semi Condensed',sans-serif;line-height:.94;color:{{ s.color }}">{{ s.valor }}</div>
+                      <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.03em;text-transform:uppercase;color:#5C5B5A;line-height:1.2;margin-top:4px">{{ s.label }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+                  <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Historial de licencias</div>
+                  <sc-for list="{{ concSel.licencias }}" as="l" hint-placeholder-count="3">
+                    <div style="display:flex;gap:10px;align-items:flex-start">
+                      <span class="cts-icon" style="font-size:17px;color:{{ l.color }}">{{ l.icon }}</span>
+                      <div style="flex:1">
+                        <div style="font:600 13px 'Barlow',sans-serif;line-height:1.25">{{ l.motivo }}</div>
+                        <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ l.periodo }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                  <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988;margin-top:4px">Incompatibilidades y excusaciones</div>
+                  <sc-for list="{{ concSel.excusaciones }}" as="x" hint-placeholder-count="2">
+                    <div style="display:flex;gap:10px;align-items:flex-start;border-left:3px solid {{ x.color }};padding-left:9px">
+                      <div>
+                        <div style="font:600 13px 'Barlow',sans-serif;line-height:1.25">{{ x.titulo }}</div>
+                        <div style="font:400 12px 'Barlow',sans-serif;color:#5C5B5A;line-height:1.35">{{ x.detalle }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding:0 16px 16px;display:flex;gap:8px;flex-wrap:wrap">
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="event_busy" hint-size="auto,32px">Registrar licencia</x-import>
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="edit" hint-size="auto,32px">Editar ficha</x-import>
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="danger" size="sm" icon="person_remove" hint-size="auto,32px">Dar de baja</x-import>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esNotificaciones }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;flex:1;min-width:220px">
+              <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
+              <input value="{{ qNotif }}" onChange="{{ setQNotif }}" placeholder="Buscar por expediente o destinatario" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;background:transparent;color:#2E2D2C">
+            </div>
+            <select class="cts-select" value="{{ fNotif }}" onChange="{{ setFNotif }}" style="width:186px">
+              <option>Todos los estados</option>
+              <option>Enviada</option>
+              <option>Recibida</option>
+              <option>Leída</option>
+              <option>Rechazada</option>
+              <option>En reintento</option>
+            </select>
+            <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;background:#fff">
+              <span class="cts-icon" style="font-size:18px;color:#8A8988">date_range</span>
+              <span style="font:600 13px 'Barlow',sans-serif;color:#2E2D2C">01/07/2026 — 28/07/2026</span>
+              <span class="cts-icon" style="font-size:18px;color:#8A8988">expand_more</span>
+            </div>
+            <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="outgoing_mail" hint-size="auto,40px">Nueva cédula</x-import>
+          </div>
+
+          <div style="display:grid;grid-template-columns:minmax(0,1.55fr) 360px;gap:16px;align-items:start">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Cédulas electrónicas</h3>
+                <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalNotif }}</span>
+              </div>
+              <table class="cts-table cts-table--hover">
+                <thead>
+                  <tr>
+                    <th style="width:124px">Expediente</th>
+                    <th>Destinatario</th>
+                    <th style="width:150px">Tipo de cédula</th>
+                    <th style="width:152px">Canal</th>
+                    <th style="width:108px">Envío</th>
+                    <th style="width:150px">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ notificaciones }}" as="n" hint-placeholder-count="9">
+                    <tr onClick="{{ n.onOpen }}" style="background:{{ n.fila }}">
+                      <td style="font-weight:600;font-size:13px;white-space:nowrap">{{ n.nro }}</td>
+                      <td>
+                        <div style="font:400 13.5px 'Barlow',sans-serif;line-height:1.25">{{ n.destinatario }}</div>
+                        <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ n.rol }}</div>
+                      </td>
+                      <td style="font-size:13px">{{ n.tipo }}</td>
+                      <td>
+                        <span style="display:inline-flex;align-items:center;gap:7px;font:600 12.5px 'Barlow',sans-serif;color:#454443">
+                          <span class="cts-icon" style="font-size:17px;color:{{ n.canalColor }}">{{ n.canalIcon }}</span>{{ n.canal }}
+                        </span>
+                      </td>
+                      <td style="font-size:12.5px;color:#5C5B5A;white-space:nowrap">{{ n.fecha }}</td>
+                      <td>
+                        <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ n.pColor }}" icon-bg="{{ n.pIconBg }}" icon="{{ n.pIcon }}" size="sm" hint-size="130px,24px">{{ n.pLabel }}</x-import>
+                      </td>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;display:flex;align-items:center;gap:10px">
+                <div style="font:600 16px 'Barlow',sans-serif">Detalle de la cédula</div>
+                <span style="margin-left:auto;font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ notifSel.id }}</span>
+              </div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:13px">
+                <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ notifSel.pColor }}" icon-bg="{{ notifSel.pIconBg }}" icon="{{ notifSel.pIcon }}" hint-size="160px,30px">{{ notifSel.pLabel }}</x-import>
+                <sc-for list="{{ notifSel.campos }}" as="c" hint-placeholder-count="6">
+                  <div style="display:flex;gap:10px;font:400 13px 'Barlow',sans-serif;border-bottom:1px solid #EDEDED;padding-bottom:8px">
+                    <span style="width:112px;flex:none;color:#8A8988;font-weight:600">{{ c.k }}</span>
+                    <span style="flex:1;word-break:break-word">{{ c.v }}</span>
+                  </div>
+                </sc-for>
+                <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Historial de entrega</div>
+                <sc-for list="{{ notifSel.historial }}" as="h" hint-placeholder-count="4">
+                  <div style="display:flex;gap:11px">
+                    <div style="display:flex;flex-direction:column;align-items:center;flex:none;width:22px">
+                      <span style="width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ h.color }}"><span class="cts-icon" style="font-size:13px;color:#fff">{{ h.icon }}</span></span>
+                      <span style="flex:1;width:2px;background:#DBDBDA;min-height:10px"></span>
+                    </div>
+                    <div style="padding-bottom:12px">
+                      <div style="font:600 13px 'Barlow',sans-serif;line-height:1.25">{{ h.titulo }}</div>
+                      <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ h.fecha }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+                <div style="background:#EDEDED;border-radius:7px;padding:11px 13px;display:flex;gap:10px">
+                  <span class="cts-icon" style="font-size:18px;color:#5C5B5A;flex:none">verified</span>
+                  <div style="font:400 12.5px 'Barlow',sans-serif;color:#454443;line-height:1.4">{{ notifSel.acuse }}</div>
+                </div>
+                <div style="display:flex;gap:8px">
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="download" hint-size="auto,32px">Acuse en PDF</x-import>
+                  <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="restart_alt" hint-size="auto,32px">Reintentar envío</x-import>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esReportes }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <div style="display:flex;gap:8px">
+              <sc-for list="{{ chipsRango }}" as="c" hint-placeholder-count="4">
+                <button onClick="{{ c.onClick }}" style="height:38px;padding:0 14px;border-radius:6px;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;border:1.5px solid {{ c.borde }};background:{{ c.fondo }};color:{{ c.texto }}">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;height:38px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px">
+              <span class="cts-icon" style="font-size:18px;color:#8A8988">date_range</span>
+              <span style="font:600 13px 'Barlow',sans-serif">{{ rangoTexto }}</span>
+            </div>
+            <div style="margin-left:auto;display:flex;gap:8px">
+              <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" icon="table_view" hint-size="auto,40px">Exportar Excel</x-import>
+              <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="picture_as_pdf" hint-size="auto,40px">Exportar informe PDF</x-import>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+            <sc-for list="{{ kpisReporte }}" as="k" hint-placeholder-count="5">
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:15px 16px;display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:9px">
+                  <span style="width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;flex:none;background:{{ k.color }}"><span class="cts-icon" style="font-size:16px;color:#fff">{{ k.icon }}</span></span>
+                  <div style="font:600 11.5px 'Barlow',sans-serif;letter-spacing:.03em;text-transform:uppercase;color:#5C5B5A;line-height:1.2">{{ k.label }}</div>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:5px">
+                  <span style="font:800 34px 'Barlow Semi Condensed',sans-serif;line-height:.94">{{ k.valor }}</span>
+                  <span style="font:600 14px 'Barlow',sans-serif;color:#5C5B5A">{{ k.unidad }}</span>
+                </div>
+                <div style="font:600 12px 'Barlow',sans-serif;color:#5C5B5A">{{ k.delta }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Expedientes iniciados y cerrados</h3>
+                <div style="margin-left:auto;display:flex;gap:14px;font:600 12px 'Barlow',sans-serif;color:#5C5B5A">
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:11px;height:11px;border-radius:2px;background:#769FD3"></span>Iniciados</span>
+                  <span style="display:flex;align-items:center;gap:6px"><span style="width:11px;height:11px;border-radius:2px;background:#356F23"></span>Cerrados</span>
+                </div>
+              </div>
+              <div style="padding:18px 16px 14px;display:flex;align-items:flex-end;gap:14px;height:236px">
+                <sc-for list="{{ evolucion }}" as="m" hint-placeholder-count="8">
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%">
+                    <div style="flex:1;display:flex;align-items:flex-end;gap:4px;width:100%;justify-content:center">
+                      <div style="width:16px;border-radius:3px 3px 0 0;background:#769FD3;height:{{ m.h1 }}"></div>
+                      <div style="width:16px;border-radius:3px 3px 0 0;background:#356F23;height:{{ m.h2 }}"></div>
+                    </div>
+                    <div style="font:600 11.5px 'Barlow',sans-serif;color:#5C5B5A">{{ m.mes }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;font:600 16px 'Barlow',sans-serif">Distribución por estado</div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:11px">
+                <sc-for list="{{ distribucion }}" as="d" hint-placeholder-count="6">
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <div style="width:126px;flex:none;font:600 12.5px 'Barlow',sans-serif">{{ d.label }}</div>
+                    <div style="flex:1;height:14px;background:#EDEDED;border-radius:3px;overflow:hidden">
+                      <div style="height:100%;border-radius:3px;background:{{ d.color }};width:{{ d.pct }}"></div>
+                    </div>
+                    <div style="width:54px;flex:none;text-align:right;font:600 12.5px 'Barlow',sans-serif;color:#5C5B5A">{{ d.n }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Carga de trabajo por conciliador</h3>
+                <span style="margin-left:auto;font:400 12px 'Barlow',sans-serif;color:#8A8988">casos activos · promedio 8</span>
+              </div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ cargaConciliadores }}" as="c" hint-placeholder-count="8">
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <div style="width:118px;flex:none;font:600 12.5px 'Barlow',sans-serif">{{ c.nombre }}</div>
+                    <div style="flex:1;height:16px;background:#EDEDED;border-radius:3px;overflow:hidden">
+                      <div style="height:100%;border-radius:3px;background:{{ c.color }};width:{{ c.pct }}"></div>
+                    </div>
+                    <div style="width:74px;flex:none;text-align:right;font:600 12.5px 'Barlow',sans-serif;color:#5C5B5A">{{ c.detalle }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+              <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;font:600 16px 'Barlow',sans-serif">Montos conciliados y honorarios</div>
+              <div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <div style="border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px">
+                    <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#5C5B5A">Total conciliado</div>
+                    <div style="font:800 30px 'Barlow Semi Condensed',sans-serif;line-height:.94;margin-top:6px">$ 184.320.500</div>
+                    <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988;margin-top:4px">63 acuerdos homologados</div>
+                  </div>
+                  <div style="border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px">
+                    <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#5C5B5A">Honorarios generados</div>
+                    <div style="font:800 30px 'Barlow Semi Condensed',sans-serif;line-height:.94;margin-top:6px">$ 9.216.025</div>
+                    <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988;margin-top:4px">5% sobre monto conciliado</div>
+                  </div>
+                </div>
+                <table class="cts-table">
+                  <thead><tr><th>Mes</th><th style="width:132px">Monto conciliado</th><th style="width:112px">Honorarios</th><th style="width:78px">Acuerdos</th></tr></thead>
+                  <tbody>
+                    <sc-for list="{{ montos }}" as="m" hint-placeholder-count="5">
+                      <tr>
+                        <td style="font-size:13px;font-weight:600">{{ m.mes }}</td>
+                        <td style="font-size:13px">{{ m.monto }}</td>
+                        <td style="font-size:13px">{{ m.hon }}</td>
+                        <td style="font-size:13px">{{ m.n }}</td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esUsuarios }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="cts-tabs" style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:0 8px">
+            <sc-for list="{{ tabsUsuarios }}" as="t" hint-placeholder-count="3">
+              <button onClick="{{ t.onClick }}" class="cts-tab" style="color:{{ t.color }};border-bottom-color:{{ t.borde }}">
+                <span class="cts-icon">{{ t.icon }}</span>{{ t.label }}
+              </button>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ tabUsuariosLista }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;flex:1;min-width:220px">
+                  <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
+                  <input value="{{ qUsuarios }}" onChange="{{ setQUsuarios }}" placeholder="Buscar por nombre, correo o CUIL" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;background:transparent;color:#2E2D2C">
+                </div>
+                <select class="cts-select" value="{{ fRol }}" onChange="{{ setFRol }}" style="width:210px">
+                  <option>Todos los roles</option>
+                  <option>Ciudadano</option>
+                  <option>Conciliador</option>
+                  <option>Mesa de entradas</option>
+                  <option>Asesoría jurídica</option>
+                  <option>Jefe de conciliadores</option>
+                  <option>Administrador</option>
+                </select>
+                <select class="cts-select" value="{{ fActivo }}" onChange="{{ setFActivo }}" style="width:150px">
+                  <option>Todos los estados</option>
+                  <option>Activo</option>
+                  <option>Inactivo</option>
+                </select>
+                <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="person_add" hint-size="auto,40px">Crear usuario</x-import>
+              </div>
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+                <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Usuarios del sistema</h3>
+                  <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalUsuarios }}</span>
+                </div>
+                <table class="cts-table cts-table--hover">
+                  <thead>
+                    <tr>
+                      <th>Usuario</th>
+                      <th style="width:184px">Rol</th>
+                      <th style="width:96px">Estado</th>
+                      <th style="width:132px">Último acceso</th>
+                      <th style="width:112px">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <sc-for list="{{ usuarios }}" as="u" hint-placeholder-count="9">
+                      <tr>
+                        <td>
+                          <div style="display:flex;align-items:center;gap:10px">
+                            <span style="width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:700 12px 'Barlow',sans-serif;color:#fff;background:{{ u.avatarBg }}">{{ u.ini }}</span>
+                            <div>
+                              <div style="font:600 13.5px 'Barlow',sans-serif;line-height:1.2">{{ u.nombre }}</div>
+                              <div style="font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ u.email }}</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Pastilla" color="{{ u.pColor }}" icon-bg="{{ u.pIconBg }}" icon="{{ u.pIcon }}" size="sm" hint-size="150px,24px">{{ u.rol }}</x-import>
+                        </td>
+                        <td>
+                          <span style="display:inline-flex;align-items:center;gap:6px;font:600 12.5px 'Barlow',sans-serif;color:{{ u.estadoColor }}">
+                            <span style="width:8px;height:8px;border-radius:50%;background:{{ u.estadoColor }}"></span>{{ u.estado }}
+                          </span>
+                        </td>
+                        <td style="font-size:12.5px;color:#5C5B5A;white-space:nowrap">{{ u.acceso }}</td>
+                        <td>
+                          <div style="display:flex;gap:6px">
+                            <span class="cts-icon" title="Restablecer contraseña" style="font-size:19px;color:#5C5B5A;cursor:pointer">lock_reset</span>
+                            <span class="cts-icon" title="Suspender acceso" style="font-size:19px;color:#5C5B5A;cursor:pointer">block</span>
+                            <span class="cts-icon" title="Editar" style="font-size:19px;color:#5C5B5A;cursor:pointer">edit</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabPermisos }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+              <div style="display:flex;align-items:center;gap:14px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Permisos por rol</h3>
+                <div style="margin-left:auto;display:flex;gap:14px;font:600 12px 'Barlow',sans-serif;color:#5C5B5A">
+                  <span style="display:flex;align-items:center;gap:6px"><span class="cts-icon" style="font-size:17px;color:#356F23">edit</span>Ver y editar</span>
+                  <span style="display:flex;align-items:center;gap:6px"><span class="cts-icon" style="font-size:17px;color:#769FD3">visibility</span>Solo consulta</span>
+                  <span style="display:flex;align-items:center;gap:6px"><span class="cts-icon" style="font-size:17px;color:#B8B7B6">remove</span>Sin acceso</span>
+                </div>
+                <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="edit" hint-size="auto,32px">Editar matriz</x-import>
+              </div>
+              <table class="cts-table">
+                <thead>
+                  <tr>
+                    <th style="width:196px">Módulo / acción</th>
+                    <sc-for list="{{ rolesCols }}" as="r" hint-placeholder-count="7">
+                      <th style="text-align:center">{{ r }}</th>
+                    </sc-for>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ matriz }}" as="m" hint-placeholder-count="9">
+                    <tr>
+                      <td style="font-size:13px;font-weight:600">{{ m.modulo }}</td>
+                      <sc-for list="{{ m.celdas }}" as="c" hint-placeholder-count="7">
+                        <td style="text-align:center"><span class="cts-icon" style="font-size:19px;color:{{ c.color }}">{{ c.icon }}</span></td>
+                      </sc-for>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabRoles }}" hint-placeholder-val="{{ false }}">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Roles</h3>
+                  <span style="margin-left:auto;font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ totalRoles }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column">
+                  <sc-for list="{{ roles }}" as="r" hint-placeholder-count="6">
+                    <div onClick="{{ r.onSelect }}" style="display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid #EDEDED;cursor:pointer;background:{{ r.fondo }};border-left:3px solid {{ r.marca }}">
+                      <span style="width:26px;height:26px;border-radius:5px;flex:none;display:flex;align-items:center;justify-content:center;background:{{ r.color }}"><span class="cts-icon" style="font-size:15px;color:#fff">{{ r.icon }}</span></span>
+                      <div style="flex:1;min-width:0">
+                        <div style="font:600 13.5px 'Barlow',sans-serif;line-height:1.2">{{ r.nombre }}</div>
+                        <div style="font:400 11.5px 'Barlow',sans-serif;color:#8A8988">{{ r.meta }}</div>
+                      </div>
+                      <span onClick="{{ r.onEdit }}" class="cts-icon" title="Editar rol" style="font-size:18px;color:#5C5B5A;cursor:pointer">edit</span>
+                      <span onClick="{{ r.onDelete }}" class="cts-icon" title="Eliminar rol" style="font-size:18px;cursor:pointer;color:{{ r.borrarColor }}">delete</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding:14px 16px;display:flex;flex-direction:column;gap:9px">
+                  <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">{{ tituloFormRol }}</div>
+                  <input value="{{ formRolNombre }}" onChange="{{ setFormRolNombre }}" placeholder="Nombre del rol" style="height:38px;border:1px solid #B8B7B6;border-radius:6px;padding:0 11px;font:400 13.5px 'Barlow',sans-serif;outline:none">
+                  <input value="{{ formRolDesc }}" onChange="{{ setFormRolDesc }}" placeholder="Descripción breve" style="height:38px;border:1px solid #B8B7B6;border-radius:6px;padding:0 11px;font:400 13.5px 'Barlow',sans-serif;outline:none">
+                  <div style="display:flex;gap:8px">
+                    <button onClick="{{ guardarRol }}" class="cts-btn cts-btn--primary cts-btn--sm" style="flex:1"><span class="cts-icon" style="font-size:16px">save</span>{{ accionFormRol }}</button>
+                    <button onClick="{{ cancelarRol }}" class="cts-btn cts-btn--secondary cts-btn--sm">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;min-width:0;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <span style="width:30px;height:30px;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;background:{{ rolSel.color }}"><span class="cts-icon" style="font-size:17px;color:#fff">{{ rolSel.icon }}</span></span>
+                  <div>
+                    <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Permisos de {{ rolSel.nombre }}</h3>
+                    <div style="font:400 12px 'Barlow',sans-serif;color:#5C5B5A">{{ rolSel.desc }}</div>
+                  </div>
+                  <span style="margin-left:auto;font:700 12px 'Barlow',sans-serif;color:#1F5D9B">{{ rolSel.conteo }}</span>
+                </div>
+                <div style="padding:6px 16px 16px">
+                  <sc-for list="{{ gruposPermisos }}" as="g" hint-placeholder-count="5">
+                    <div style="border-bottom:1px solid #EDEDED;padding:12px 0">
+                      <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988;margin-bottom:8px">{{ g.modulo }}</div>
+                      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 18px">
+                        <sc-for list="{{ g.permisos }}" as="p" hint-placeholder-count="4">
+                          <label class="cts-switch" style="justify-content:space-between;gap:12px">
+                            <span style="flex:1">
+                              <span style="display:block;font:600 13px 'Barlow',sans-serif;line-height:1.25">{{ p.nombre }}</span>
+                              <span style="display:block;font:400 11.5px 'Barlow',sans-serif;color:#8A8988">{{ p.codigo }}</span>
+                            </span>
+                            <input type="checkbox" checked="{{ p.activo }}" onChange="{{ p.onToggle }}">
+                          </label>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                  <div style="display:flex;align-items:center;gap:10px;padding-top:14px">
+                    <span class="cts-icon" style="font-size:18px;color:#8A8988">info</span>
+                    <span style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A;flex:1">Los cambios de permisos quedan registrados en la auditoría de accesos con usuario y sello de tiempo.</span>
+                    <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" size="sm" icon="save" hint-size="auto,32px">Guardar cambios</x-import>
+                  </div>
+                </div>
+              </div>
+
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
+                <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+                  <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Catálogo de permisos</h3>
+                  <span style="margin-left:auto;font:400 12px 'Barlow',sans-serif;color:#8A8988">{{ totalPermisos }}</span>
+                </div>
+                <div style="max-height:420px;overflow:auto">
+                  <sc-for list="{{ catalogo }}" as="p" hint-placeholder-count="10">
+                    <div style="display:flex;align-items:center;gap:9px;padding:10px 14px;border-bottom:1px solid #EDEDED">
+                      <div style="flex:1;min-width:0">
+                        <div style="font:600 13px 'Barlow',sans-serif;line-height:1.2">{{ p.nombre }}</div>
+                        <div style="font:400 11.5px 'Barlow',sans-serif;color:#8A8988">{{ p.codigo }} · {{ p.modulo }}</div>
+                      </div>
+                      <span onClick="{{ p.onEdit }}" class="cts-icon" title="Editar permiso" style="font-size:18px;color:#5C5B5A;cursor:pointer">edit</span>
+                      <span onClick="{{ p.onDelete }}" class="cts-icon" title="Eliminar permiso" style="font-size:18px;color:#EA2F09;cursor:pointer">delete</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="padding:14px;display:flex;flex-direction:column;gap:9px;border-top:1px solid #DBDBDA">
+                  <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">{{ tituloFormPerm }}</div>
+                  <input value="{{ formPermNombre }}" onChange="{{ setFormPermNombre }}" placeholder="Nombre del permiso" style="height:38px;border:1px solid #B8B7B6;border-radius:6px;padding:0 11px;font:400 13.5px 'Barlow',sans-serif;outline:none">
+                  <input value="{{ formPermCodigo }}" onChange="{{ setFormPermCodigo }}" placeholder="Código (ej. expedientes.editar)" style="height:38px;border:1px solid #B8B7B6;border-radius:6px;padding:0 11px;font:400 13.5px 'Barlow',sans-serif;outline:none">
+                  <select class="cts-select" value="{{ formPermModulo }}" onChange="{{ setFormPermModulo }}">
+                    <option>Expedientes</option>
+                    <option>Sorteo</option>
+                    <option>Audiencias</option>
+                    <option>Notificaciones</option>
+                    <option>Acuerdos</option>
+                    <option>Administración</option>
+                  </select>
+                  <div style="display:flex;gap:8px">
+                    <button onClick="{{ guardarPermiso }}" class="cts-btn cts-btn--primary cts-btn--sm" style="flex:1"><span class="cts-icon" style="font-size:16px">save</span>{{ accionFormPerm }}</button>
+                    <button onClick="{{ cancelarPermiso }}" class="cts-btn cts-btn--secondary cts-btn--sm">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabAuditoria }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:14px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;flex:1;min-width:220px">
+                  <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
+                  <input value="{{ qAuditoria }}" onChange="{{ setQAuditoria }}" placeholder="Buscar por usuario, expediente o acción" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;background:transparent;color:#2E2D2C">
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px">
+                  <span class="cts-icon" style="font-size:18px;color:#8A8988">date_range</span>
+                  <span style="font:600 13px 'Barlow',sans-serif">28/07/2026</span>
+                </div>
+                <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" icon="download" hint-size="auto,40px">Exportar auditoría</x-import>
+              </div>
+              <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
+                <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;font:600 16px 'Barlow',sans-serif">Registro de auditoría de accesos</div>
+                <table class="cts-table">
+                  <thead>
+                    <tr>
+                      <th style="width:124px">Fecha y hora</th>
+                      <th style="width:196px">Usuario</th>
+                      <th style="width:168px">Acción</th>
+                      <th>Objeto</th>
+                      <th style="width:124px">Origen</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <sc-for list="{{ auditoria }}" as="a" hint-placeholder-count="10">
+                      <tr>
+                        <td style="font-size:12.5px;color:#5C5B5A;white-space:nowrap">{{ a.cuando }}</td>
+                        <td>
+                          <div style="font:600 13px 'Barlow',sans-serif;line-height:1.2">{{ a.usuario }}</div>
+                          <div style="font:400 11.5px 'Barlow',sans-serif;color:#8A8988">{{ a.rol }}</div>
+                        </td>
+                        <td>
+                          <span style="display:inline-flex;align-items:center;gap:7px;font:600 12.5px 'Barlow',sans-serif;color:{{ a.color }}">
+                            <span class="cts-icon" style="font-size:17px">{{ a.icon }}</span>{{ a.accion }}
+                          </span>
+                        </td>
+                        <td style="font-size:13px">{{ a.objeto }}</td>
+                        <td style="font-size:12.5px;color:#5C5B5A">{{ a.ip }}</td>
+                      </tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ esPlaceholder }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:56px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+          <span class="cts-icon" style="font-size:40px;color:#B8B7B6">{{ placeholderIcon }}</span>
+          <div style="font:800 24px 'Barlow Semi Condensed',sans-serif;text-transform:uppercase;line-height:.94">{{ tituloVista }}</div>
+          <div style="font:400 14px 'Barlow',sans-serif;color:#5C5B5A;max-width:460px">{{ placeholderTexto }}</div>
+          <button onClick="{{ volverDashboard }}" class="cts-btn cts-btn--secondary" style="margin-top:8px">Volver al dashboard</button>
+        </div>
+      </sc-if>
+
+    </main>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const NAV = [
+  { id: "dashboard", icon: "dashboard", label: "Dashboard" },
+  { id: "expedientes", icon: "folder", label: "Expedientes", badge: "214", desc: "Bandeja de casos con filtros por estado, conciliador y plazo. No incluido en este entregable." },
+  { id: "sorteo", icon: "casino", label: "Sorteo de conciliadores", badge: "3" },
+  { id: "audiencias", icon: "videocam", label: "Audiencias / Videollamadas", badge: "8" },
+  { id: "registro", icon: "badge", label: "Registro de conciliadores", desc: "Matrículas, disponibilidad, licencias y causales de excusación." },
+  { id: "notificaciones", icon: "mark_email_read", label: "Notificaciones", badge: "6", desc: "Cédulas electrónicas fehacientes, acuses de recibo y reintentos de notificación." },
+  { id: "reportes", icon: "monitoring", label: "Reportes y estadísticas", desc: "Tablero de gestión exportable: acuerdos, plazos, carga por conciliador." },
+  { id: "usuarios", icon: "group", label: "Usuarios y perfiles", desc: "Roles: ciudadano, conciliador, mesa de entradas, asesoría jurídica, jefe de conciliadores y administrador. Auditoría de accesos." },
+  { id: "config", icon: "settings", label: "Configuración", desc: "Plazos legales, plantillas de acta, feriados provinciales y parámetros del sorteo." },
+];
+
+const CONC = [
+  { ini: "MF", nombre: "M. Fernández", mat: "0214", carga: 9 },
+  { ini: "JA", nombre: "J. Aquino", mat: "0187", carga: 7 },
+  { ini: "CR", nombre: "C. Romero", mat: "0243", carga: 11 },
+  { ini: "LB", nombre: "L. Benítez", mat: "0301", carga: 6 },
+  { ini: "PG", nombre: "P. Gómez", mat: "0166", carga: 12 },
+  { ini: "SN", nombre: "S. Núñez", mat: "0289", carga: 8 },
+  { ini: "RE", nombre: "R. Escobar", mat: "0322", carga: 5 },
+  { ini: "VA", nombre: "V. Alegre", mat: "0198", carga: 10 },
+  { ini: "DM", nombre: "D. Meza", mat: "0275", carga: 7 },
+  { ini: "AO", nombre: "A. Ojeda", mat: "0231", carga: 9 },
+  { ini: "GS", nombre: "G. Sandoval", mat: "0310", carga: 4 },
+  { ini: "NF", nombre: "N. Fleitas", mat: "0256", carga: 8 },
+];
+
+const AVATARES = ["#769FD3", "#1F5D9B", "#58A89A", "#B45F04", "#6B5CB7", "#356F23"];
+
+class Component extends DCLogic {
+  state = {
+    nav: "dashboard", sorteo: "listo", idx: 0, ganador: 3, grabando: true, resultado: "Acuerdo total",
+    qBandeja: "", fEstados: [], fConc: "Todos los conciliadores", fPlazo: "Todos los plazos", pagina: 1, ficha: null,
+    qConc: "", fCirc: "Todas las circunscripciones", fDisp: "Todas", concSel: 0,
+    qNotif: "", fNotif: "Todos los estados", notifSel: "CED-2026-01188",
+    enSala: false, audVista: "lista", fAudConc: "Todos los conciliadores", fAudModo: "Todas las modalidades",
+    modalFijar: false, fFecha: "2026-08-07", fHora: "08:30", fModalidad: "Virtual", fSala: "Sala 1 — Planta baja",
+    fPartInput: "", participantes: ["Dra. P. Insaurralde — letrada del reclamante"], fNotificar: true,
+    agendaExtra: [], notifExtra: [],
+    rango: "Este mes",
+    tabUsuarios: "usuarios", qUsuarios: "", fRol: "Todos los roles", fActivo: "Todos los estados", qAuditoria: "",
+    listaRoles: ROLES_INI, catalogo: PERMISOS_INI, asignaciones: ASIGN_INI, rolSel: "conciliador",
+    editRol: null, formRolNombre: "", formRolDesc: "",
+    editPerm: null, formPermNombre: "", formPermCodigo: "", formPermModulo: "Expedientes",
+  };
+
+  guardarRol = () => {
+    const n = this.state.formRolNombre.trim();
+    if (!n) return;
+    this.setState((p) => {
+      if (p.editRol) {
+        return { listaRoles: p.listaRoles.map((r) => r.id === p.editRol ? Object.assign({}, r, { nombre: n, desc: p.formRolDesc }) : r), editRol: null, formRolNombre: "", formRolDesc: "" };
+      }
+      const id = "rol_" + Date.now();
+      return {
+        listaRoles: p.listaRoles.concat({ id, nombre: n, desc: p.formRolDesc || "Rol personalizado", color: "#58A89A", icon: "shield_person", usuarios: 0 }),
+        asignaciones: Object.assign({}, p.asignaciones, { [id]: [] }),
+        rolSel: id, formRolNombre: "", formRolDesc: "",
+      };
+    });
+  };
+
+  guardarPermiso = () => {
+    const n = this.state.formPermNombre.trim();
+    if (!n) return;
+    this.setState((p) => {
+      if (p.editPerm) {
+        return { catalogo: p.catalogo.map((x) => x.id === p.editPerm ? Object.assign({}, x, { nombre: n, codigo: p.formPermCodigo, modulo: p.formPermModulo }) : x), editPerm: null, formPermNombre: "", formPermCodigo: "" };
+      }
+      const id = "perm_" + Date.now();
+      return {
+        catalogo: p.catalogo.concat({ id, nombre: n, codigo: p.formPermCodigo || "nuevo.permiso", modulo: p.formPermModulo }),
+        formPermNombre: "", formPermCodigo: "",
+      };
+    });
+  };
+
+  set = (k) => (e) => this.setState({ [k]: e.target.value, pagina: 1 });
+  toggleEstado = (id) => () => this.setState((p) => ({
+    fEstados: p.fEstados.includes(id) ? p.fEstados.filter((x) => x !== id) : p.fEstados.concat(id), pagina: 1,
+  }));
+
+  componentWillUnmount() { clearInterval(this._t); clearTimeout(this._s); }
+
+  ir = (id) => () => this.setState({ nav: id, enSala: false });
+
+  guardarAudiencia = () => {
+    const s = this.state;
+    const [aa, mm, dd] = s.fFecha.split("-");
+    const fecha = dd + "/" + mm + "/" + aa;
+    const enlace = "https://audiencias.corrientes.gob.ar/oclo/EXP-2026-00431-" + s.fHora.replace(":", "");
+    const lugar = s.fModalidad === "Presencial" ? s.fSala : s.fModalidad === "Virtual" ? enlace : s.fSala + " + " + enlace;
+    const nueva = {
+      id: "AUD-" + Date.now(), nro: "EXP-2026-00431", partes: "Sosa, Ramón c/ Frigorífico del Litoral S.A.",
+      motivo: "Despido sin causa", fecha, fechaISO: s.fFecha, hora: s.fHora, dur: "45 min",
+      modalidad: s.fModalidad, lugar, conciliador: "Dra. M. Fernández", estado: "pendiente",
+    };
+    const nuevasNotifs = [];
+    if (s.fNotificar) {
+      const base = { nro: "EXP-2026-00431", tipo: "Citación a audiencia", canal: "Domicilio electrónico", fecha: "28/07 09:58", estado: "enviada", sello: "28/07/2026 09:58:02 (ART) · TSA Gob. Corrientes", acuse: "Cédula emitida al fijarse la audiencia del " + fecha + " a las " + s.fHora + ". Pendiente de acuse.", historial: [{ titulo: "Audiencia fijada en la agenda", fecha: "28/07/2026 09:57", icon: "event_available", color: "#1F5D9B" }, { titulo: "Cédula generada y enviada", fecha: "28/07/2026 09:58", icon: "send", color: "#769FD3" }] };
+      nuevasNotifs.push(Object.assign({ id: "CED-2026-01190", destinatario: "Sosa, Ramón Alberto", rol: "Reclamante", direccion: "rsosa@correo.com.ar" }, base));
+      nuevasNotifs.push(Object.assign({ id: "CED-2026-01191", destinatario: "Frigorífico del Litoral S.A.", rol: "Reclamada", direccion: "legales@frigolitoral.com.ar" }, base));
+    }
+    this.setState((p) => ({
+      agendaExtra: p.agendaExtra.concat(nueva),
+      notifExtra: nuevasNotifs.concat(p.notifExtra),
+      modalFijar: false, audVista: "lista",
+    }));
+  };
+
+  ejecutarSorteo = () => {
+    if (this.state.sorteo === "girando") return;
+    clearInterval(this._t); clearTimeout(this._s);
+    this.setState({ sorteo: "girando" });
+    this._t = setInterval(() => this.setState({ idx: Math.floor(Math.random() * CONC.length) }), 95);
+    this._s = setTimeout(() => {
+      clearInterval(this._t);
+      const g = Math.floor(Math.random() * CONC.length);
+      this.setState({ sorteo: "hecho", idx: g, ganador: g });
+    }, 2600);
+  };
+
+  renderVals() {
+    const s = this.state;
+    const item = NAV.find((n) => n.id === s.nav) || NAV[0];
+    const girando = s.sorteo === "girando";
+    const g = CONC[s.ganador];
+    const now = "28/07/2026 09:41:07";
+
+    return {
+      ...this.vistas(s),
+      navItems: NAV.map((n) => ({
+        icon: n.icon, label: n.label, badge: n.badge || "", onClick: this.ir(n.id),
+        bg: s.nav === n.id ? "#454443" : "transparent",
+        fg: s.nav === n.id ? "#FFFFFF" : "#B8B7B6",
+        badgeBg: n.badge ? (s.nav === n.id ? "#769FD3" : "#454443") : "transparent",
+        badgeFg: n.badge ? "#FFFFFF" : "transparent",
+      })),
+      tituloVista: { dashboard: "Panel de gestión", sorteo: "Sorteo electrónico de conciliadores", audiencias: s.enSala ? "Audiencia por videollamada" : "Agenda de audiencias", expedientes: "Bandeja de expedientes", registro: "Registro de conciliadores", notificaciones: "Notificaciones electrónicas", reportes: "Reportes y estadísticas", usuarios: "Usuarios y perfiles" }[s.nav] || item.label,
+      esDashboard: s.nav === "dashboard",
+      esSorteo: s.nav === "sorteo",
+      esAgenda: s.nav === "audiencias" && !s.enSala,
+      esSala: s.nav === "audiencias" && s.enSala,
+      volverAgenda: () => this.setState({ enSala: false }),
+      esExpedientes: s.nav === "expedientes",
+      esRegistro: s.nav === "registro",
+      esNotificaciones: s.nav === "notificaciones",
+      esReportes: s.nav === "reportes",
+      esUsuarios: s.nav === "usuarios",
+      esPlaceholder: s.nav === "config",
+      placeholderIcon: item.icon,
+      placeholderTexto: item.desc || "",
+      volverDashboard: this.ir("dashboard"),
+      irAudiencia: () => this.setState({ nav: "audiencias", enSala: true }),
+
+      kpis: [
+        { label: "Expedientes activos", valor: "214", unidad: "", icon: "folder_open", color: "#1F5D9B", delta: "+12 esta semana", deltaIcon: "trending_up", deltaColor: "#5C5B5A" },
+        { label: "Audiencias de hoy", valor: "8", unidad: "", icon: "event", color: "#769FD3", delta: "3 virtuales · 5 presenciales", deltaIcon: "schedule", deltaColor: "#5C5B5A" },
+        { label: "Tasa de acuerdo", valor: "63", unidad: "%", icon: "handshake", color: "#719C29", delta: "+4 pts vs. junio", deltaIcon: "trending_up", deltaColor: "#356F23" },
+        { label: "Tiempo prom. resolución", valor: "21", unidad: "días", icon: "timer", color: "#FAAE05", delta: "−3 días vs. junio", deltaIcon: "trending_down", deltaColor: "#356F23" },
+        { label: "Cumplimiento de plazos", valor: "91", unidad: "%", icon: "gavel", color: "#6F0603", delta: "3 en riesgo de vencimiento", deltaIcon: "priority_high", deltaColor: "#6F0603" },
+      ],
+
+      expedientes: [
+        { nro: "EXP-2026-00431", caratula: "Sosa, Ramón c/ Frigorífico del Litoral S.A.", motivo: "Despido sin causa", conciliador: "Sin asignar", ingreso: "27/07/2026", estado: "tramite" },
+        { nro: "EXP-2026-00428", caratula: "Britez, Lucía c/ Distribuidora Paraná S.R.L.", motivo: "Diferencias salariales", conciliador: "Dra. M. Fernández", ingreso: "24/07/2026", estado: "audiencia" },
+        { nro: "EXP-2026-00419", caratula: "Ayala, Néstor c/ Construcciones Itatí S.A.", motivo: "Accidente de trabajo", conciliador: "Dr. J. Aquino", ingreso: "21/07/2026", estado: "audiencia" },
+        { nro: "EXP-2026-00418", caratula: "Gauna, Silvia c/ Supermercados Taragüí", motivo: "Registración deficiente", conciliador: "Dra. C. Romero", ingreso: "20/07/2026", estado: "vencido" },
+        { nro: "EXP-2026-00405", caratula: "Miño, Carlos c/ Transporte Guaraní S.R.L.", motivo: "Horas extras impagas", conciliador: "Dr. L. Benítez", ingreso: "15/07/2026", estado: "acuerdo" },
+        { nro: "EXP-2026-00397", caratula: "Duarte, Ana c/ Clínica San Martín", motivo: "Licencia no otorgada", conciliador: "Dra. S. Núñez", ingreso: "11/07/2026", estado: "sinacuerdo" },
+        { nro: "EXP-2026-00381", caratula: "Ramírez, Julio c/ Agropecuaria Corrientes", motivo: "Despido indirecto", conciliador: "Dr. P. Gómez", ingreso: "04/07/2026", estado: "archivado" },
+      ],
+
+      audiencias: [
+        { hora: "09:30", dur: "45 min", caratula: "Britez c/ Distribuidora Paraná S.R.L.", nro: "EXP-2026-00428", conciliador: "Dra. M. Fernández", modalidad: "Videollamada", icon: "videocam", color: "#1F5D9B", accion: "Ingresar" },
+        { hora: "11:00", dur: "60 min", caratula: "Ayala c/ Construcciones Itatí S.A.", nro: "EXP-2026-00419", conciliador: "Dr. J. Aquino", modalidad: "Presencial · Sala 2", icon: "meeting_room", color: "#5C5B5A", accion: "Ver acta" },
+        { hora: "12:30", dur: "45 min", caratula: "Gauna c/ Supermercados Taragüí", nro: "EXP-2026-00418", conciliador: "Dra. C. Romero", modalidad: "Mixta · 1 parte remota", icon: "cast", color: "#B45F04", accion: "Ingresar" },
+        { hora: "15:00", dur: "30 min", caratula: "Miño c/ Transporte Guaraní S.R.L.", nro: "EXP-2026-00405", conciliador: "Dr. L. Benítez", modalidad: "Videollamada · Homologación", icon: "videocam", color: "#356F23", accion: "Ingresar" },
+      ],
+
+      distribucion: [
+        { label: "En trámite", n: "58", pct: "27%", color: "#FAAE05" },
+        { label: "Audiencia fijada", n: "44", pct: "21%", color: "#769FD3" },
+        { label: "Acuerdo homologado", n: "63", pct: "29%", color: "#719C29" },
+        { label: "Sin acuerdo", n: "22", pct: "10%", color: "#F4492E" },
+        { label: "Vencido", n: "9", pct: "4%", color: "#6F0603" },
+        { label: "Archivado", n: "18", pct: "9%", color: "#8A8988" },
+      ],
+
+      conciliadores: CONC.map((c, i) => {
+        const sel = (girando && i === s.idx) || (s.sorteo === "hecho" && i === s.ganador);
+        const fin = s.sorteo === "hecho" && i === s.ganador;
+        return {
+          ini: c.ini, nombre: c.nombre, mat: c.mat, carga: c.carga,
+          estado: fin ? "Designado/a" : "Habilitado/a",
+          borde: fin ? "#356F23" : sel ? "#1F5D9B" : "#DBDBDA",
+          fondo: fin ? "#356F23" : sel ? "#769FD3" : "#FFFFFF",
+          texto: sel ? "#FFFFFF" : "#2E2D2C",
+          textoSec: sel ? "#EDEDED" : "#8A8988",
+          avatarBg: sel ? "#2E2D2C" : AVATARES[i % AVATARES.length],
+        };
+      }),
+      ejecutarSorteo: this.ejecutarSorteo,
+      textoBotonSorteo: girando ? "Sorteando…" : s.sorteo === "hecho" ? "Repetir sorteo" : "Ejecutar sorteo",
+      estadoSorteoTexto: girando ? "Selección aleatoria en curso" : s.sorteo === "hecho" ? "Sorteo finalizado y registrado" : "Sorteo del 28/07/2026 registrado",
+      estadoSorteoIcon: girando ? "autorenew" : "verified",
+      estadoSorteoColor: girando ? "#1F5D9B" : "#356F23",
+      ganadorIni: girando ? "—" : g.ini,
+      ganadorNombre: girando ? "Sorteando…" : "Dra. " + g.nombre,
+      ganadorDetalle: girando ? "Resultado pendiente" : "Matrícula " + g.mat + " · " + g.carga + " casos activos",
+      constancia: [
+        { k: "Expediente", v: "EXP-2026-00431" },
+        { k: "Fecha y hora", v: now + " (ART)" },
+        { k: "Ejecutado por", v: "Dra. Marcela Fernández — Jefa de conciliadores" },
+        { k: "Universo", v: "12 conciliadores habilitados · 4 excluidos por licencia o excusación" },
+        { k: "Método", v: "Generador aleatorio certificado, semilla pública 8F42-C019" },
+        { k: "Hash de la constancia", v: "b7d41e93a0c5f28d64ab1e77c3095fa2" },
+      ],
+      historialSorteos: [
+        { nro: "EXP-2026-00430", quien: "Dr. R. Escobar", cuando: "28/07 08:52" },
+        { nro: "EXP-2026-00429", quien: "Dra. V. Alegre", cuando: "27/07 16:20" },
+        { nro: "EXP-2026-00427", quien: "Dr. D. Meza", cuando: "27/07 11:04" },
+        { nro: "EXP-2026-00426", quien: "Dra. G. Sandoval", cuando: "26/07 09:37" },
+      ],
+
+      grabando: s.grabando,
+      grabBg: s.grabando ? "#EA2F09" : "#5C5B5A",
+      grabAnim: s.grabando ? "ocloPulse 1.4s ease-in-out infinite" : "none",
+      grabTexto: s.grabando ? "Grabando apertura del acto" : "Grabación detenida",
+      grabBoton: s.grabando ? "Detener fragmento" : "Grabar fragmento",
+      grabBotonIcon: s.grabando ? "stop_circle" : "fiber_manual_record",
+      toggleGrabacion: () => this.setState((p) => ({ grabando: !p.grabando })),
+
+      participantes: [
+        { ini: "MF", nombre: "Dra. M. Fernández", rol: "Conciliadora", placeholder: "Video del conciliador", avatarBg: "#1F5D9B", borde: "#719C29", micIcon: "mic", micColor: "#719C29", conexion: "Estable", conexIcon: "signal_cellular_alt", conexColor: "#719C29" },
+        { ini: "LB", nombre: "Lucía Britez", rol: "Reclamante", placeholder: "Video de la reclamante", avatarBg: "#769FD3", borde: "#454443", micIcon: "mic", micColor: "#719C29", conexion: "Estable", conexIcon: "signal_cellular_alt", conexColor: "#719C29" },
+        { ini: "DP", nombre: "Distribuidora Paraná S.R.L.", rol: "Reclamada · apoderado", placeholder: "Video de la reclamada", avatarBg: "#B45F04", borde: "#454443", micIcon: "mic_off", micColor: "#B8B7B6", conexion: "Inestable", conexIcon: "signal_cellular_alt_2_bar", conexColor: "#FACD05" },
+        { ini: "AJ", nombre: "Dr. H. Cabral", rol: "Letrado de la reclamante", placeholder: "Video del letrado", avatarBg: "#6B5CB7", borde: "#454443", micIcon: "mic_off", micColor: "#B8B7B6", conexion: "Estable", conexIcon: "signal_cellular_alt", conexColor: "#719C29" },
+      ],
+      controlesLlamada: [
+        { icon: "mic", label: "Micrófono" },
+        { icon: "videocam", label: "Cámara" },
+        { icon: "screen_share", label: "Compartir" },
+        { icon: "attach_file", label: "Documentos" },
+      ],
+      datosExpediente: [
+        { k: "Motivo", v: "Diferencias salariales" },
+        { k: "Ingreso", v: "24/07/2026" },
+        { k: "Vence", v: "29/07/2026 (plazo legal)" },
+        { k: "Reclamante", v: "Britez, Lucía — DNI 38.442.117" },
+        { k: "Reclamada", v: "Distribuidora Paraná S.R.L. — CUIT 30-71204885-3" },
+      ],
+      checklist: [
+        { icon: "check_circle", color: "#356F23", label: "Identidad del reclamante acreditada", detalle: "DNI verificado contra RENAPER · 09:32" },
+        { icon: "check_circle", color: "#356F23", label: "Personería de la reclamada acreditada", detalle: "Poder general vigente adjunto al expediente" },
+        { icon: "radio_button_unchecked", color: "#8A8988", label: "Conformidad de las partes registrada", detalle: "Pendiente de manifestación" },
+        { icon: "radio_button_unchecked", color: "#8A8988", label: "Acta leída y aceptada", detalle: "Se habilita al cerrar el acto" },
+      ],
+      resultados: ["Acuerdo total", "Acuerdo parcial", "Sin acuerdo", "Incomparecencia"].map((label) => {
+        const activo = s.resultado === label;
+        return {
+          label, onClick: () => this.setState({ resultado: label }),
+          borde: activo ? "#356F23" : "#DBDBDA",
+          fondo: activo ? "#356F23" : "#FFFFFF",
+          texto: activo ? "#FFFFFF" : "#2E2D2C",
+        };
+      }),
+    };
+  }
+
+  vistas(s) {
+    const P = (k) => ({ pColor: EST[k].c, pIconBg: EST[k].i, pIcon: EST[k].ic, pLabel: EST[k].l });
+    const chip = (activo, color) => ({
+      borde: activo ? color : "#DBDBDA",
+      fondo: activo ? color : "#FFFFFF",
+      texto: activo ? "#FFFFFF" : "#2E2D2C",
+    });
+
+    /* ---------- Expedientes ---------- */
+    const q = s.qBandeja.toLowerCase();
+    const filtrada = BANDEJA.filter((e) =>
+      (s.fEstados.length === 0 || s.fEstados.includes(e.estado)) &&
+      (s.fConc === "Todos los conciliadores" || e.conciliador === s.fConc) &&
+      (s.fPlazo === "Todos los plazos" ||
+        (s.fPlazo === "Vencidos" && e.dias < 0) ||
+        (s.fPlazo === "Próximos a vencer" && e.dias >= 0 && e.dias <= 5) ||
+        (s.fPlazo === "En término" && e.dias > 5)) &&
+      (q === "" || (e.nro + " " + e.partes + " " + e.motivo).toLowerCase().includes(q))
+    );
+    const porPagina = 8;
+    const totalPags = Math.max(1, Math.ceil(filtrada.length / porPagina));
+    const pagina = Math.min(s.pagina, totalPags);
+    const desde = (pagina - 1) * porPagina;
+    const pagRows = filtrada.slice(desde, desde + porPagina);
+    const plazo = (d) => d < 0
+      ? { plazoBg: "#6F0603", plazoFg: "#FFFFFF", plazoIcon: "timer_off", plazoTexto: "Vencido hace " + Math.abs(d) + " d" }
+      : d <= 5
+        ? { plazoBg: "#FACD05", plazoFg: "#2E2D2C", plazoIcon: "warning", plazoTexto: "Vence en " + d + " d" }
+        : { plazoBg: "#EDEDED", plazoFg: "#454443", plazoIcon: "schedule", plazoTexto: d + " días restantes" };
+    const fichaRow = s.ficha != null ? BANDEJA.find((e) => e.nro === s.ficha) : null;
+
+    /* ---------- Agenda de audiencias ---------- */
+    const agenda = s.agendaExtra.concat(AUDIENCIAS).filter((a) =>
+      (s.fAudConc === "Todos los conciliadores" || a.conciliador === s.fAudConc) &&
+      (s.fAudModo === "Todas las modalidades" || a.modalidad === s.fAudModo)
+    ).sort((x, y) => (x.fechaISO + x.hora).localeCompare(y.fechaISO + y.hora));
+    const habiles = (() => {
+      const d0 = new Date("2026-07-28T00:00:00");
+      const d1 = new Date(s.fFecha + "T00:00:00");
+      if (isNaN(d1) || d1 <= d0) return 0;
+      let n = 0;
+      const cur = new Date(d0);
+      while (cur < d1) { cur.setDate(cur.getDate() + 1); const w = cur.getDay(); if (w !== 0 && w !== 6) n++; }
+      return n;
+    })();
+
+    /* ---------- Registro de conciliadores ---------- */
+    const qc = s.qConc.toLowerCase();
+    const regFiltrado = REGISTRO.filter((c) =>
+      (s.fCirc === "Todas las circunscripciones" || c.circ === s.fCirc) &&
+      (s.fDisp === "Todas" || c.disp === s.fDisp) &&
+      (qc === "" || (c.nombre + " " + c.mat).toLowerCase().includes(qc))
+    );
+    const cSel = REGISTRO[s.concSel];
+
+    /* ---------- Notificaciones ---------- */
+    const qn = s.qNotif.toLowerCase();
+    const todasNotifs = s.notifExtra.concat(NOTIFS);
+    const notifFiltradas = todasNotifs.filter((n) =>
+      (s.fNotif === "Todos los estados" || NOTIF_EST[n.estado].l === s.fNotif) &&
+      (qn === "" || (n.nro + " " + n.destinatario).toLowerCase().includes(qn))
+    );
+    const nSel = todasNotifs.find((n) => n.id === s.notifSel) || todasNotifs[0];
+
+    /* ---------- Usuarios ---------- */
+    const qu = s.qUsuarios.toLowerCase();
+    const usuariosFiltrados = USUARIOS.filter((u) =>
+      (s.fRol === "Todos los roles" || u.rol === s.fRol) &&
+      (s.fActivo === "Todos los estados" || u.estado === s.fActivo) &&
+      (qu === "" || (u.nombre + " " + u.email).toLowerCase().includes(qu))
+    );
+    const qa = s.qAuditoria.toLowerCase();
+    const permIcon = { e: { icon: "edit", color: "#356F23" }, v: { icon: "visibility", color: "#769FD3" }, n: { icon: "remove", color: "#B8B7B6" } };
+
+    return {
+      /* Expedientes */
+      qBandeja: s.qBandeja, setQBandeja: this.set("qBandeja"),
+      fConc: s.fConc, setFConc: this.set("fConc"),
+      fPlazo: s.fPlazo, setFPlazo: this.set("fPlazo"),
+      limpiarFiltros: () => this.setState({ qBandeja: "", fEstados: [], fConc: "Todos los conciliadores", fPlazo: "Todos los plazos", pagina: 1 }),
+      chipsEstado: Object.keys(EST).map((k) => {
+        const activo = s.fEstados.includes(k);
+        return Object.assign({ label: EST[k].l, punto: activo ? "#FFFFFF" : EST[k].c, onClick: this.toggleEstado(k) }, chip(activo, EST[k].i));
+      }),
+      bandeja: pagRows.map((e) => Object.assign({
+        nro: e.nro, partes: e.partes, motivo: e.motivo, ingreso: e.ingreso, prox: e.prox, conciliador: e.conciliador,
+        onOpen: () => this.setState({ ficha: e.nro }),
+      }, P(e.estado), plazo(e.dias))),
+      totalBandeja: filtrada.length + " expedientes",
+      rangoPagina: "Mostrando " + (filtrada.length === 0 ? 0 : desde + 1) + "–" + Math.min(desde + porPagina, filtrada.length) + " de " + filtrada.length,
+      paginas: Array.from({ length: totalPags }, (_, i) => Object.assign({ n: i + 1, onClick: () => this.setState({ pagina: i + 1 }) }, chip(pagina === i + 1, "#1F5D9B"))),
+      pagAnterior: () => this.setState({ pagina: Math.max(1, pagina - 1) }),
+      pagSiguiente: () => this.setState({ pagina: Math.min(totalPags, pagina + 1) }),
+      sinFicha: !fichaRow,
+      hayFicha: !!fichaRow,
+      cerrarFicha: () => this.setState({ ficha: null }),
+      ficha: fichaRow ? Object.assign({
+        nro: fichaRow.nro, partes: fichaRow.partes, motivo: fichaRow.motivo, ingreso: fichaRow.ingreso, conciliador: fichaRow.conciliador,
+        plazoTexto: plazo(fichaRow.dias).plazoTexto,
+        partesDetalle: [
+          { rol: "Reclamante", icon: "person", color: "#1F5D9B", nombre: fichaRow.reclamante, campos: [
+            { k: "DNI", v: fichaRow.dni }, { k: "Domicilio", v: fichaRow.domicilio }, { k: "Correo", v: fichaRow.mail },
+            { k: "Letrado/a", v: fichaRow.letrado }, { k: "Antigüedad", v: fichaRow.antiguedad },
+          ] },
+          { rol: "Reclamada", icon: "domain", color: "#B45F04", nombre: fichaRow.reclamada, campos: [
+            { k: "CUIT", v: fichaRow.cuit }, { k: "Domicilio", v: fichaRow.domicilioEmp }, { k: "Correo", v: fichaRow.mailEmp },
+            { k: "Apoderado/a", v: fichaRow.apoderado }, { k: "Actividad", v: fichaRow.actividad },
+          ] },
+        ],
+        documentos: DOCUMENTOS,
+        timeline: TIMELINE(fichaRow),
+      }) : {},
+
+      /* Agenda de audiencias */
+      vistasAgenda: [
+        { id: "lista", label: "Lista", icon: "view_list" },
+        { id: "calendario", label: "Calendario semanal", icon: "calendar_view_week" },
+      ].map((v) => ({
+        label: v.label, icon: v.icon, onClick: () => this.setState({ audVista: v.id }),
+        fondo: s.audVista === v.id ? "#1F5D9B" : "#FFFFFF",
+        texto: s.audVista === v.id ? "#FFFFFF" : "#2E2D2C",
+      })),
+      agendaLista: s.audVista === "lista",
+      agendaCalendario: s.audVista === "calendario",
+      fAudConc: s.fAudConc, setFAudConc: this.set("fAudConc"),
+      fAudModo: s.fAudModo, setFAudModo: this.set("fAudModo"),
+      totalAudiencias: agenda.length + " audiencias en el período",
+      listaAudiencias: agenda.map((a) => {
+        const acc = a.estado === "finalizada"
+          ? { accion: "Ver acta", accionBorde: "#B8B7B6", accionFondo: "#FFFFFF", accionTexto: "#2E2D2C", onAccion: () => {} }
+          : (a.estado === "hoy" || a.estado === "curso") && a.modalidad !== "Presencial"
+            ? { accion: "Ingresar", accionBorde: "#1F5D9B", accionFondo: "#1F5D9B", accionTexto: "#FFFFFF", onAccion: () => this.setState({ enSala: true }) }
+            : { accion: "Reprogramar", accionBorde: "#B8B7B6", accionFondo: "#FFFFFF", accionTexto: "#5C5B5A", onAccion: () => {} };
+        return Object.assign({
+          nro: a.nro, partes: a.partes, motivo: a.motivo, fecha: a.fecha, hora: a.hora, dur: a.dur,
+          modalidad: a.modalidad, lugar: a.lugar, conciliador: a.conciliador,
+          modoIcon: MODO[a.modalidad].icon, modoColor: MODO[a.modalidad].color,
+          pColor: AUD_EST[a.estado].c, pIconBg: AUD_EST[a.estado].i, pIcon: AUD_EST[a.estado].ic, pLabel: AUD_EST[a.estado].l,
+        }, acc);
+      }),
+      diasSemana: SEMANA.map((d) => ({
+        dia: d.dia, fecha: d.fecha,
+        fondo: d.fecha === "28/07" ? "#EDEDED" : "#F7F7F7",
+        texto: d.fecha === "28/07" ? "#1F5D9B" : "#2E2D2C",
+      })),
+      filasHorario: HORAS.map((h) => ({
+        hora: h,
+        celdas: SEMANA.map((d) => {
+          const ev = agenda.find((a) => a.fecha === d.fecha + "/2026" && a.hora === h);
+          if (!ev) return { hay: false };
+          return {
+            hay: true, hora: ev.hora, nro: ev.nro, partes: ev.partes.split(" c/")[0], modalidad: ev.modalidad,
+            borde: MODO[ev.modalidad].color, fondo: MODO[ev.modalidad].fondo,
+            onClick: ev.modalidad === "Presencial" ? () => {} : () => this.setState({ enSala: true }),
+          };
+        }),
+      })),
+
+      /* Fijar audiencia */
+      modalFijar: s.modalFijar,
+      abrirFijar: () => this.setState({ modalFijar: true }),
+      fijarDesdeSorteo: () => this.setState({ nav: "audiencias", enSala: false, audVista: "lista", modalFijar: true }),
+      cerrarFijar: () => this.setState({ modalFijar: false }),
+      fijarConciliador: "Dra. M. Fernández",
+      fFecha: s.fFecha, setFFecha: this.set("fFecha"),
+      fHora: s.fHora, setFHora: this.set("fHora"),
+      opcionesModalidad: [
+        { label: "Presencial", icon: "meeting_room" },
+        { label: "Virtual", icon: "videocam" },
+        { label: "Mixta", icon: "cast" },
+      ].map((m) => Object.assign({ label: m.label, icon: m.icon, onClick: () => this.setState({ fModalidad: m.label }) }, chip(s.fModalidad === m.label, "#1F5D9B"))),
+      necesitaSala: s.fModalidad !== "Virtual",
+      necesitaEnlace: s.fModalidad !== "Presencial",
+      fSala: s.fSala, setFSala: this.set("fSala"),
+      enlaceGenerado: "https://audiencias.corrientes.gob.ar/oclo/EXP-2026-00431-" + s.fHora.replace(":", ""),
+      plazoAvisoColor: habiles > 10 ? "#6F0603" : habiles >= 8 ? "#B45F04" : "#356F23",
+      plazoAvisoIcon: habiles > 10 ? "gavel" : habiles >= 8 ? "warning" : "check_circle",
+      plazoAvisoTitulo: habiles > 10 ? "Fuera del plazo legal (Art. 17)" : habiles >= 8 ? "Al límite del plazo legal" : "Dentro del plazo legal",
+      plazoAvisoDetalle: habiles + " días hábiles desde la designación del 28/07/2026. El plazo máximo es de 10 días hábiles.",
+      fPartInput: s.fPartInput, setFPartInput: this.set("fPartInput"),
+      agregarParticipante: () => this.setState((p) => p.fPartInput.trim() ? { participantes: p.participantes.concat(p.fPartInput.trim()), fPartInput: "" } : {}),
+      participantesExtra: s.participantes.map((nombre) => ({
+        nombre, onQuitar: () => this.setState((p) => ({ participantes: p.participantes.filter((x) => x !== nombre) })),
+      })),
+      fNotificar: s.fNotificar,
+      toggleNotificar: () => this.setState((p) => ({ fNotificar: !p.fNotificar })),
+      guardarAudiencia: this.guardarAudiencia,
+
+      /* Registro */
+      qConc: s.qConc, setQConc: this.set("qConc"),
+      fCirc: s.fCirc, setFCirc: this.set("fCirc"),
+      chipsDisp: ["Todas", "Disponible", "Con licencia", "Suspendido"].map((d) =>
+        Object.assign({ label: d, onClick: () => this.setState({ fDisp: d }) }, chip(s.fDisp === d, "#1F5D9B"))),
+      registro: regFiltrado.map((c) => Object.assign({
+        ini: c.ini, nombre: c.nombre, email: c.email, mat: c.mat, circ: c.circ, casos: c.casos, avatarBg: c.avatarBg,
+        onOpen: () => this.setState({ concSel: REGISTRO.indexOf(c) }),
+      }, DISP[c.disp])),
+      totalConc: regFiltrado.length + " de " + REGISTRO.length + " conciliadores",
+      concSel: {
+        ini: cSel.ini, nombre: cSel.nombre, mat: cSel.mat, circ: cSel.circ, avatarBg: cSel.avatarBg,
+        datos: [
+          { k: "CUIL", v: cSel.cuil },
+          { k: "Domicilio electr.", v: cSel.email },
+          { k: "Teléfono", v: cSel.tel },
+          { k: "Alta en el registro", v: cSel.alta },
+          { k: "Disponibilidad", v: DISP[cSel.disp].pLabel },
+        ],
+        stats: [
+          { valor: cSel.resueltos, label: "Casos resueltos", color: "#2E2D2C" },
+          { valor: cSel.tasa + "%", label: "Tasa de acuerdo", color: "#356F23" },
+          { valor: cSel.casos, label: "Casos activos", color: "#1F5D9B" },
+        ],
+        licencias: cSel.licencias,
+        excusaciones: cSel.excusaciones,
+      },
+
+      /* Notificaciones */
+      qNotif: s.qNotif, setQNotif: this.set("qNotif"),
+      fNotif: s.fNotif, setFNotif: this.set("fNotif"),
+      totalNotif: notifFiltradas.length + " cédulas en el período",
+      notificaciones: notifFiltradas.map((n) => Object.assign({
+        nro: n.nro, destinatario: n.destinatario, rol: n.rol, tipo: n.tipo, fecha: n.fecha,
+        canal: n.canal, canalIcon: CANAL[n.canal].icon, canalColor: CANAL[n.canal].color,
+        fila: n.id === nSel.id ? "#F7F7F7" : "#FFFFFF",
+        onOpen: () => this.setState({ notifSel: n.id }),
+        pColor: NOTIF_EST[n.estado].c, pIconBg: NOTIF_EST[n.estado].i, pIcon: NOTIF_EST[n.estado].ic, pLabel: NOTIF_EST[n.estado].l,
+      })),
+      notifSel: {
+        id: nSel.id,
+        pColor: NOTIF_EST[nSel.estado].c, pIconBg: NOTIF_EST[nSel.estado].i, pIcon: NOTIF_EST[nSel.estado].ic, pLabel: NOTIF_EST[nSel.estado].l,
+        campos: [
+          { k: "Expediente", v: nSel.nro },
+          { k: "Destinatario", v: nSel.destinatario + " — " + nSel.rol },
+          { k: "Tipo", v: nSel.tipo },
+          { k: "Canal", v: nSel.canal + " · " + nSel.direccion },
+          { k: "Enviada", v: nSel.fecha },
+          { k: "Sello de tiempo", v: nSel.sello },
+        ],
+        historial: nSel.historial,
+        acuse: nSel.acuse,
+      },
+
+      /* Reportes */
+      chipsRango: ["Este mes", "Trimestre", "Año 2026", "Personalizado"].map((r) =>
+        Object.assign({ label: r, onClick: () => this.setState({ rango: r }) }, chip(s.rango === r, "#1F5D9B"))),
+      rangoTexto: { "Este mes": "01/07/2026 — 28/07/2026", "Trimestre": "01/05/2026 — 28/07/2026", "Año 2026": "01/01/2026 — 28/07/2026", "Personalizado": "Seleccionar fechas" }[s.rango],
+      kpisReporte: [
+        { label: "Tasa de acuerdo", valor: "63", unidad: "%", icon: "handshake", color: "#719C29", delta: "134 acuerdos sobre 213 audiencias" },
+        { label: "Tasa de fracaso", valor: "22", unidad: "%", icon: "gavel", color: "#F4492E", delta: "47 casos derivados a sede judicial" },
+        { label: "Incomparecencia", valor: "9", unidad: "%", icon: "person_off", color: "#B45F04", delta: "19 audiencias frustradas" },
+        { label: "Duración promedio", valor: "21", unidad: "días", icon: "timer", color: "#FAAE05", delta: "Meta legal: 30 días hábiles" },
+        { label: "Cumplimiento de plazos", valor: "91", unidad: "%", icon: "verified", color: "#1F5D9B", delta: "19 expedientes fuera de término" },
+      ],
+      evolucion: [
+        { mes: "Dic", h1: "38%", h2: "30%" }, { mes: "Ene", h1: "46%", h2: "36%" },
+        { mes: "Feb", h1: "52%", h2: "44%" }, { mes: "Mar", h1: "68%", h2: "51%" },
+        { mes: "Abr", h1: "60%", h2: "58%" }, { mes: "May", h1: "74%", h2: "62%" },
+        { mes: "Jun", h1: "82%", h2: "70%" }, { mes: "Jul", h1: "95%", h2: "66%" },
+      ],
+      cargaConciliadores: REGISTRO.filter((c) => c.disp === "Disponible").slice(0, 8).map((c) => ({
+        nombre: c.nombre, pct: Math.round((c.casos / 14) * 100) + "%",
+        color: c.casos >= 11 ? "#F4492E" : c.casos >= 8 ? "#FAAE05" : "#769FD3",
+        detalle: c.casos + " casos",
+      })),
+      montos: [
+        { mes: "Marzo 2026", monto: "$ 21.480.000", hon: "$ 1.074.000", n: "9" },
+        { mes: "Abril 2026", monto: "$ 28.930.500", hon: "$ 1.446.525", n: "11" },
+        { mes: "Mayo 2026", monto: "$ 34.115.000", hon: "$ 1.705.750", n: "12" },
+        { mes: "Junio 2026", monto: "$ 46.720.000", hon: "$ 2.336.000", n: "15" },
+        { mes: "Julio 2026", monto: "$ 53.075.000", hon: "$ 2.653.750", n: "16" },
+      ],
+
+      /* Usuarios */
+      tabsUsuarios: [
+        { id: "usuarios", label: "Usuarios", icon: "group" },
+        { id: "roles", label: "Roles y permisos", icon: "shield_person" },
+        { id: "permisos", label: "Matriz de permisos", icon: "admin_panel_settings" },
+        { id: "auditoria", label: "Auditoría de accesos", icon: "history" },
+      ].map((t) => ({
+        label: t.label, icon: t.icon, onClick: () => this.setState({ tabUsuarios: t.id }),
+        color: s.tabUsuarios === t.id ? "#1F5D9B" : "#5C5B5A",
+        borde: s.tabUsuarios === t.id ? "#1F5D9B" : "transparent",
+      })),
+      tabUsuariosLista: s.tabUsuarios === "usuarios",
+      tabRoles: s.tabUsuarios === "roles",
+      tabPermisos: s.tabUsuarios === "permisos",
+      tabAuditoria: s.tabUsuarios === "auditoria",
+
+      totalRoles: s.listaRoles.length + " definidos",
+      roles: s.listaRoles.map((r) => ({
+        nombre: r.nombre, color: r.color, icon: r.icon,
+        meta: (s.asignaciones[r.id] || []).length + " permisos · " + r.usuarios + " usuarios",
+        fondo: s.rolSel === r.id ? "#F7F7F7" : "#FFFFFF",
+        marca: s.rolSel === r.id ? "#1F5D9B" : "transparent",
+        borrarColor: r.usuarios > 0 ? "#B8B7B6" : "#EA2F09",
+        onSelect: () => this.setState({ rolSel: r.id }),
+        onEdit: (e) => { e.stopPropagation(); this.setState({ editRol: r.id, formRolNombre: r.nombre, formRolDesc: r.desc }); },
+        onDelete: (e) => {
+          e.stopPropagation();
+          if (r.usuarios > 0) return;
+          this.setState((p) => ({ listaRoles: p.listaRoles.filter((x) => x.id !== r.id), rolSel: p.rolSel === r.id ? p.listaRoles[0].id : p.rolSel }));
+        },
+      })),
+      tituloFormRol: s.editRol ? "Editar rol" : "Nuevo rol",
+      accionFormRol: s.editRol ? "Guardar rol" : "Crear rol",
+      formRolNombre: s.formRolNombre, setFormRolNombre: this.set("formRolNombre"),
+      formRolDesc: s.formRolDesc, setFormRolDesc: this.set("formRolDesc"),
+      guardarRol: this.guardarRol,
+      cancelarRol: () => this.setState({ editRol: null, formRolNombre: "", formRolDesc: "" }),
+
+      rolSel: (() => {
+        const r = s.listaRoles.find((x) => x.id === s.rolSel) || s.listaRoles[0];
+        return { nombre: r.nombre, desc: r.desc, color: r.color, icon: r.icon, conteo: (s.asignaciones[r.id] || []).length + " de " + s.catalogo.length + " permisos asignados" };
+      })(),
+      gruposPermisos: ["Expedientes", "Sorteo", "Audiencias", "Notificaciones", "Acuerdos", "Administración"]
+        .map((m) => ({
+          modulo: m,
+          permisos: s.catalogo.filter((p) => p.modulo === m).map((p) => ({
+            nombre: p.nombre, codigo: p.codigo,
+            activo: (s.asignaciones[s.rolSel] || []).includes(p.id),
+            onToggle: () => this.setState((prev) => {
+              const act = prev.asignaciones[prev.rolSel] || [];
+              return { asignaciones: Object.assign({}, prev.asignaciones, { [prev.rolSel]: act.includes(p.id) ? act.filter((x) => x !== p.id) : act.concat(p.id) }) };
+            }),
+          })),
+        })).filter((g) => g.permisos.length > 0),
+
+      totalPermisos: s.catalogo.length + " permisos",
+      catalogo: s.catalogo.map((p) => ({
+        nombre: p.nombre, codigo: p.codigo, modulo: p.modulo,
+        onEdit: () => this.setState({ editPerm: p.id, formPermNombre: p.nombre, formPermCodigo: p.codigo, formPermModulo: p.modulo }),
+        onDelete: () => this.setState((prev) => {
+          const asign = {};
+          Object.keys(prev.asignaciones).forEach((k) => { asign[k] = prev.asignaciones[k].filter((x) => x !== p.id); });
+          return { catalogo: prev.catalogo.filter((x) => x.id !== p.id), asignaciones: asign };
+        }),
+      })),
+      tituloFormPerm: s.editPerm ? "Editar permiso" : "Nuevo permiso",
+      accionFormPerm: s.editPerm ? "Guardar permiso" : "Crear permiso",
+      formPermNombre: s.formPermNombre, setFormPermNombre: this.set("formPermNombre"),
+      formPermCodigo: s.formPermCodigo, setFormPermCodigo: this.set("formPermCodigo"),
+      formPermModulo: s.formPermModulo, setFormPermModulo: this.set("formPermModulo"),
+      guardarPermiso: this.guardarPermiso,
+      cancelarPermiso: () => this.setState({ editPerm: null, formPermNombre: "", formPermCodigo: "" }),
+      qUsuarios: s.qUsuarios, setQUsuarios: this.set("qUsuarios"),
+      fRol: s.fRol, setFRol: this.set("fRol"),
+      fActivo: s.fActivo, setFActivo: this.set("fActivo"),
+      totalUsuarios: usuariosFiltrados.length + " usuarios",
+      usuarios: usuariosFiltrados.map((u) => ({
+        ini: u.ini, nombre: u.nombre, email: u.email, rol: u.rol, estado: u.estado, acceso: u.acceso, avatarBg: ROL[u.rol].c,
+        pColor: ROL[u.rol].c, pIconBg: ROL[u.rol].i, pIcon: ROL[u.rol].ic,
+        estadoColor: u.estado === "Activo" ? "#356F23" : "#8A8988",
+      })),
+      rolesCols: ["Ciud.", "Concil.", "Mesa", "Ases. jur.", "Jefe", "Admin"],
+      matriz: MATRIZ.map((m) => ({ modulo: m.modulo, celdas: m.p.map((x) => permIcon[x]) })),
+      qAuditoria: s.qAuditoria, setQAuditoria: this.set("qAuditoria"),
+      auditoria: AUDITORIA.filter((a) => qa === "" || (a.usuario + " " + a.objeto + " " + a.accion).toLowerCase().includes(qa))
+        .map((a) => Object.assign({ cuando: a.cuando, usuario: a.usuario, rol: a.rol, objeto: a.objeto, ip: a.ip }, ACCION[a.accion])),
+    };
+  }
+}
+
+const EST = {
+  ingresado: { c: "#90B4E1", i: "#1F5D9B", ic: "inbox", l: "Ingresado" },
+  notificado: { c: "#FAAE05", i: "#B45F04", ic: "mark_email_read", l: "Notificado" },
+  audiencia: { c: "#769FD3", i: "#1F5D9B", ic: "event", l: "Audiencia fijada" },
+  conciliacion: { c: "#58A89A", i: "#008275", ic: "forum", l: "En conciliación" },
+  homologado: { c: "#719C29", i: "#356F23", ic: "handshake", l: "Acuerdo homologado" },
+  sinacuerdo: { c: "#F4492E", i: "#6F0603", ic: "gavel", l: "Sin acuerdo" },
+  cerrado: { c: "#8A8988", i: "#454443", ic: "inventory_2", l: "Cerrado" },
+};
+
+const BANDEJA = [
+  { nro: "EXP-2026-00431", partes: "Sosa, Ramón c/ Frigorífico del Litoral S.A.", motivo: "Despido sin causa", estado: "ingresado", ingreso: "27/07/2026", prox: "Sin fijar", conciliador: "Sin asignar", dias: 29, reclamante: "Sosa, Ramón Alberto", dni: "27.884.310", domicilio: "Av. 3 de Abril 1245, Corrientes", mail: "rsosa@correo.com.ar", letrado: "Dra. P. Insaurralde", antiguedad: "6 años y 4 meses", reclamada: "Frigorífico del Litoral S.A.", cuit: "30-70884512-6", domicilioEmp: "Ruta 12 km 8, Riachuelo", mailEmp: "legales@frigolitoral.com.ar", apoderado: "Dr. E. Vallejos", actividad: "Industria frigorífica" },
+  { nro: "EXP-2026-00428", partes: "Britez, Lucía c/ Distribuidora Paraná S.R.L.", motivo: "Diferencias salariales", estado: "audiencia", ingreso: "24/07/2026", prox: "28/07 09:30", conciliador: "Dra. M. Fernández", dias: 4, reclamante: "Britez, Lucía Mariel", dni: "38.442.117", domicilio: "Pellegrini 830, Corrientes", mail: "lbritez@correo.com.ar", letrado: "Dr. H. Cabral", antiguedad: "3 años y 1 mes", reclamada: "Distribuidora Paraná S.R.L.", cuit: "30-71204885-3", domicilioEmp: "San Martín 2140, Corrientes", mailEmp: "rrhh@distparana.com.ar", apoderado: "Dra. N. Sotelo", actividad: "Distribución mayorista" },
+  { nro: "EXP-2026-00426", partes: "Ojeda, Marcos c/ Textil Guaraní S.A.", motivo: "Registración deficiente", estado: "conciliacion", ingreso: "23/07/2026", prox: "30/07 10:00", conciliador: "Dra. G. Sandoval", dias: 12, reclamante: "Ojeda, Marcos Daniel", dni: "31.209.774", domicilio: "Barrio Laguna Seca Mz 14", mail: "mojeda@correo.com.ar", letrado: "Dra. L. Vera", antiguedad: "8 años", reclamada: "Textil Guaraní S.A.", cuit: "30-69884120-1", domicilioEmp: "Parque Industrial, Santa Ana", mailEmp: "legal@textilguarani.com.ar", apoderado: "Dr. F. Duarte", actividad: "Industria textil" },
+  { nro: "EXP-2026-00419", partes: "Ayala, Néstor c/ Construcciones Itatí S.A.", motivo: "Accidente de trabajo", estado: "audiencia", ingreso: "21/07/2026", prox: "28/07 11:00", conciliador: "Dr. J. Aquino", dias: 8, reclamante: "Ayala, Néstor Fabián", dni: "24.110.982", domicilio: "Calle 9 de Julio 455, Itatí", mail: "nayala@correo.com.ar", letrado: "Dr. R. Maidana", antiguedad: "11 años", reclamada: "Construcciones Itatí S.A.", cuit: "30-70123998-4", domicilioEmp: "Bolívar 1720, Corrientes", mailEmp: "estudio@construitati.com.ar", apoderado: "Dra. M. Acosta", actividad: "Construcción" },
+  { nro: "EXP-2026-00418", partes: "Gauna, Silvia c/ Supermercados Taragüí", motivo: "Registración deficiente", estado: "notificado", ingreso: "20/07/2026", prox: "29/07 12:30", conciliador: "Dra. C. Romero", dias: -2, reclamante: "Gauna, Silvia Noemí", dni: "29.774.201", domicilio: "Junín 1580, Corrientes", mail: "sgauna@correo.com.ar", letrado: "Dra. C. Blanco", antiguedad: "4 años y 8 meses", reclamada: "Supermercados Taragüí S.A.", cuit: "30-71009887-2", domicilioEmp: "Av. Maipú 3400, Corrientes", mailEmp: "rrhh@taragui.com.ar", apoderado: "Dr. J. Ferreyra", actividad: "Comercio minorista" },
+  { nro: "EXP-2026-00412", partes: "Cáceres, Diego c/ Logística del Norte S.R.L.", motivo: "Despido indirecto", estado: "notificado", ingreso: "18/07/2026", prox: "31/07 09:00", conciliador: "Dr. R. Escobar", dias: 3, reclamante: "Cáceres, Diego Emanuel", dni: "35.660.418", domicilio: "Chacra 145, Corrientes", mail: "dcaceres@correo.com.ar", letrado: "Dr. S. Ledesma", antiguedad: "2 años y 9 meses", reclamada: "Logística del Norte S.R.L.", cuit: "30-71440021-9", domicilioEmp: "Ruta 5 km 3, Corrientes", mailEmp: "admin@lognorte.com.ar", apoderado: "Dra. V. Cabral", actividad: "Transporte de cargas" },
+  { nro: "EXP-2026-00405", partes: "Miño, Carlos c/ Transporte Guaraní S.R.L.", motivo: "Horas extras impagas", estado: "homologado", ingreso: "15/07/2026", prox: "Homologada", conciliador: "Dr. L. Benítez", dias: 18, reclamante: "Miño, Carlos Alberto", dni: "26.880.114", domicilio: "Av. Independencia 990", mail: "cmino@correo.com.ar", letrado: "Dra. A. Zalazar", antiguedad: "7 años", reclamada: "Transporte Guaraní S.R.L.", cuit: "30-70991223-5", domicilioEmp: "Av. Costanera 155", mailEmp: "legales@tguarani.com.ar", apoderado: "Dr. O. Ramírez", actividad: "Transporte de pasajeros" },
+  { nro: "EXP-2026-00399", partes: "Vera, Andrea c/ Sanatorio del Este S.A.", motivo: "Licencia no otorgada", estado: "conciliacion", ingreso: "12/07/2026", prox: "01/08 15:00", conciliador: "Dra. S. Núñez", dias: 6, reclamante: "Vera, Andrea Soledad", dni: "33.019.556", domicilio: "Rivadavia 2210, Corrientes", mail: "avera@correo.com.ar", letrado: "Dr. M. Ibarra", antiguedad: "5 años y 2 meses", reclamada: "Sanatorio del Este S.A.", cuit: "30-70554189-7", domicilioEmp: "España 1450, Corrientes", mailEmp: "rrhh@sanatorioeste.com.ar", apoderado: "Dra. R. Lugo", actividad: "Salud privada" },
+  { nro: "EXP-2026-00397", partes: "Duarte, Ana c/ Clínica San Martín", motivo: "Diferencias salariales", estado: "sinacuerdo", ingreso: "11/07/2026", prox: "Cerrada sin acuerdo", conciliador: "Dra. S. Núñez", dias: 14, reclamante: "Duarte, Ana Carolina", dni: "34.775.290", domicilio: "Salta 1120, Corrientes", mail: "aduarte@correo.com.ar", letrado: "Dra. P. Insaurralde", antiguedad: "2 años", reclamada: "Clínica San Martín S.R.L.", cuit: "30-71330114-8", domicilioEmp: "San Martín 990, Corrientes", mailEmp: "legales@clinicasm.com.ar", apoderado: "Dr. G. Peralta", actividad: "Salud privada" },
+  { nro: "EXP-2026-00388", partes: "Godoy, Hernán c/ Agro Insumos Corrientes", motivo: "Despido sin causa", estado: "audiencia", ingreso: "08/07/2026", prox: "04/08 10:30", conciliador: "Dr. P. Gómez", dias: 1, reclamante: "Godoy, Hernán Ariel", dni: "30.442.870", domicilio: "Colonia Brugne s/n", mail: "hgodoy@correo.com.ar", letrado: "Dr. E. Fernández", antiguedad: "9 años y 6 meses", reclamada: "Agro Insumos Corrientes S.A.", cuit: "30-70448902-0", domicilioEmp: "Ruta 118 km 12, Saladas", mailEmp: "admin@agroinsumos.com.ar", apoderado: "Dra. T. Miranda", actividad: "Agroindustria" },
+  { nro: "EXP-2026-00381", partes: "Ramírez, Julio c/ Agropecuaria Corrientes", motivo: "Despido indirecto", estado: "cerrado", ingreso: "04/07/2026", prox: "Archivado", conciliador: "Dr. P. Gómez", dias: 22, reclamante: "Ramírez, Julio César", dni: "22.987.443", domicilio: "Paraje El Sombrero", mail: "jramirez@correo.com.ar", letrado: "Dra. L. Vera", antiguedad: "14 años", reclamada: "Agropecuaria Corrientes S.A.", cuit: "30-69112004-3", domicilioEmp: "Ruta 12 km 45", mailEmp: "legales@agrocorrientes.com.ar", apoderado: "Dr. C. Sosa", actividad: "Producción agropecuaria" },
+  { nro: "EXP-2026-00374", partes: "Leiva, Mónica c/ Hotel Costanera S.A.", motivo: "Acoso laboral", estado: "conciliacion", ingreso: "02/07/2026", prox: "05/08 11:00", conciliador: "Dra. M. Fernández", dias: -5, reclamante: "Leiva, Mónica Beatriz", dni: "28.114.663", domicilio: "Quintana 745, Corrientes", mail: "mleiva@correo.com.ar", letrado: "Dr. H. Cabral", antiguedad: "6 años", reclamada: "Hotel Costanera S.A.", cuit: "30-70882115-4", domicilioEmp: "Av. Costanera 2200", mailEmp: "rrhh@hotelcostanera.com.ar", apoderado: "Dra. S. Britos", actividad: "Hotelería" },
+  { nro: "EXP-2026-00369", partes: "Aguirre, Pablo c/ Metalúrgica Litoral", motivo: "Accidente de trabajo", estado: "homologado", ingreso: "29/06/2026", prox: "Homologada", conciliador: "Dra. V. Alegre", dias: 25, reclamante: "Aguirre, Pablo Nicolás", dni: "32.556.901", domicilio: "Barrio Anahí Mz 8", mail: "paguirre@correo.com.ar", letrado: "Dr. R. Maidana", antiguedad: "4 años", reclamada: "Metalúrgica Litoral S.R.L.", cuit: "30-71119008-6", domicilioEmp: "Parque Industrial, Corrientes", mailEmp: "legal@metlitoral.com.ar", apoderado: "Dr. A. Vega", actividad: "Metalurgia" },
+  { nro: "EXP-2026-00362", partes: "Fernández, Rocío c/ Colegio Santa Rita", motivo: "Diferencias salariales", estado: "ingresado", ingreso: "26/06/2026", prox: "Sin fijar", conciliador: "Sin asignar", dias: 9, reclamante: "Fernández, Rocío Belén", dni: "36.880.115", domicilio: "Catamarca 1330, Corrientes", mail: "rfernandez@correo.com.ar", letrado: "Dra. C. Blanco", antiguedad: "3 años y 5 meses", reclamada: "Colegio Santa Rita", cuit: "30-65990114-2", domicilioEmp: "Mendoza 880, Corrientes", mailEmp: "administracion@santarita.edu.ar", apoderado: "Dr. J. Ferreyra", actividad: "Educación privada" },
+];
+
+const DOCUMENTOS = [
+  { icon: "description", color: "#1F5D9B", nombre: "Carátula digital del expediente", meta: "PDF · 118 KB · generada automáticamente al ingreso" },
+  { icon: "mark_email_read", color: "#B45F04", nombre: "Cédula de notificación a la reclamada", meta: "PDF · 96 KB · con acuse de recibo electrónico" },
+  { icon: "gavel", color: "#356F23", nombre: "Acta de apertura de audiencia", meta: "PDF · 74 KB · firmada digitalmente por la conciliadora" },
+  { icon: "movie", color: "#6F0603", nombre: "Grabación de apertura y cierre del acto", meta: "MP4 · 42 MB · 4 min 18 s · acceso restringido" },
+  { icon: "attach_file", color: "#5C5B5A", nombre: "Recibos de haberes aportados por la parte", meta: "PDF · 1,2 MB · 12 fojas" },
+];
+
+const TIMELINE = (e) => [
+  { titulo: "Reclamo iniciado en línea", fecha: e.ingreso + " · 08:14", detalle: "Formulario web autogestionado. Se generó la carátula " + e.nro + ".", icon: "how_to_reg", color: "#356F23", linea: "#356F23", texto: "#2E2D2C" },
+  { titulo: "Verificación de mesa de entradas", fecha: e.ingreso + " · 10:02", detalle: "Documentación completa. Se habilitó el trámite de conciliación obligatoria.", icon: "fact_check", color: "#356F23", linea: "#356F23", texto: "#2E2D2C" },
+  { titulo: "Sorteo electrónico de conciliador/a", fecha: e.ingreso + " · 11:47", detalle: e.conciliador === "Sin asignar" ? "Pendiente de sorteo." : "Designado/a " + e.conciliador + ". Constancia auditable disponible.", icon: "casino", color: e.conciliador === "Sin asignar" ? "#B8B7B6" : "#356F23", linea: "#DBDBDA", texto: e.conciliador === "Sin asignar" ? "#8A8988" : "#2E2D2C" },
+  { titulo: "Notificación fehaciente a las partes", fecha: "21/07/2026 · 09:20", detalle: "Cédula electrónica al domicilio constituido. Acuse recibido a las 09:41.", icon: "mark_email_read", color: "#356F23", linea: "#DBDBDA", texto: "#2E2D2C" },
+  { titulo: "Audiencia de conciliación", fecha: e.prox, detalle: "Modalidad videollamada institucional. Grabación limitada a apertura y cierre.", icon: "videocam", color: "#1F5D9B", linea: "#DBDBDA", texto: "#2E2D2C" },
+  { titulo: "Acuerdo y homologación", fecha: "Pendiente", detalle: "Requiere firma digital de las partes y dictamen de asesoría jurídica.", icon: "draw", color: "#B8B7B6", linea: "#DBDBDA", texto: "#8A8988" },
+  { titulo: "Cierre y archivo del expediente", fecha: "Pendiente", detalle: "Se habilita al cumplirse el acuerdo homologado.", icon: "inventory_2", color: "#B8B7B6", linea: "transparent", texto: "#8A8988" },
+];
+
+const DISP = {
+  "Disponible": { pColor: "#719C29", pIconBg: "#356F23", pIcon: "check_circle", pLabel: "Disponible" },
+  "Con licencia": { pColor: "#FAAE05", pIconBg: "#B45F04", pIcon: "event_busy", pLabel: "Con licencia" },
+  "Suspendido": { pColor: "#F4492E", pIconBg: "#6F0603", pIcon: "block", pLabel: "Suspendido" },
+};
+
+const REGISTRO = [
+  { ini: "MF", nombre: "Dra. Marcela Fernández", mat: "0214", circ: "1ª — Capital", email: "mfernandez@oclo.corrientes.gob.ar", cuil: "27-24886113-4", tel: "379 4 15-8820", alta: "12/03/2019", disp: "Disponible", casos: 9, resueltos: 148, tasa: 71, licencias: [{ motivo: "Licencia ordinaria", periodo: "10/01/2026 — 24/01/2026", icon: "beach_access", color: "#769FD3" }, { motivo: "Capacitación en mediación laboral", periodo: "05/09/2025 — 12/09/2025", icon: "school", color: "#58A89A" }], excusaciones: [{ titulo: "Excusación — EXP-2025-00877", detalle: "Vinculación profesional previa con la parte reclamada. Art. 17 inc. 7.", color: "#B45F04" }] },
+  { ini: "JA", nombre: "Dr. Julián Aquino", mat: "0187", circ: "1ª — Capital", email: "jaquino@oclo.corrientes.gob.ar", cuil: "20-22114990-1", tel: "379 4 15-4471", alta: "04/08/2018", disp: "Disponible", casos: 7, resueltos: 172, tasa: 65, licencias: [{ motivo: "Licencia por enfermedad", periodo: "02/05/2026 — 16/05/2026", icon: "medical_services", color: "#F4492E" }], excusaciones: [{ titulo: "Sin causales registradas", detalle: "No se registran incompatibilidades vigentes.", color: "#719C29" }] },
+  { ini: "CR", nombre: "Dra. Carolina Romero", mat: "0243", circ: "2ª — Goya", email: "cromero@oclo.corrientes.gob.ar", cuil: "27-28990177-3", tel: "3777 4 42-1180", alta: "22/02/2020", disp: "Disponible", casos: 11, resueltos: 96, tasa: 58, licencias: [], excusaciones: [{ titulo: "Recusación planteada — EXP-2026-00303", detalle: "Planteada por la reclamada; rechazada por jefatura el 14/06/2026.", color: "#6F0603" }] },
+  { ini: "LB", nombre: "Dr. Leandro Benítez", mat: "0301", circ: "1ª — Capital", email: "lbenitez@oclo.corrientes.gob.ar", cuil: "20-31009884-7", tel: "379 4 15-9037", alta: "09/11/2021", disp: "Disponible", casos: 6, resueltos: 64, tasa: 69, licencias: [], excusaciones: [{ titulo: "Sin causales registradas", detalle: "No se registran incompatibilidades vigentes.", color: "#719C29" }] },
+  { ini: "PG", nombre: "Dr. Pablo Gómez", mat: "0166", circ: "3ª — Paso de los Libres", email: "pgomez@oclo.corrientes.gob.ar", cuil: "20-20114552-9", tel: "3772 4 42-0091", alta: "17/06/2017", disp: "Disponible", casos: 12, resueltos: 210, tasa: 62, licencias: [{ motivo: "Licencia ordinaria", periodo: "01/02/2026 — 21/02/2026", icon: "beach_access", color: "#769FD3" }], excusaciones: [] },
+  { ini: "SN", nombre: "Dra. Silvina Núñez", mat: "0289", circ: "1ª — Capital", email: "snunez@oclo.corrientes.gob.ar", cuil: "27-30114778-6", tel: "379 4 15-3320", alta: "30/04/2021", disp: "Disponible", casos: 8, resueltos: 88, tasa: 67, licencias: [], excusaciones: [] },
+  { ini: "RE", nombre: "Dr. Rodrigo Escobar", mat: "0322", circ: "4ª — Curuzú Cuatiá", email: "rescobar@oclo.corrientes.gob.ar", cuil: "20-33115006-2", tel: "3774 4 42-7788", alta: "15/03/2022", disp: "Disponible", casos: 5, resueltos: 41, tasa: 73, licencias: [], excusaciones: [] },
+  { ini: "VA", nombre: "Dra. Valeria Alegre", mat: "0198", circ: "2ª — Goya", email: "valegre@oclo.corrientes.gob.ar", cuil: "27-26449001-8", tel: "3777 4 42-9911", alta: "08/07/2018", disp: "Con licencia", casos: 10, resueltos: 156, tasa: 64, licencias: [{ motivo: "Licencia por maternidad", periodo: "01/07/2026 — 28/11/2026", icon: "child_care", color: "#8E7CC3" }], excusaciones: [] },
+  { ini: "DM", nombre: "Dr. Damián Meza", mat: "0275", circ: "1ª — Capital", email: "dmeza@oclo.corrientes.gob.ar", cuil: "20-29887114-5", tel: "379 4 15-6642", alta: "19/09/2020", disp: "Disponible", casos: 7, resueltos: 102, tasa: 60, licencias: [], excusaciones: [] },
+  { ini: "AO", nombre: "Dra. Ana Ojeda", mat: "0231", circ: "3ª — Paso de los Libres", email: "aojeda@oclo.corrientes.gob.ar", cuil: "27-27114990-0", tel: "3772 4 42-3355", alta: "11/05/2019", disp: "Suspendido", casos: 0, resueltos: 121, tasa: 59, licencias: [{ motivo: "Suspensión preventiva — sumario administrativo", periodo: "desde 03/06/2026", icon: "gavel", color: "#6F0603" }], excusaciones: [{ titulo: "Incompatibilidad declarada", detalle: "Ejercicio profesional en fuero laboral. En análisis por asesoría jurídica.", color: "#F4492E" }] },
+  { ini: "GS", nombre: "Dra. Gabriela Sandoval", mat: "0310", circ: "1ª — Capital", email: "gsandoval@oclo.corrientes.gob.ar", cuil: "27-32009887-1", tel: "379 4 15-1194", alta: "02/02/2022", disp: "Disponible", casos: 4, resueltos: 37, tasa: 76, licencias: [], excusaciones: [] },
+  { ini: "NF", nombre: "Dr. Néstor Fleitas", mat: "0256", circ: "4ª — Curuzú Cuatiá", email: "nfleitas@oclo.corrientes.gob.ar", cuil: "20-25998410-3", tel: "3774 4 42-5520", alta: "27/10/2019", disp: "Con licencia", casos: 8, resueltos: 133, tasa: 61, licencias: [{ motivo: "Licencia por estudio", periodo: "15/07/2026 — 15/08/2026", icon: "school", color: "#58A89A" }], excusaciones: [] },
+];
+
+const AUD_EST = {
+  pendiente: { c: "#90B4E1", i: "#1F5D9B", ic: "schedule", l: "Pendiente" },
+  hoy: { c: "#FAAE05", i: "#B45F04", ic: "today", l: "Hoy" },
+  curso: { c: "#719C29", i: "#356F23", ic: "videocam", l: "En curso" },
+  finalizada: { c: "#8A8988", i: "#454443", ic: "task_alt", l: "Finalizada" },
+  reprogramada: { c: "#F68E13", i: "#B45F04", ic: "event_repeat", l: "Reprogramada" },
+};
+
+const MODO = {
+  "Presencial": { icon: "meeting_room", color: "#5C5B5A", fondo: "#EDEDED" },
+  "Virtual": { icon: "videocam", color: "#1F5D9B", fondo: "#E7EEF7" },
+  "Mixta": { icon: "cast", color: "#B45F04", fondo: "#FBF0DF" },
+};
+
+const SEMANA = [
+  { dia: "Lunes", fecha: "27/07" }, { dia: "Martes", fecha: "28/07" }, { dia: "Miércoles", fecha: "29/07" },
+  { dia: "Jueves", fecha: "30/07" }, { dia: "Viernes", fecha: "31/07" },
+];
+
+const HORAS = ["08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "15:00", "16:00"];
+
+const AUDIENCIAS = [
+  { id: "a1", nro: "EXP-2026-00428", partes: "Britez, Lucía c/ Distribuidora Paraná S.R.L.", motivo: "Diferencias salariales", fecha: "28/07/2026", fechaISO: "2026-07-28", hora: "09:30", dur: "45 min", modalidad: "Virtual", lugar: "audiencias.corrientes.gob.ar/oclo/00428-0930", conciliador: "Dra. M. Fernández", estado: "curso" },
+  { id: "a2", nro: "EXP-2026-00419", partes: "Ayala, Néstor c/ Construcciones Itatí S.A.", motivo: "Accidente de trabajo", fecha: "28/07/2026", fechaISO: "2026-07-28", hora: "11:00", dur: "60 min", modalidad: "Presencial", lugar: "Sala 2 — Planta baja", conciliador: "Dr. J. Aquino", estado: "hoy" },
+  { id: "a3", nro: "EXP-2026-00418", partes: "Gauna, Silvia c/ Supermercados Taragüí", motivo: "Registración deficiente", fecha: "28/07/2026", fechaISO: "2026-07-28", hora: "12:30", dur: "45 min", modalidad: "Mixta", lugar: "Sala 3 + enlace virtual para la reclamada", conciliador: "Dra. C. Romero", estado: "hoy" },
+  { id: "a4", nro: "EXP-2026-00405", partes: "Miño, Carlos c/ Transporte Guaraní S.R.L.", motivo: "Horas extras impagas", fecha: "28/07/2026", fechaISO: "2026-07-28", hora: "15:00", dur: "30 min", modalidad: "Virtual", lugar: "audiencias.corrientes.gob.ar/oclo/00405-1500", conciliador: "Dr. L. Benítez", estado: "hoy" },
+  { id: "a5", nro: "EXP-2026-00397", partes: "Duarte, Ana c/ Clínica San Martín", motivo: "Diferencias salariales", fecha: "27/07/2026", fechaISO: "2026-07-27", hora: "10:00", dur: "45 min", modalidad: "Presencial", lugar: "Sala 1 — Planta baja", conciliador: "Dra. S. Núñez", estado: "finalizada" },
+  { id: "a6", nro: "EXP-2026-00369", partes: "Aguirre, Pablo c/ Metalúrgica Litoral", motivo: "Accidente de trabajo", fecha: "27/07/2026", fechaISO: "2026-07-27", hora: "11:30", dur: "60 min", modalidad: "Virtual", lugar: "audiencias.corrientes.gob.ar/oclo/00369-1130", conciliador: "Dra. V. Alegre", estado: "finalizada" },
+  { id: "a7", nro: "EXP-2026-00426", partes: "Ojeda, Marcos c/ Textil Guaraní S.A.", motivo: "Registración deficiente", fecha: "30/07/2026", fechaISO: "2026-07-30", hora: "10:00", dur: "45 min", modalidad: "Virtual", lugar: "audiencias.corrientes.gob.ar/oclo/00426-1000", conciliador: "Dra. G. Sandoval", estado: "pendiente" },
+  { id: "a8", nro: "EXP-2026-00412", partes: "Cáceres, Diego c/ Logística del Norte S.R.L.", motivo: "Despido indirecto", fecha: "31/07/2026", fechaISO: "2026-07-31", hora: "09:00", dur: "45 min", modalidad: "Presencial", lugar: "Sala 2 — Planta baja", conciliador: "Dr. R. Escobar", estado: "pendiente" },
+  { id: "a9", nro: "EXP-2026-00374", partes: "Leiva, Mónica c/ Hotel Costanera S.A.", motivo: "Acoso laboral", fecha: "29/07/2026", fechaISO: "2026-07-29", hora: "11:00", dur: "60 min", modalidad: "Mixta", lugar: "Sala 3 + enlace virtual para la reclamante", conciliador: "Dra. M. Fernández", estado: "reprogramada" },
+  { id: "a10", nro: "EXP-2026-00399", partes: "Vera, Andrea c/ Sanatorio del Este S.A.", motivo: "Licencia no otorgada", fecha: "31/07/2026", fechaISO: "2026-07-31", hora: "15:00", dur: "45 min", modalidad: "Virtual", lugar: "audiencias.corrientes.gob.ar/oclo/00399-1500", conciliador: "Dra. S. Núñez", estado: "pendiente" },
+  { id: "a11", nro: "EXP-2026-00388", partes: "Godoy, Hernán c/ Agro Insumos Corrientes", motivo: "Despido sin causa", fecha: "29/07/2026", fechaISO: "2026-07-29", hora: "08:30", dur: "45 min", modalidad: "Presencial", lugar: "Sala 1 — Planta baja", conciliador: "Dr. P. Gómez", estado: "pendiente" },
+];
+
+const NOTIF_EST = {
+  enviada: { c: "#90B4E1", i: "#1F5D9B", ic: "outgoing_mail", l: "Enviada" },
+  recibida: { c: "#769FD3", i: "#1F5D9B", ic: "inbox", l: "Recibida" },
+  leida: { c: "#719C29", i: "#356F23", ic: "drafts", l: "Leída" },
+  rechazada: { c: "#F4492E", i: "#6F0603", ic: "block", l: "Rechazada" },
+  reintento: { c: "#FAAE05", i: "#B45F04", ic: "restart_alt", l: "En reintento" },
+};
+
+const CANAL = {
+  "Domicilio electrónico": { icon: "alternate_email", color: "#1F5D9B" },
+  "Correo institucional": { icon: "mail", color: "#769FD3" },
+  "SMS": { icon: "sms", color: "#B45F04" },
+  "WhatsApp institucional": { icon: "forum", color: "#356F23" },
+};
+
+const NOTIFS = [
+  { id: "CED-2026-01188", nro: "EXP-2026-00431", destinatario: "Frigorífico del Litoral S.A.", rol: "Reclamada", tipo: "Traslado del reclamo", canal: "Domicilio electrónico", direccion: "legales@frigolitoral.com.ar", fecha: "28/07 08:40", estado: "enviada", sello: "28/07/2026 08:40:11 (ART) · TSA Gob. Corrientes", acuse: "Pendiente de acuse. El plazo de 3 días hábiles vence el 31/07/2026.", historial: [{ titulo: "Cédula generada y firmada", fecha: "28/07/2026 08:39", icon: "draw", color: "#1F5D9B" }, { titulo: "Envío al domicilio electrónico", fecha: "28/07/2026 08:40", icon: "send", color: "#769FD3" }] },
+  { id: "CED-2026-01187", nro: "EXP-2026-00428", destinatario: "Britez, Lucía Mariel", rol: "Reclamante", tipo: "Citación a audiencia", canal: "WhatsApp institucional", direccion: "+54 9 379 4 22-1188", fecha: "27/07 16:12", estado: "leida", sello: "27/07/2026 16:12:48 (ART) · TSA Gob. Corrientes", acuse: "Acuse automático registrado el 27/07/2026 16:31. Lectura confirmada por la destinataria.", historial: [{ titulo: "Cédula generada y firmada", fecha: "27/07/2026 16:11", icon: "draw", color: "#1F5D9B" }, { titulo: "Entregada al destinatario", fecha: "27/07/2026 16:12", icon: "check", color: "#769FD3" }, { titulo: "Acuse de recibo registrado", fecha: "27/07/2026 16:31", icon: "verified", color: "#356F23" }] },
+  { id: "CED-2026-01186", nro: "EXP-2026-00428", destinatario: "Distribuidora Paraná S.R.L.", rol: "Reclamada", tipo: "Citación a audiencia", canal: "Domicilio electrónico", direccion: "rrhh@distparana.com.ar", fecha: "27/07 16:12", estado: "recibida", sello: "27/07/2026 16:12:50 (ART) · TSA Gob. Corrientes", acuse: "Acuse de entrega recibido. Sin confirmación de lectura al 28/07/2026.", historial: [{ titulo: "Cédula generada y firmada", fecha: "27/07/2026 16:11", icon: "draw", color: "#1F5D9B" }, { titulo: "Entregada al servidor de destino", fecha: "27/07/2026 16:12", icon: "check", color: "#769FD3" }] },
+  { id: "CED-2026-01181", nro: "EXP-2026-00418", destinatario: "Supermercados Taragüí S.A.", rol: "Reclamada", tipo: "Intimación por incomparecencia", canal: "Domicilio electrónico", direccion: "rrhh@taragui.com.ar", fecha: "26/07 11:05", estado: "reintento", sello: "26/07/2026 11:05:22 (ART) · TSA Gob. Corrientes", acuse: "Sin acuse tras 2 intentos. Se programó un tercer reintento para el 29/07/2026 09:00.", historial: [{ titulo: "Primer envío", fecha: "24/07/2026 09:10", icon: "send", color: "#769FD3" }, { titulo: "Sin respuesta del servidor", fecha: "24/07/2026 09:41", icon: "error", color: "#F4492E" }, { titulo: "Segundo reintento", fecha: "26/07/2026 11:05", icon: "restart_alt", color: "#FAAE05" }, { titulo: "Tercer reintento programado", fecha: "29/07/2026 09:00", icon: "schedule", color: "#8A8988" }] },
+  { id: "CED-2026-01179", nro: "EXP-2026-00419", destinatario: "Ayala, Néstor Fabián", rol: "Reclamante", tipo: "Citación a audiencia", canal: "SMS", direccion: "+54 9 379 4 66-0912", fecha: "25/07 10:22", estado: "leida", sello: "25/07/2026 10:22:03 (ART) · TSA Gob. Corrientes", acuse: "Acuse registrado el 25/07/2026 10:44 mediante enlace de confirmación.", historial: [{ titulo: "Envío por SMS", fecha: "25/07/2026 10:22", icon: "sms", color: "#B45F04" }, { titulo: "Acuse de recibo registrado", fecha: "25/07/2026 10:44", icon: "verified", color: "#356F23" }] },
+  { id: "CED-2026-01175", nro: "EXP-2026-00412", destinatario: "Logística del Norte S.R.L.", rol: "Reclamada", tipo: "Traslado del reclamo", canal: "Correo institucional", direccion: "admin@lognorte.com.ar", fecha: "24/07 15:48", estado: "rechazada", sello: "24/07/2026 15:48:31 (ART) · TSA Gob. Corrientes", acuse: "Rechazada por el servidor de destino (buzón inexistente). Corresponde notificación por domicilio real.", historial: [{ titulo: "Envío al correo institucional", fecha: "24/07/2026 15:48", icon: "send", color: "#769FD3" }, { titulo: "Rechazo del servidor de destino", fecha: "24/07/2026 15:49", icon: "block", color: "#6F0603" }] },
+  { id: "CED-2026-01170", nro: "EXP-2026-00405", destinatario: "Miño, Carlos Alberto", rol: "Reclamante", tipo: "Notificación de homologación", canal: "Domicilio electrónico", direccion: "cmino@correo.com.ar", fecha: "22/07 09:30", estado: "leida", sello: "22/07/2026 09:30:14 (ART) · TSA Gob. Corrientes", acuse: "Acuse registrado el 22/07/2026 09:52. Acta homologada descargada por el destinatario.", historial: [{ titulo: "Envío del acta homologada", fecha: "22/07/2026 09:30", icon: "send", color: "#769FD3" }, { titulo: "Acuse y descarga del acta", fecha: "22/07/2026 09:52", icon: "verified", color: "#356F23" }] },
+  { id: "CED-2026-01166", nro: "EXP-2026-00399", destinatario: "Sanatorio del Este S.A.", rol: "Reclamada", tipo: "Citación a audiencia", canal: "Domicilio electrónico", direccion: "rrhh@sanatorioeste.com.ar", fecha: "21/07 12:04", estado: "recibida", sello: "21/07/2026 12:04:09 (ART) · TSA Gob. Corrientes", acuse: "Acuse de entrega recibido. Lectura pendiente.", historial: [{ titulo: "Envío al domicilio electrónico", fecha: "21/07/2026 12:04", icon: "send", color: "#769FD3" }, { titulo: "Entrega confirmada", fecha: "21/07/2026 12:05", icon: "check", color: "#769FD3" }] },
+  { id: "CED-2026-01160", nro: "EXP-2026-00374", destinatario: "Hotel Costanera S.A.", rol: "Reclamada", tipo: "Intimación por vencimiento de plazo", canal: "WhatsApp institucional", direccion: "+54 9 379 4 55-3311", fecha: "20/07 17:26", estado: "enviada", sello: "20/07/2026 17:26:40 (ART) · TSA Gob. Corrientes", acuse: "Pendiente de acuse. El expediente registra plazo vencido hace 5 días.", historial: [{ titulo: "Cédula generada y firmada", fecha: "20/07/2026 17:25", icon: "draw", color: "#1F5D9B" }, { titulo: "Envío por canal institucional", fecha: "20/07/2026 17:26", icon: "send", color: "#769FD3" }] },
+];
+
+const ROLES_INI = [
+  { id: "ciudadano", nombre: "Ciudadano", desc: "Inicia reclamos y consulta el estado de su trámite.", color: "#90B4E1", icon: "person", usuarios: 1 },
+  { id: "conciliador", nombre: "Conciliador", desc: "Conduce audiencias y registra el resultado del acto.", color: "#769FD3", icon: "handshake", usuarios: 3 },
+  { id: "mesa", nombre: "Mesa de entradas", desc: "Verifica documentación y da curso a los expedientes.", color: "#58A89A", icon: "inbox", usuarios: 2 },
+  { id: "asesoria", nombre: "Asesoría jurídica", desc: "Dictamina sobre acuerdos previo a la homologación.", color: "#FAAE05", icon: "gavel", usuarios: 1 },
+  { id: "jefe", nombre: "Jefe de conciliadores", desc: "Supervisa sorteos, plazos y carga de trabajo.", color: "#719C29", icon: "supervisor_account", usuarios: 1 },
+  { id: "admin", nombre: "Administrador", desc: "Gestiona usuarios, roles, permisos y auditoría.", color: "#6F0603", icon: "admin_panel_settings", usuarios: 1 },
+];
+
+const PERMISOS_INI = [
+  { id: "p1", nombre: "Iniciar reclamo", codigo: "expedientes.iniciar", modulo: "Expedientes" },
+  { id: "p2", nombre: "Consultar expediente", codigo: "expedientes.ver", modulo: "Expedientes" },
+  { id: "p3", nombre: "Editar carátula", codigo: "expedientes.editar", modulo: "Expedientes" },
+  { id: "p4", nombre: "Archivar expediente", codigo: "expedientes.archivar", modulo: "Expedientes" },
+  { id: "p5", nombre: "Ejecutar sorteo", codigo: "sorteo.ejecutar", modulo: "Sorteo" },
+  { id: "p6", nombre: "Ver constancia auditable", codigo: "sorteo.constancia", modulo: "Sorteo" },
+  { id: "p7", nombre: "Fijar audiencia", codigo: "audiencias.fijar", modulo: "Audiencias" },
+  { id: "p8", nombre: "Ingresar a videollamada", codigo: "audiencias.ingresar", modulo: "Audiencias" },
+  { id: "p9", nombre: "Grabar fragmento del acto", codigo: "audiencias.grabar", modulo: "Audiencias" },
+  { id: "p10", nombre: "Emitir cédula", codigo: "notificaciones.emitir", modulo: "Notificaciones" },
+  { id: "p11", nombre: "Reintentar notificación", codigo: "notificaciones.reintentar", modulo: "Notificaciones" },
+  { id: "p12", nombre: "Registrar acuerdo", codigo: "acuerdos.registrar", modulo: "Acuerdos" },
+  { id: "p13", nombre: "Homologar acuerdo", codigo: "acuerdos.homologar", modulo: "Acuerdos" },
+  { id: "p14", nombre: "Firmar digitalmente", codigo: "acuerdos.firmar", modulo: "Acuerdos" },
+  { id: "p15", nombre: "Gestionar usuarios", codigo: "admin.usuarios", modulo: "Administración" },
+  { id: "p16", nombre: "Gestionar roles y permisos", codigo: "admin.roles", modulo: "Administración" },
+  { id: "p17", nombre: "Ver auditoría de accesos", codigo: "admin.auditoria", modulo: "Administración" },
+  { id: "p18", nombre: "Exportar reportes", codigo: "admin.reportes", modulo: "Administración" },
+];
+
+const ASIGN_INI = {
+  ciudadano: ["p1", "p2", "p8"],
+  conciliador: ["p2", "p3", "p6", "p7", "p8", "p9", "p12", "p14", "p18"],
+  mesa: ["p1", "p2", "p3", "p6", "p10", "p11"],
+  asesoria: ["p2", "p12", "p13", "p14", "p17", "p18"],
+  jefe: ["p2", "p3", "p4", "p5", "p6", "p7", "p10", "p12", "p13", "p17", "p18"],
+  admin: ["p2", "p4", "p15", "p16", "p17", "p18"],
+};
+
+const ROL = {
+  "Ciudadano": { c: "#90B4E1", i: "#1F5D9B", ic: "person" },
+  "Conciliador": { c: "#769FD3", i: "#1F5D9B", ic: "handshake" },
+  "Mesa de entradas": { c: "#58A89A", i: "#008275", ic: "inbox" },
+  "Asesoría jurídica": { c: "#FAAE05", i: "#B45F04", ic: "gavel" },
+  "Jefe de conciliadores": { c: "#719C29", i: "#356F23", ic: "supervisor_account" },
+  "Administrador": { c: "#6F0603", i: "#2E2D2C", ic: "admin_panel_settings" },
+};
+
+const USUARIOS = [
+  { ini: "MF", nombre: "Marcela Fernández", email: "mfernandez@oclo.corrientes.gob.ar", rol: "Jefe de conciliadores", estado: "Activo", acceso: "28/07 08:02" },
+  { ini: "JA", nombre: "Julián Aquino", email: "jaquino@oclo.corrientes.gob.ar", rol: "Conciliador", estado: "Activo", acceso: "28/07 07:48" },
+  { ini: "CR", nombre: "Carolina Romero", email: "cromero@oclo.corrientes.gob.ar", rol: "Conciliador", estado: "Activo", acceso: "27/07 18:31" },
+  { ini: "ML", nombre: "Mariano Ledesma", email: "mledesma@oclo.corrientes.gob.ar", rol: "Mesa de entradas", estado: "Activo", acceso: "28/07 07:30" },
+  { ini: "SB", nombre: "Sofía Britos", email: "sbritos@oclo.corrientes.gob.ar", rol: "Asesoría jurídica", estado: "Activo", acceso: "27/07 16:05" },
+  { ini: "LB", nombre: "Lucía Britez", email: "lbritez@correo.com.ar", rol: "Ciudadano", estado: "Activo", acceso: "26/07 20:14" },
+  { ini: "AO", nombre: "Ana Ojeda", email: "aojeda@oclo.corrientes.gob.ar", rol: "Conciliador", estado: "Inactivo", acceso: "03/06 09:10" },
+  { ini: "GV", nombre: "Gustavo Vallejos", email: "gvallejos@oclo.corrientes.gob.ar", rol: "Administrador", estado: "Activo", acceso: "28/07 09:15" },
+  { ini: "RM", nombre: "Rocío Maidana", email: "rmaidana@oclo.corrientes.gob.ar", rol: "Mesa de entradas", estado: "Inactivo", acceso: "12/05 11:40" },
+];
+
+const MATRIZ = [
+  { modulo: "Inicio de reclamo", p: ["e", "n", "e", "v", "v", "e"] },
+  { modulo: "Bandeja de expedientes", p: ["v", "e", "e", "v", "e", "e"] },
+  { modulo: "Sorteo de conciliadores", p: ["n", "v", "v", "v", "e", "e"] },
+  { modulo: "Audiencias y videollamada", p: ["v", "e", "v", "n", "e", "e"] },
+  { modulo: "Registro de conciliadores", p: ["n", "v", "v", "v", "e", "e"] },
+  { modulo: "Notificaciones", p: ["v", "v", "e", "v", "e", "e"] },
+  { modulo: "Homologación y firma digital", p: ["v", "e", "n", "e", "e", "e"] },
+  { modulo: "Reportes y estadísticas", p: ["n", "v", "v", "v", "e", "e"] },
+  { modulo: "Usuarios y auditoría", p: ["n", "n", "n", "v", "v", "e"] },
+];
+
+const ACCION = {
+  "Consulta": { accion: "Consulta", icon: "visibility", color: "#1F5D9B" },
+  "Modificación": { accion: "Modificación", icon: "edit", color: "#B45F04" },
+  "Descarga": { accion: "Descarga", icon: "download", color: "#008275" },
+  "Decisión": { accion: "Decisión", icon: "gavel", color: "#356F23" },
+  "Acceso denegado": { accion: "Acceso denegado", icon: "block", color: "#6F0603" },
+};
+
+const AUDITORIA = [
+  { cuando: "28/07 09:41:07", usuario: "Marcela Fernández", rol: "Jefe de conciliadores", accion: "Decisión", objeto: "Sorteo ejecutado — EXP-2026-00431", ip: "10.24.8.115" },
+  { cuando: "28/07 09:12:44", usuario: "Mariano Ledesma", rol: "Mesa de entradas", accion: "Modificación", objeto: "Carátula corregida — EXP-2026-00428", ip: "10.24.8.102" },
+  { cuando: "28/07 08:57:19", usuario: "Julián Aquino", rol: "Conciliador", accion: "Consulta", objeto: "Expediente EXP-2026-00419", ip: "10.24.9.31" },
+  { cuando: "28/07 08:40:55", usuario: "Sistema OCLO", rol: "Proceso automático", accion: "Descarga", objeto: "Cédula CED-2026-01188 generada y enviada", ip: "127.0.0.1" },
+  { cuando: "28/07 08:31:02", usuario: "Sofía Britos", rol: "Asesoría jurídica", accion: "Descarga", objeto: "Acta de apertura — EXP-2026-00428", ip: "10.24.8.140" },
+  { cuando: "28/07 08:04:38", usuario: "Sofía Britos", rol: "Asesoría jurídica", accion: "Decisión", objeto: "Dictamen favorable — EXP-2026-00405", ip: "10.24.8.140" },
+  { cuando: "27/07 19:22:10", usuario: "Lucía Britez", rol: "Ciudadano", accion: "Consulta", objeto: "Estado del reclamo EXP-2026-00428", ip: "181.90.44.17" },
+  { cuando: "27/07 18:03:51", usuario: "Rocío Maidana", rol: "Mesa de entradas", accion: "Acceso denegado", objeto: "Módulo Usuarios y perfiles", ip: "10.24.8.108" },
+  { cuando: "27/07 16:48:27", usuario: "Carolina Romero", rol: "Conciliador", accion: "Modificación", objeto: "Resultado de audiencia — EXP-2026-00397", ip: "10.24.9.44" },
+  { cuando: "27/07 15:10:06", usuario: "Gustavo Vallejos", rol: "Administrador", accion: "Modificación", objeto: "Restablecimiento de contraseña — usuario mledesma", ip: "10.24.8.2" },
+];
+
+</script>
+<script>
+(function(){
+  function wrapTables(){
+    document.querySelectorAll('table.cts-table').forEach(function(t){
+      var p = t.parentElement;
+      if(p && p.classList && p.classList.contains('cts-table-wrap')) return;
+      var d = document.createElement('div');
+      d.className = 'cts-table-wrap';
+      t.parentNode.insertBefore(d, t);
+      d.appendChild(t);
+    });
+  }
+  function start(){
+    wrapTables();
+    var mo = new MutationObserver(function(){ wrapTables(); });
+    mo.observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>
+</body>
+</html>

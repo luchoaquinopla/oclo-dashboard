@@ -1,0 +1,26 @@
+:root{
+--font-sans:"Barlow",system-ui,sans-serif;
+--font-display:"Barlow Semi Condensed","Barlow",sans-serif;
+/* Títulos: Barlow Semi Condensed ExtraBold, CAJA ALTA (manual: 96/90 → ratio interlínea 0.94) */
+--display-weight:800;
+--display-transform:uppercase; /* @kind other */
+--display-leading:0.94;
+/* Subtítulos/destacados: Barlow Semibold, caja alta (40/42 → 1.05) */
+--heading-weight:600;
+--heading-leading:1.05;
+/* Texto de lectura: Barlow Regular (22/31 → 1.41) */
+--body-weight:400;
+--body-leading:1.41;
+/* Escala UI (app interna, base 14) */
+--text-xs:11px;
+--text-sm:12.5px;
+--text-base:14px;
+--text-md:16px;
+--text-lg:19px;
+--text-xl:24px;
+--text-2xl:32px;
+--text-3xl:44px;
+}
+body{font-family:var(--font-sans);color:var(--text-body);font-weight:var(--body-weight)}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent-strong);text-decoration:underline}

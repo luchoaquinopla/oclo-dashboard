@@ -1,0 +1,4 @@
+/* Barlow — única tipografía del sistema (Google Fonts). Barlow Semi Condensed para títulos (ExtraBold) y destacados italic (Bold Italic). */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Barlow+Semi+Condensed:ital,wght@0,700;0,800;1,700&display=swap");
+/* Iconos: Material Symbols Rounded (filled) — sustituto CDN más cercano al sistema de iconos del manual (24px, esquinas y terminaciones redondeadas, estilo pleno). */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..700,1,0&display=swap");
