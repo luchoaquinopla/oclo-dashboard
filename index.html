@@ -22,30 +22,34 @@ a{color:#1F5D9B;text-decoration:none}
 a:hover{color:#123A62;text-decoration:underline}
 @keyframes ocloPulse{0%,100%{opacity:1}50%{opacity:.25}}
 
-/* --- Responsive overrides (mobile/tablet) --- */
+/* --- Responsive overrides (mobile/tablet) ---
+   NOTE: React re-serializes inline styles (adds a space after ":", expands
+   shorthands), so [style*="..."] substring selectors never match the
+   rendered attribute text. Use real tag/class selectors instead — the
+   shell has exactly one <aside>/<nav>/<header>/<main>, and grid/modal/
+   search containers carry an explicit .oclo-* class for this reason. */
 @media (max-width:860px){
   *{box-sizing:border-box}
   html,body{overflow-x:hidden;height:auto!important}
-  [style*="height:100vh"][style*="overflow:hidden"]{flex-direction:column!important;height:auto!important;min-height:100vh!important;overflow:visible!important}
-  aside[style*="width:246px"]{width:100%!important;flex:none!important}
-  aside nav[style*="flex-direction:column"]{flex-direction:row!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;padding:8px 10px!important;gap:6px!important}
+  .oclo-shell{flex-direction:column!important;height:auto!important;min-height:100vh!important;overflow:visible!important}
+  aside{width:100%!important;flex:none!important}
+  aside nav{flex-direction:row!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;padding:8px 10px!important;gap:6px!important}
   aside nav button{width:auto!important;flex:0 0 auto!important;white-space:nowrap}
-  [style*="display:grid"]{grid-template-columns:1fr!important;grid-template-rows:none!important}
-  [style*="display:flex"]{flex-wrap:wrap!important}
-  header[style*="min-height:62px"]{height:auto!important;padding:10px 14px!important}
-  main[style*="flex:1;overflow:auto"]{padding:14px!important}
-  [style*="width:min(300px,26vw)"]{width:100%!important}
-  [style*="width:680px"]{width:100%!important}
+  .oclo-grid{grid-template-columns:1fr!important;grid-template-rows:none!important}
+  header{height:auto!important;flex-wrap:wrap!important;row-gap:8px;padding:10px 14px!important}
+  main{padding:14px!important}
+  .oclo-search{width:100%!important;min-width:0!important}
+  .oclo-modal{width:100%!important}
   .cts-table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch;margin:0 -1px}
   .cts-table-wrap .cts-table{min-width:560px}
 }
 @media (max-width:480px){
-  aside nav button span[style*="flex:1"]{display:none}
+  .oclo-nav-label{display:none}
   h1{font-size:18px!important}
 }
 </style>
 </helmet>
-<div style="display:flex;height:100vh;overflow:hidden;background:#F7F7F7;font-family:'Barlow',system-ui,sans-serif;color:#2E2D2C">
+<div class="oclo-shell" style="display:flex;height:100vh;overflow:hidden;background:#F7F7F7;font-family:'Barlow',system-ui,sans-serif;color:#2E2D2C">
 
   <aside style="width:246px;flex:none;background:#2E2D2C;display:flex;flex-direction:column">
     <div style="padding:20px 18px 14px">
@@ -56,7 +60,7 @@ a:hover{color:#123A62;text-decoration:underline}
       <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="9">
         <button onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:11px;padding:9px 12px;border:none;border-radius:6px;cursor:pointer;font:600 13.5px 'Barlow',sans-serif;text-align:left;width:100%;transition:background .12s ease-out,color .12s ease-out;background:{{ it.bg }};color:{{ it.fg }}">
           <span class="cts-icon" style="font-size:19px">{{ it.icon }}</span>
-          <span style="flex:1">{{ it.label }}</span>
+          <span class="oclo-nav-label" style="flex:1">{{ it.label }}</span>
           <span style="font:700 10.5px 'Barlow',sans-serif;padding:1px 6px;border-radius:999px;background:{{ it.badgeBg }};color:{{ it.badgeFg }}">{{ it.badge }}</span>
         </button>
       </sc-for>
@@ -78,7 +82,7 @@ a:hover{color:#123A62;text-decoration:underline}
         <h1 style="margin:0;font:800 23px 'Barlow Semi Condensed',sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.01em;color:#2E2D2C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tituloVista }}</h1>
       </div>
       <div style="flex:none;display:flex;align-items:center;gap:12px">
-        <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;background:#fff;width:min(300px,26vw);min-width:150px">
+        <div class="oclo-search" style="display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #B8B7B6;border-radius:6px;background:#fff;width:min(300px,26vw);min-width:150px">
           <span class="cts-icon" style="font-size:18px;color:#8A8988">search</span>
           <input placeholder="Buscar expediente, DNI o CUIT" style="border:none;outline:none;flex:1;min-width:0;font:400 14px 'Barlow',sans-serif;color:#2E2D2C;background:transparent">
         </div>
@@ -94,7 +98,7 @@ a:hover{color:#123A62;text-decoration:underline}
       <sc-if value="{{ esDashboard }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;gap:18px">
 
-          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
             <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="5">
               <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:15px 16px 14px;display:flex;flex-direction:column;gap:9px">
                 <div style="display:flex;align-items:center;gap:9px">
@@ -123,7 +127,7 @@ a:hover{color:#123A62;text-decoration:underline}
             <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="secondary" size="sm" icon="visibility" hint-size="auto,32px">Ver vencimientos</x-import>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);gap:16px;align-items:start">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);gap:16px;align-items:start">
 
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
@@ -241,7 +245,7 @@ a:hover{color:#123A62;text-decoration:underline}
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start">
 
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
               <div style="display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid #DBDBDA">
@@ -250,7 +254,7 @@ a:hover{color:#123A62;text-decoration:underline}
                   <span class="cts-icon" style="font-size:16px">{{ estadoSorteoIcon }}</span>{{ estadoSorteoTexto }}
                 </span>
               </div>
-              <div style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+              <div class="oclo-grid" style="padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
                 <sc-for list="{{ conciliadores }}" as="c" hint-placeholder-count="12">
                   <div style="border:1.5px solid {{ c.borde }};background:{{ c.fondo }};border-radius:7px;padding:11px 12px;display:flex;flex-direction:column;gap:6px;transition:background .1s ease-out,border-color .1s ease-out">
                     <div style="display:flex;align-items:center;gap:9px">
@@ -408,7 +412,7 @@ a:hover{color:#123A62;text-decoration:underline}
                 <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Semana del 27/07 al 31/07/2026</h3>
                 <span style="margin-left:auto;font:400 12.5px 'Barlow',sans-serif;color:#8A8988">{{ totalAudiencias }}</span>
               </div>
-              <div style="display:grid;grid-template-columns:74px repeat(5,minmax(0,1fr))">
+              <div class="oclo-grid" style="display:grid;grid-template-columns:74px repeat(5,minmax(0,1fr))">
                 <div style="border-bottom:1px solid #DBDBDA;background:#F7F7F7"></div>
                 <sc-for list="{{ diasSemana }}" as="d" hint-placeholder-count="5">
                   <div style="border-bottom:1px solid #DBDBDA;border-left:1px solid #EDEDED;background:{{ d.fondo }};padding:9px 12px">
@@ -436,7 +440,7 @@ a:hover{color:#123A62;text-decoration:underline}
 
           <sc-if value="{{ modalFijar }}" hint-placeholder-val="{{ false }}">
             <div style="position:fixed;inset:0;background:rgba(46,45,44,.5);display:flex;align-items:center;justify-content:center;z-index:100;padding:24px">
-              <div style="background:#fff;border-radius:8px;width:680px;max-width:100%;max-height:100%;overflow:auto;box-shadow:0 8px 28px rgba(46,45,44,.25)">
+              <div class="oclo-modal" style="background:#fff;border-radius:8px;width:680px;max-width:100%;max-height:100%;overflow:auto;box-shadow:0 8px 28px rgba(46,45,44,.25)">
                 <div style="display:flex;align-items:center;padding:16px 20px;border-bottom:1px solid #DBDBDA">
                   <div>
                     <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Agenda de audiencias</div>
@@ -446,7 +450,7 @@ a:hover{color:#123A62;text-decoration:underline}
                 </div>
 
                 <div style="padding:18px 20px;display:flex;flex-direction:column;gap:16px">
-                  <div style="background:#F7F7F7;border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <div class="oclo-grid" style="background:#F7F7F7;border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
                     <div>
                       <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Expediente</div>
                       <div style="font:700 14.5px 'Barlow',sans-serif;line-height:1.25">EXP-2026-00431</div>
@@ -459,7 +463,7 @@ a:hover{color:#123A62;text-decoration:underline}
                     </div>
                   </div>
 
-                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <div class="oclo-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
                     <label style="display:flex;flex-direction:column;gap:5px">
                       <span style="font:600 12.5px 'Barlow',sans-serif">Fecha de la audiencia</span>
                       <input type="date" value="{{ fFecha }}" onChange="{{ setFFecha }}" class="cts-input">
@@ -557,7 +561,7 @@ a:hover{color:#123A62;text-decoration:underline}
             <button onClick="{{ volverAgenda }}" class="cts-btn cts-btn--secondary cts-btn--sm"><span class="cts-icon" style="font-size:16px">arrow_back</span>Agenda de audiencias</button>
             <span style="font:400 12.5px 'Barlow',sans-serif;color:#5C5B5A">Sala virtual institucional · acceso restringido a las partes acreditadas</span>
           </div>
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch;height:100%">
+        <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch;height:100%">
 
           <div style="background:#2E2D2C;border-radius:8px;display:flex;flex-direction:column;overflow:hidden;min-height:620px">
             <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #454443">
@@ -571,7 +575,7 @@ a:hover{color:#123A62;text-decoration:underline}
               </div>
             </div>
 
-            <div style="flex:1;padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px">
+            <div class="oclo-grid" style="flex:1;padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px">
               <sc-for list="{{ participantes }}" as="p" hint-placeholder-count="4">
                 <div style="position:relative;border-radius:7px;overflow:hidden;background:#454443;border:2px solid {{ p.borde }};display:flex;align-items:center;justify-content:center;min-height:180px">
                   <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
@@ -636,7 +640,7 @@ a:hover{color:#123A62;text-decoration:underline}
               </div>
               <div style="padding:0 16px 16px;display:flex;flex-direction:column;gap:9px">
                 <div style="font:600 12.5px 'Barlow',sans-serif">Resultado del acto</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div class="oclo-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
                   <sc-for list="{{ resultados }}" as="r" hint-placeholder-count="4">
                     <button onClick="{{ r.onClick }}" style="height:38px;border-radius:6px;cursor:pointer;font:700 12.5px 'Barlow',sans-serif;border:1.5px solid {{ r.borde }};background:{{ r.fondo }};color:{{ r.texto }}">{{ r.label }}</button>
                   </sc-for>
@@ -769,11 +773,11 @@ a:hover{color:#123A62;text-decoration:underline}
                 </div>
               </div>
 
-              <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px;align-items:start">
+              <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px;align-items:start">
                 <div style="display:flex;flex-direction:column;gap:16px">
                   <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
                     <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;font:600 16px 'Barlow',sans-serif">Datos de las partes</div>
-                    <div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                    <div class="oclo-grid" style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
                       <sc-for list="{{ ficha.partesDetalle }}" as="p" hint-placeholder-count="2">
                         <div style="border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px;display:flex;flex-direction:column;gap:7px">
                           <div style="display:flex;align-items:center;gap:8px">
@@ -861,7 +865,7 @@ a:hover{color:#123A62;text-decoration:underline}
             <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="person_add" hint-size="auto,40px">Alta de conciliador</x-import>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start">
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
                 <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Conciliadores registrados</h3>
@@ -918,7 +922,7 @@ a:hover{color:#123A62;text-decoration:underline}
                     </div>
                   </sc-for>
                 </div>
-                <div style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-bottom:1px solid #DBDBDA">
+                <div class="oclo-grid" style="padding:14px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;border-bottom:1px solid #DBDBDA">
                   <sc-for list="{{ concSel.stats }}" as="s" hint-placeholder-count="3">
                     <div style="border:1px solid #DBDBDA;border-radius:7px;padding:10px 11px">
                       <div style="font:800 26px 'Barlow Semi Condensed',sans-serif;line-height:.94;color:{{ s.color }}">{{ s.valor }}</div>
@@ -981,7 +985,7 @@ a:hover{color:#123A62;text-decoration:underline}
             <x-import component-from-global-scope="CorrientesOCLODesignSystem_ff5265.Button" variant="primary" icon="outgoing_mail" hint-size="auto,40px">Nueva cédula</x-import>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1.55fr) 360px;gap:16px;align-items:start">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1.55fr) 360px;gap:16px;align-items:start">
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;overflow:hidden">
               <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
                 <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Cédulas electrónicas</h3>
@@ -1080,7 +1084,7 @@ a:hover{color:#123A62;text-decoration:underline}
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
             <sc-for list="{{ kpisReporte }}" as="k" hint-placeholder-count="5">
               <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:15px 16px;display:flex;flex-direction:column;gap:9px">
                 <div style="display:flex;align-items:center;gap:9px">
@@ -1096,7 +1100,7 @@ a:hover{color:#123A62;text-decoration:underline}
             </sc-for>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start">
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
               <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
                 <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Expedientes iniciados y cerrados</h3>
@@ -1134,7 +1138,7 @@ a:hover{color:#123A62;text-decoration:underline}
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start">
+          <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start">
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
               <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
                 <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Carga de trabajo por conciliador</h3>
@@ -1156,7 +1160,7 @@ a:hover{color:#123A62;text-decoration:underline}
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
               <div style="padding:13px 16px;border-bottom:1px solid #DBDBDA;font:600 16px 'Barlow',sans-serif">Montos conciliados y honorarios</div>
               <div style="padding:16px;display:flex;flex-direction:column;gap:14px">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="oclo-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
                   <div style="border:1px solid #DBDBDA;border-radius:7px;padding:13px 14px">
                     <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#5C5B5A">Total conciliado</div>
                     <div style="font:800 30px 'Barlow Semi Condensed',sans-serif;line-height:.94;margin-top:6px">$ 184.320.500</div>
@@ -1307,7 +1311,7 @@ a:hover{color:#123A62;text-decoration:underline}
           </sc-if>
 
           <sc-if value="{{ tabRoles }}" hint-placeholder-val="{{ false }}">
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">
+            <div class="oclo-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:start">
 
               <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
                 <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
@@ -1351,7 +1355,7 @@ a:hover{color:#123A62;text-decoration:underline}
                   <sc-for list="{{ gruposPermisos }}" as="g" hint-placeholder-count="5">
                     <div style="border-bottom:1px solid #EDEDED;padding:12px 0">
                       <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988;margin-bottom:8px">{{ g.modulo }}</div>
-                      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 18px">
+                      <div class="oclo-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 18px">
                         <sc-for list="{{ g.permisos }}" as="p" hint-placeholder-count="4">
                           <label class="cts-switch" style="justify-content:space-between;gap:12px">
                             <span style="flex:1">
