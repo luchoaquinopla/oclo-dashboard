@@ -42,7 +42,12 @@ a:hover{color:#123A62;text-decoration:underline}
   .oclo-drawer-backdrop{display:block;position:fixed;inset:0;background:rgba(46,45,44,.5);z-index:200;opacity:0;pointer-events:none;transition:opacity .22s ease-out}
   html.oclo-drawer-open .oclo-drawer-backdrop{opacity:1;pointer-events:auto}
   html.oclo-drawer-open{overflow:hidden}
-  .oclo-grid{grid-template-columns:1fr!important;grid-template-rows:none!important;align-items:start!important;height:auto!important}
+  /* minmax(0,1fr), no un 1fr a secas: por default un track de grid no
+     puede achicarse más que el min-content de lo que tiene adentro, así
+     que una tabla/gráfico con min-width interno empujaba el track (y toda
+     la página) más allá del viewport. minmax(0,...) le saca ese piso. */
+  .oclo-grid{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:none!important;align-items:start!important;height:auto!important;min-width:0!important}
+  .oclo-grid>*{min-width:0!important}
   header{height:auto!important;min-height:0!important;padding:10px 12px!important;gap:8px!important}
   .oclo-header-eyebrow{display:none!important}
   main{padding:14px!important}
@@ -57,6 +62,18 @@ a:hover{color:#123A62;text-decoration:underline}
   .oclo-video-topbar,.oclo-video-controls{flex-wrap:wrap!important;row-gap:8px}
   .oclo-video-grid{grid-template-columns:1fr 1fr!important;gap:8px!important}
   .oclo-video-tile{min-height:120px!important}
+  /* Sorteo electrónico: el botón "Ejecutar sorteo" se salía del card
+     porque la fila no envolvía. */
+  .oclo-sorteo-header{flex-wrap:wrap!important;row-gap:12px}
+  .oclo-sorteo-actions{margin-left:0!important;width:100%!important;justify-content:space-between!important;flex-wrap:wrap!important;row-gap:8px}
+  /* Reportes: el gráfico de barras tenía más ancho mínimo que la pantalla
+     y empujaba todo el layout hacia el costado — ahora scrollea contenido
+     dentro de su propia card en vez de desbordar la página. */
+  .oclo-chart-header{flex-wrap:wrap!important;row-gap:8px}
+  .oclo-bar-chart{overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  /* Pestañas (Usuarios y perfiles, etc.): scrollean en vez de desbordar. */
+  .cts-tabs{overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  .cts-tabs .cts-tab{flex:none!important;white-space:nowrap}
 }
 @media (max-width:480px){
   h1{font-size:18px!important}
@@ -244,13 +261,13 @@ a:hover{color:#123A62;text-decoration:underline}
       <sc-if value="{{ esSorteo }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:16px">
 
-          <div style="display:flex;align-items:center;gap:18px;background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:16px 18px">
+          <div class="oclo-sorteo-header" style="display:flex;align-items:center;gap:18px;background:#fff;border:1px solid #DBDBDA;border-radius:8px;padding:16px 18px">
             <div>
               <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Expediente a sortear</div>
               <div style="font:700 18px 'Barlow',sans-serif;line-height:1.2">EXP-2026-00431 · Sosa, Ramón c/ Frigorífico del Litoral S.A.</div>
               <div style="font:400 13px 'Barlow',sans-serif;color:#5C5B5A">Despido sin causa · Ingresado 27/07/2026 · Mesa de entradas</div>
             </div>
-            <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+            <div class="oclo-sorteo-actions" style="margin-left:auto;display:flex;align-items:center;gap:10px">
               <div style="text-align:right">
                 <div style="font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8A8988">Universo habilitado</div>
                 <div style="font:700 18px 'Barlow',sans-serif">12 conciliadores</div>
@@ -1118,14 +1135,14 @@ a:hover{color:#123A62;text-decoration:underline}
 
           <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start">
             <div style="background:#fff;border:1px solid #DBDBDA;border-radius:8px">
-              <div style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
+              <div class="oclo-chart-header" style="display:flex;align-items:center;padding:13px 16px;border-bottom:1px solid #DBDBDA">
                 <h3 style="margin:0;font:600 16px 'Barlow',sans-serif">Expedientes iniciados y cerrados</h3>
                 <div style="margin-left:auto;display:flex;gap:14px;font:600 12px 'Barlow',sans-serif;color:#5C5B5A">
                   <span style="display:flex;align-items:center;gap:6px"><span style="width:11px;height:11px;border-radius:2px;background:#769FD3"></span>Iniciados</span>
                   <span style="display:flex;align-items:center;gap:6px"><span style="width:11px;height:11px;border-radius:2px;background:#356F23"></span>Cerrados</span>
                 </div>
               </div>
-              <div style="padding:18px 16px 14px;display:flex;align-items:flex-end;gap:14px;height:236px">
+              <div class="oclo-bar-chart" style="padding:18px 16px 14px;display:flex;align-items:flex-end;gap:14px;height:236px">
                 <sc-for list="{{ evolucion }}" as="m" hint-placeholder-count="8">
                   <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%">
                     <div style="flex:1;display:flex;align-items:flex-end;gap:4px;width:100%;justify-content:center">
