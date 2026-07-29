@@ -30,21 +30,31 @@ a:hover{color:#123A62;text-decoration:underline}
    search containers carry an explicit .oclo-* class for this reason. */
 @media (max-width:860px){
   *{box-sizing:border-box}
-  html,body{overflow-x:hidden;height:auto!important}
-  .oclo-shell{flex-direction:column!important;height:auto!important;min-height:100vh!important;overflow:visible!important}
-  aside{width:100%!important;flex:none!important}
-  aside nav{flex-direction:row!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch;padding:8px 10px!important;gap:6px!important}
-  aside nav button{width:auto!important;flex:0 0 auto!important;white-space:nowrap}
-  .oclo-grid{grid-template-columns:1fr!important;grid-template-rows:none!important}
-  header{height:auto!important;flex-wrap:wrap!important;row-gap:8px;padding:10px 14px!important}
+  html,body{overflow-x:hidden}
+  /* Sidebar stays on the left as a narrow icon rail instead of moving to
+     the top — only labels/badges/footer text collapse to save width. */
+  aside{width:64px!important;flex:none!important}
+  .oclo-logo-wrap,.oclo-nav-header-label,.oclo-nav-label,.oclo-nav-badge,.oclo-user-info,.oclo-user-logout{display:none!important}
+  aside nav{padding:10px 6px!important;gap:4px!important}
+  aside nav button{justify-content:center!important;padding:10px 0!important;gap:0!important}
+  .oclo-sidebar-footer{justify-content:center!important;padding:12px 0!important}
+  .oclo-grid{grid-template-columns:1fr!important;grid-template-rows:none!important;align-items:start!important;height:auto!important}
+  header{height:auto!important;min-height:0!important;padding:10px 12px!important;gap:8px!important}
+  .oclo-header-eyebrow{display:none!important}
   main{padding:14px!important}
-  .oclo-search{width:100%!important;min-width:0!important}
+  .oclo-search{width:34px!important;min-width:34px!important;padding:0!important;border-color:transparent!important;background:transparent!important}
+  .oclo-search input{display:none!important}
   .oclo-modal{width:100%!important}
   .cts-table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch;margin:0 -1px}
   .cts-table-wrap .cts-table{min-width:560px}
+  /* Sala virtual (videollamada): no la forzamos a una sola columna de
+     tiles ni a una altura fija — eso era lo que la "cortaba". */
+  .oclo-video-panel{min-height:0!important}
+  .oclo-video-topbar,.oclo-video-controls{flex-wrap:wrap!important;row-gap:8px}
+  .oclo-video-grid{grid-template-columns:1fr 1fr!important;gap:8px!important}
+  .oclo-video-tile{min-height:120px!important}
 }
 @media (max-width:480px){
-  .oclo-nav-label{display:none}
   h1{font-size:18px!important}
 }
 </style>
@@ -52,33 +62,33 @@ a:hover{color:#123A62;text-decoration:underline}
 <div class="oclo-shell" style="display:flex;height:100vh;overflow:hidden;background:#F7F7F7;font-family:'Barlow',system-ui,sans-serif;color:#2E2D2C">
 
   <aside style="width:246px;flex:none;background:#2E2D2C;display:flex;flex-direction:column">
-    <div style="padding:20px 18px 14px">
+    <div class="oclo-logo-wrap" style="padding:20px 18px 14px">
       <img src="assets/logo-horizontal-dark.png" alt="Gobierno de Corrientes" style="width:174px;display:block">
     </div>
-    <div style="padding:0 18px 16px;border-bottom:1px solid #454443;font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;color:#B8B7B6;text-transform:uppercase;line-height:1.5">OCLO · Conciliación<br>Laboral Obligatoria</div>
+    <div class="oclo-nav-header-label" style="padding:0 18px 16px;border-bottom:1px solid #454443;font:600 11px 'Barlow',sans-serif;letter-spacing:.06em;color:#B8B7B6;text-transform:uppercase;line-height:1.5">OCLO · Conciliación<br>Laboral Obligatoria</div>
     <nav style="display:flex;flex-direction:column;gap:2px;padding:12px 10px;flex:1;overflow:auto">
       <sc-for list="{{ navItems }}" as="it" hint-placeholder-count="9">
         <button onClick="{{ it.onClick }}" style="display:flex;align-items:center;gap:11px;padding:9px 12px;border:none;border-radius:6px;cursor:pointer;font:600 13.5px 'Barlow',sans-serif;text-align:left;width:100%;transition:background .12s ease-out,color .12s ease-out;background:{{ it.bg }};color:{{ it.fg }}">
           <span class="cts-icon" style="font-size:19px">{{ it.icon }}</span>
           <span class="oclo-nav-label" style="flex:1">{{ it.label }}</span>
-          <span style="font:700 10.5px 'Barlow',sans-serif;padding:1px 6px;border-radius:999px;background:{{ it.badgeBg }};color:{{ it.badgeFg }}">{{ it.badge }}</span>
+          <span class="oclo-nav-badge" style="font:700 10.5px 'Barlow',sans-serif;padding:1px 6px;border-radius:999px;background:{{ it.badgeBg }};color:{{ it.badgeFg }}">{{ it.badge }}</span>
         </button>
       </sc-for>
     </nav>
-    <div style="padding:13px 14px;border-top:1px solid #454443;display:flex;align-items:center;gap:10px">
+    <div class="oclo-sidebar-footer" style="padding:13px 14px;border-top:1px solid #454443;display:flex;align-items:center;gap:10px">
       <div style="width:34px;height:34px;border-radius:50%;background:#769FD3;color:#fff;display:flex;align-items:center;justify-content:center;font:700 13px 'Barlow',sans-serif;flex:none">MF</div>
-      <div style="min-width:0;flex:1">
+      <div class="oclo-user-info" style="min-width:0;flex:1">
         <div style="font:600 12.5px 'Barlow',sans-serif;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Dra. Marcela Fernández</div>
         <div style="font:400 11px 'Barlow',sans-serif;color:#B8B7B6">Jefa de conciliadores</div>
       </div>
-      <span class="cts-icon" style="font-size:18px;color:#8A8988">logout</span>
+      <span class="cts-icon oclo-user-logout" style="font-size:18px;color:#8A8988">logout</span>
     </div>
   </aside>
 
   <div style="flex:1;display:flex;flex-direction:column;min-width:0">
     <header style="min-height:62px;flex:none;background:#fff;border-bottom:1px solid #DBDBDA;display:flex;align-items:center;gap:16px;padding:8px 26px">
       <div style="flex:1;min-width:0">
-        <div style="font:600 10.5px 'Barlow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8A8988">Secretaría de Trabajo y Empleo</div>
+        <div class="oclo-header-eyebrow" style="font:600 10.5px 'Barlow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8A8988">Secretaría de Trabajo y Empleo</div>
         <h1 style="margin:0;font:800 23px 'Barlow Semi Condensed',sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.01em;color:#2E2D2C;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ tituloVista }}</h1>
       </div>
       <div style="flex:none;display:flex;align-items:center;gap:12px">
@@ -563,8 +573,8 @@ a:hover{color:#123A62;text-decoration:underline}
           </div>
         <div class="oclo-grid" style="display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch;height:100%">
 
-          <div style="background:#2E2D2C;border-radius:8px;display:flex;flex-direction:column;overflow:hidden;min-height:620px">
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #454443">
+          <div class="oclo-video-panel" style="background:#2E2D2C;border-radius:8px;display:flex;flex-direction:column;overflow:hidden;min-height:620px">
+            <div class="oclo-video-topbar" style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #454443">
               <span style="display:flex;align-items:center;gap:7px;background:{{ grabBg }};border-radius:5px;padding:5px 10px;font:700 12px 'Barlow',sans-serif;color:#fff">
                 <span style="width:9px;height:9px;border-radius:50%;background:#fff;animation:{{ grabAnim }}"></span>{{ grabTexto }}
               </span>
@@ -575,9 +585,9 @@ a:hover{color:#123A62;text-decoration:underline}
               </div>
             </div>
 
-            <div class="oclo-grid" style="flex:1;padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px">
+            <div class="oclo-video-grid" style="flex:1;padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px">
               <sc-for list="{{ participantes }}" as="p" hint-placeholder-count="4">
-                <div style="position:relative;border-radius:7px;overflow:hidden;background:#454443;border:2px solid {{ p.borde }};display:flex;align-items:center;justify-content:center;min-height:180px">
+                <div class="oclo-video-tile" style="position:relative;border-radius:7px;overflow:hidden;background:#454443;border:2px solid {{ p.borde }};display:flex;align-items:center;justify-content:center;min-height:180px">
                   <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
                     <div style="width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 25px 'Barlow',sans-serif;color:#fff;background:{{ p.avatarBg }}">{{ p.ini }}</div>
                     <div style="font:400 11.5px 'Barlow',sans-serif;color:#8A8988">{{ p.placeholder }}</div>
@@ -596,7 +606,7 @@ a:hover{color:#123A62;text-decoration:underline}
               </sc-for>
             </div>
 
-            <div style="flex:none;padding:14px 16px;border-top:1px solid #454443;display:flex;align-items:center;gap:10px">
+            <div class="oclo-video-controls" style="flex:none;padding:14px 16px;border-top:1px solid #454443;display:flex;align-items:center;gap:10px">
               <sc-for list="{{ controlesLlamada }}" as="c" hint-placeholder-count="4">
                 <button style="display:flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:6px;border:1px solid #5C5B5A;background:#2E2D2C;color:#EDEDED;font:600 13px 'Barlow',sans-serif;cursor:pointer">
                   <span class="cts-icon" style="font-size:19px">{{ c.icon }}</span>{{ c.label }}
